@@ -1,4 +1,4 @@
-package complex;
+package de.vcs.model.gml.complex;
 
 
 /**
