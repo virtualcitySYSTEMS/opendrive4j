@@ -1,6 +1,6 @@
-package junction;
+package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,10 +9,10 @@ import core._OpenDriveElement;
  */
 public abstract class Connection extends _OpenDriveElement {
 
-	public string id;
+	public String id;
 	public JunctionType type;
-	private string incomingRoad;
-	private string connectingRoad;
+	private String incomingRoad;
+	private String connectingRoad;
 	private ContactPoint contactPoint;
 	public PredecessorSuccessor successor;
 	public LaneLink laneLink;

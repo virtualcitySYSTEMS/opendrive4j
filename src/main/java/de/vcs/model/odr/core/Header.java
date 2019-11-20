@@ -1,4 +1,4 @@
-package core;
+package de.vcs.model.odr.core;
 
 import geometry.InertialTransform;
 
@@ -9,16 +9,16 @@ import geometry.InertialTransform;
  */
 public class Header extends _OpenDriveElement {
 
-	public integer revMajor;
-	public integer revMinor;
-	public string name;
+	public int revMajor;
+	public int revMinor;
+	public String name;
 	public double version;
-	public string date;
+	public String date;
 	public double north;
 	public double south;
 	public double east;
 	public double west;
-	public string vendor;
+	public String vendor;
 	public AdditionalData m_AdditionalData;
 	public GeoReference geoReference;
 	public InertialTransform offset;

@@ -1,6 +1,6 @@
-package geometry;
+package de.vcs.model.odr.geometry;
 
-import  Geometry.Geometric primitive.GM_Point;
+
 
 /**
  * @author rruhdorfer
@@ -10,7 +10,7 @@ import  Geometry.Geometric primitive.GM_Point;
 public abstract class _STGeometry extends _ParametricGeometry {
 
 	public double length;
-	public GM_Point inertialReference;
+	public Point inertialReference;
 
 	public _STGeometry(){
 

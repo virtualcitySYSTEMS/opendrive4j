@@ -1,5 +1,4 @@
-package core;
-
+package de.vcs.model.odr.core;
 
 /**
  * @author rruhdorfer

@@ -1,6 +1,6 @@
-package junction;
+package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,8 +9,8 @@ import core._OpenDriveElement;
  */
 public class Controller extends _OpenDriveElement {
 
-	public string id;
-	public string type;
+	public String id;
+	public String type;
 	public int sequence;
 
 	public Controller(){

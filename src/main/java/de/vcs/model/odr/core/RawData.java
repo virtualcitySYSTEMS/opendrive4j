@@ -1,4 +1,4 @@
-package core;
+package de.vcs.model.odr.core;
 
 
 /**
@@ -8,11 +8,11 @@ package core;
  */
 public class RawData {
 
-	public string date;
+	public String date;
 	public Source source;
-	public string sourceComment;
+	public String sourceComment;
 	public PostProcessing postProcessing;
-	public string postProcessingComment;
+	public String postProcessingComment;
 
 	public RawData(){
 

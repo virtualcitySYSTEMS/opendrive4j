@@ -1,4 +1,4 @@
-package core;
+package de.vcs.model.odr.core;
 
 
 /**
@@ -8,8 +8,8 @@ package core;
  */
 public class UserData {
 
-	public string code;
-	public string value;
+	public String code;
+	public String value;
 
 	public UserData(){
 

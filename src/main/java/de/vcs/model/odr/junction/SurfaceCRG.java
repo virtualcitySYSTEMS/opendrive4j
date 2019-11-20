@@ -1,4 +1,4 @@
-package junction;
+package de.vcs.model.odr.junction;
 
 import geometry.STTransform;
 import core._OpenDriveElement;

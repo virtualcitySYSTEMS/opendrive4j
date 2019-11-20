@@ -1,4 +1,4 @@
-package core;
+package de.vcs.model.odr.core;
 
 
 /**
@@ -8,7 +8,7 @@ package core;
  */
 public class Include {
 
-	public string file;
+	public String file;
 
 	public Include(){
 

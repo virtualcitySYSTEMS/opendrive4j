@@ -1,4 +1,4 @@
-package geometry;
+package de.vcs.model.odr.geometry;
 
 import lane.Material;
 

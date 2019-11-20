@@ -1,5 +1,4 @@
-package geometry;
-
+package de.vcs.model.odr.geometry;
 
 /**
  * @author rruhdorfer
