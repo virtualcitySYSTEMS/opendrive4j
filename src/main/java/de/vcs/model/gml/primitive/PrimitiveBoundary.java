@@ -1,5 +1,4 @@
-package primitive;
-
+package de.vcs.model.gml.primitive;
 
 /**
  * The abstract class Primitive boundary is the root for the various return types

@@ -1,5 +1,4 @@
-package coordinate;
-
+package de.vcs.model.gml.coordinate;
 
 /**
  * Many of the geometric constructs in this International Standard require the use

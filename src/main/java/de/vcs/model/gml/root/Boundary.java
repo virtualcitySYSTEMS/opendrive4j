@@ -1,4 +1,4 @@
-package root;
+package de.vcs.model.gml.root;
 
 
 /**

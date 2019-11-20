@@ -1,11 +1,12 @@
-package coordinate;
+package de.vcs.model.gml.coordinate;
+
 
 
 /**
  * The surface patches that make up the parametric curve surfaces,
  * ParametricCurveSurface (Figure 23), are all continuous families of curves,
  * given by a constructive function of the form:
- * surface(s,t): [a,b]´[c,d] ®DirectPosition
+ * surface(s,t): [a,b]ï¿½[c,d] ï¿½DirectPosition
  * 
  * By fixing the value of either parameter, we have a one-parameter family of
  * curves.

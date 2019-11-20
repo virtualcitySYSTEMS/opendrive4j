@@ -1,4 +1,5 @@
-package coordinate;
+package de.vcs.model.gml.coordinate;
+
 
 
 /**
@@ -12,7 +13,7 @@ package coordinate;
  * points of a LineSegment shall all lie on the straight line between its start
  * point and end point. Between these two points, other positions may be
  * interpolated linearly.
- * NOTE The linear interpolation, given using a constructive parameter t, 0 £ t £
+ * NOTE The linear interpolation, given using a constructive parameter t, 0 ï¿½ t ï¿½
  * 1.0, where c(o) = c.startPoint() and c(1)=c.endPoint(), is:
  * 
  * c(t) = t c(1)  + (1-t) c(0)

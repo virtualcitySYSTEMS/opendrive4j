@@ -1,4 +1,4 @@
-package coordinate;
+package de.vcs.model.gml.coordinate;
 
 
 /**

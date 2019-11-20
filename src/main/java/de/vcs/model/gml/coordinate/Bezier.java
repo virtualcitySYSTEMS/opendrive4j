@@ -1,11 +1,11 @@
-package coordinate;
+package de.vcs.model.gml.coordinate;
 
 
 /**
- * Bezier are polynomial splines that use Bézier or Bernstein polynomials for
+ * Bezier are polynomial splines that use Bï¿½zier or Bernstein polynomials for
  * interpolation purposes. An n-long control point array shall create a polynomial
  * curve of degree n that defines the entire curve segment. These curves are
- * defined in terms of a set of basis functions called the Bézier or Bernstein
+ * defined in terms of a set of basis functions called the Bï¿½zier or Bernstein
  * polynomials.
  * @author rruhdorfer
  * @version 1.0

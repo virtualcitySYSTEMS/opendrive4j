@@ -1,6 +1,4 @@
-package primitive;
-
-import coordinate.DirectPosition;
+package de.vcs.model.gml.primitive;
 
 /**
  * Point (Figure 9) is the basic data type for a geometric object consisting of

@@ -1,5 +1,4 @@
-package primitive;
-
+package de.vcs.model.gml.primitive;
 
 /**
  * SurfacePatch (Figure 20) defines a homogeneous portion of a Surface. The

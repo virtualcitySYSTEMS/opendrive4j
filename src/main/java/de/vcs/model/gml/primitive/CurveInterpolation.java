@@ -1,5 +1,4 @@
-package primitive;
-
+package de.vcs.model.gml.primitive;
 
 /**
  * CurveInterpolation is a list of codes that may be used to identify the

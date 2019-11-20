@@ -1,4 +1,4 @@
-package primitive;
+package de.vcs.model.gml.primitive;
 
 
 /**

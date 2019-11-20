@@ -1,5 +1,4 @@
-package primitive;
-
+package de.vcs.model.gml.primitive;
 
 /**
  * CurveSegment defines a homogeneous segment of a Curve. Each CurveSegment shall

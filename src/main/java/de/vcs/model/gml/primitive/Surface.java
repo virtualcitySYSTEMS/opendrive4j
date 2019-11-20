@@ -1,9 +1,9 @@
-package primitive;
+package de.vcs.model.gml.primitive;
 
 
 /**
  * Surface (Figure 12) a subclass of Primitive and is the basis for 2-dimensional
- * geometry. Unorientable surfaces such as the Möbius band are not allowed. The
+ * geometry. Unorientable surfaces such as the Mï¿½bius band are not allowed. The
  * orientation of a surface chooses an "up" direction through the choice of the
  * upward normal, which, if the surface is not a cycle, is the side of the surface
  * from which the exterior boundary appears counterclockwise. Reversal of the

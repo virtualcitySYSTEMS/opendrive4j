@@ -1,4 +1,4 @@
-package coordinate;
+package de.vcs.model.gml.coordinate;
 
 
 /**
@@ -8,9 +8,9 @@ package coordinate;
  * multiplicity 1 elsewhere, and they differ by a positive constant from the
  * preceding knot. This code list is used to describe the distribution of knots in
  * the parameter space of various splines. The possible values are:
- * ¾ uniform: the form of knots is appropriate for a uniform B-spline.
- * ¾ quasiUniform: the form of knots is appropriate for a quasi-uniform B-spline.
- * ¾ piecewiseBezier : the form of knots is appropriate for a piecewise Bezier
+ * ï¿½ uniform: the form of knots is appropriate for a uniform B-spline.
+ * ï¿½ quasiUniform: the form of knots is appropriate for a quasi-uniform B-spline.
+ * ï¿½ piecewiseBezier : the form of knots is appropriate for a piecewise Bezier
  * curve.
  * KnotType::
  * uniform : CharacterString

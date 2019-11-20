@@ -1,6 +1,5 @@
-package primitive;
+package de.vcs.model.gml.primitive;
 
-import complex.CompositeSurface;
 
 /**
  * A Shell is used to represent a single connected component of a SolidBoundary.
