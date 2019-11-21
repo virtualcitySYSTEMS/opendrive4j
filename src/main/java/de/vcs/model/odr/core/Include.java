@@ -6,12 +6,23 @@ package de.vcs.model.odr.core;
  * @version 1.0
  * @created 20-Nov-2019 15:16:08
  */
-public class Include {
+public class Include extends AdditionalData {
 
-	public String file;
+	private String file;
 
 	public Include(){
 
 	}
 
+	public Include(String file) {
+		this.file = file;
+	}
+
+	public String getFile() {
+		return file;
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+	}
 }

@@ -13,15 +13,71 @@ import de.vcs.model.odr.railroad.Station;
  */
 public class OpenDRIVE {
 
-	public Road road;
-	public Header header;
-	public Controller controller;
-	public Junction junction;
-	public JunctionGroup junctionGroup;
-	public Station station;
+	private Road road;
+	private Header header;
+	private Controller controller;
+	private Junction junction;
+	private JunctionGroup junctionGroup;
+	private Station station;
 
 	public OpenDRIVE(){
 
 	}
 
+	public OpenDRIVE(Road road, Header header, Controller controller, Junction junction, JunctionGroup junctionGroup, Station station) {
+		this.road = road;
+		this.header = header;
+		this.controller = controller;
+		this.junction = junction;
+		this.junctionGroup = junctionGroup;
+		this.station = station;
+	}
+
+	public Road getRoad() {
+		return road;
+	}
+
+	public void setRoad(Road road) {
+		this.road = road;
+	}
+
+	public Header getHeader() {
+		return header;
+	}
+
+	public void setHeader(Header header) {
+		this.header = header;
+	}
+
+	public Controller getController() {
+		return controller;
+	}
+
+	public void setController(Controller controller) {
+		this.controller = controller;
+	}
+
+	public Junction getJunction() {
+		return junction;
+	}
+
+	public void setJunction(Junction junction) {
+		this.junction = junction;
+	}
+
+	public JunctionGroup getJunctionGroup() {
+		return junctionGroup;
+	}
+
+	public void setJunctionGroup(JunctionGroup junctionGroup) {
+		this.junctionGroup = junctionGroup;
+	}
+
+	public Station getStation() {
+		return station;
+	}
+
+	public void setStation(Station station) {
+		this.station = station;
+	}
 }

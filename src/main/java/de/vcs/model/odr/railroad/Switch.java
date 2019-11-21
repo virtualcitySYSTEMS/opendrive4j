@@ -1,6 +1,6 @@
 package de.vcs.model.odr.railroad;
 
-import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.core.AdditionalData;
 
 /**
@@ -8,18 +8,73 @@ import de.vcs.model.odr.core.AdditionalData;
  * @version 1.0
  * @created 20-Nov-2019 15:17:47
  */
-public class Switch extends _OpenDriveElement {
+public class Switch extends AbstractOpenDriveElement {
 
-	public String name;
-	public String id;
-	public SwitchPosition position;
-	public MainTrack mainTrack;
-	public SideTrack sideTrack;
-	public Partner partner;
-	public AdditionalData m_AdditionalData;
+    private String name;
+    private String id;
+    private SwitchPosition position;
+    private MainTrack mainTrack;
+    private SideTrack sideTrack;
+    private Partner partner;
 
-	public Switch(){
+    public Switch() {
+    }
 
-	}
+    public Switch(String name, String id, SwitchPosition position, MainTrack mainTrack,
+            SideTrack sideTrack, Partner partner) {
+        this.name = name;
+        this.id = id;
+        this.position = position;
+        this.mainTrack = mainTrack;
+        this.sideTrack = sideTrack;
+        this.partner = partner;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public SwitchPosition getPosition() {
+        return position;
+    }
+
+    public void setPosition(SwitchPosition position) {
+        this.position = position;
+    }
+
+    public MainTrack getMainTrack() {
+        return mainTrack;
+    }
+
+    public void setMainTrack(MainTrack mainTrack) {
+        this.mainTrack = mainTrack;
+    }
+
+    public SideTrack getSideTrack() {
+        return sideTrack;
+    }
+
+    public void setSideTrack(SideTrack sideTrack) {
+        this.sideTrack = sideTrack;
+    }
+
+    public Partner getPartner() {
+        return partner;
+    }
+
+    public void setPartner(Partner partner) {
+        this.partner = partner;
+    }
 }

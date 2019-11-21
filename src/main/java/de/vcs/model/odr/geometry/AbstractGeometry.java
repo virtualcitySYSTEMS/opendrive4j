@@ -6,10 +6,6 @@ package de.vcs.model.odr.geometry;
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public abstract class _AbstractGeometry {
-
-	public _AbstractGeometry(){
-
-	}
+public abstract class AbstractGeometry {
 
 }

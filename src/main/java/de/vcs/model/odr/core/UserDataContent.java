@@ -8,8 +8,21 @@ package de.vcs.model.odr.core;
  */
 public class UserDataContent {
 
+	private String content;
+
 	public UserDataContent(){
 
 	}
 
+	public UserDataContent(String content) {
+		this.content = content;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
 }

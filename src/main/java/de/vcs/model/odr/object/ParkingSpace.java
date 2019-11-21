@@ -1,19 +1,36 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.core._OpenDriveElement;
-
 /**
  * @author rruhdorfer
  * @version 1.0
  * @created 20-Nov-2019 15:17:41
  */
-public class ParkingSpace extends _AbstractObject _OpenDriveElement {
+public class ParkingSpace extends AbstractObject {
 
-	public ParkingSpaceAccess access;
-	public String restrictions;
+    private ParkingSpaceAccess access;
+    private String restrictions;
 
-	public ParkingSpace(){
+    public ParkingSpace() {
+    }
 
-	}
+    public ParkingSpace(ParkingSpaceAccess access, String restrictions) {
+        this.access = access;
+        this.restrictions = restrictions;
+    }
 
+    public ParkingSpaceAccess getAccess() {
+        return access;
+    }
+
+    public void setAccess(ParkingSpaceAccess access) {
+        this.access = access;
+    }
+
+    public String getRestrictions() {
+        return restrictions;
+    }
+
+    public void setRestrictions(String restrictions) {
+        this.restrictions = restrictions;
+    }
 }

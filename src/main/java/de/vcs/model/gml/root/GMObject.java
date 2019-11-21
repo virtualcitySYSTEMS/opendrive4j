@@ -1,7 +1,7 @@
 package de.vcs.model.gml.root;
 
 import de.vcs.model.odr.geometry.InertialTransform;
-import de.vcs.model.odr.geometry._AbstractGeometry;
+import de.vcs.model.odr.geometry.AbstractGeometry;
 
 /**
  * Object (Figure 6) is the root class of the geometric object taxonomy and
@@ -19,11 +19,11 @@ import de.vcs.model.odr.geometry._AbstractGeometry;
  * @version 1.0
  * @created 20-Nov-2019 15:50:32
  */
-public abstract class Object extends _AbstractGeometry {
+public abstract class GMObject extends AbstractGeometry {
 
 	public InertialTransform inertialTransform;
 
-	public Object(){
+	public GMObject(){
 
 	}
 

@@ -3,6 +3,8 @@ package de.vcs.model.gml.complex;
 
 import de.vcs.model.gml.primitive.Primitive;
 
+import java.util.ArrayList;
+
 /**
  * @author rruhdorfer
  * @version 1.0
@@ -10,7 +12,7 @@ import de.vcs.model.gml.primitive.Primitive;
  */
 public abstract class Composite extends Complex {
 
-	public Primitive generator;
+	public ArrayList<Primitive> primitives;
 
 	public Composite(){
 

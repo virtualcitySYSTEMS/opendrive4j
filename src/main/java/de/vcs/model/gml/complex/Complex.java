@@ -2,6 +2,9 @@ package de.vcs.model.gml.complex;
 
 
 import de.vcs.model.gml.primitive.Primitive;
+import de.vcs.model.gml.root.GMObject;
+
+import java.util.ArrayList;
 
 /**
  * geometric complex
@@ -18,13 +21,25 @@ import de.vcs.model.gml.primitive.Primitive;
  * @version 1.0
  * @created 20-Nov-2019 15:50:05
  */
-public abstract class Complex extends Object {
+public abstract class Complex extends GMObject {
 
-	public Primitive element;
-	public Complex subComplex;
+	public ArrayList<Primitive> elements;
+	public ArrayList<Complex> subComplexes;
+	private boolean isMaximal;
 
 	public Complex(){
 
 	}
 
+	public Complex(boolean isMaximal) {
+		this.isMaximal = isMaximal;
+	}
+
+	public boolean isMaximal() {
+		return isMaximal;
+	}
+
+	public void setMaximal(boolean maximal) {
+		isMaximal = maximal;
+	}
 }

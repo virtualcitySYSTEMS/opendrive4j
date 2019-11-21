@@ -1,21 +1,24 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AdditionalData;
-import de.vcs.model.odr.core._OpenDriveElement;
-import de.vcs.model.odr.geometry._ParametricGeometry;
+import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.geometry.AbstractParametricGeometry;
+
+import java.util.ArrayList;
 
 /**
  * @author rruhdorfer
  * @version 1.0
  * @created 20-Nov-2019 15:17:21
  */
-public class PlanView extends _OpenDriveElement {
+public class PlanView extends AbstractOpenDriveElement {
 
-	public AdditionalData m_AdditionalData;
-	public _ParametricGeometry geometry;
+    public ArrayList<AbstractParametricGeometry> geometry;
 
-	public PlanView(){
+    public PlanView() {
+    }
 
-	}
-
+    public PlanView(ArrayList<AbstractParametricGeometry> geometry) {
+        this.geometry = geometry;
+    }
 }

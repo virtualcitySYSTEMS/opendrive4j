@@ -8,12 +8,31 @@ package de.vcs.model.odr.geometry;
  */
 public class SPosition {
 
-	public double s;
+	private double s;
 	private double t;
-	public _STGeometry m__STGeometry;
 
 	public SPosition(){
 
 	}
 
+	public SPosition(double s, double t) {
+		this.s = s;
+		this.t = t;
+	}
+
+	public double getS() {
+		return s;
+	}
+
+	public void setS(double s) {
+		this.s = s;
+	}
+
+	public double getT() {
+		return t;
+	}
+
+	public void setT(double t) {
+		this.t = t;
+	}
 }

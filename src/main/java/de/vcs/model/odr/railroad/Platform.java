@@ -1,22 +1,42 @@
 package de.vcs.model.odr.railroad;
 
-import de.vcs.model.odr.core._OpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.core.AbstractOpenDriveElement;
+
+import java.util.ArrayList;
 
 /**
  * @author rruhdorfer
  * @version 1.0
  * @created 20-Nov-2019 15:17:47
  */
-public class Platform extends _OpenDriveElement {
+public class Platform extends AbstractOpenDriveElement {
 
-	public String name;
-	public String id;
-	public Segment segment;
-	public AdditionalData m_AdditionalData;
+    private String name;
+    private String id;
+    public ArrayList<Segment> segments;
 
-	public Platform(){
+    public Platform() {
+    }
 
-	}
+    public Platform(String name, String id, ArrayList<Segment> segments) {
+        this.name = name;
+        this.id = id;
+        this.segments = segments;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

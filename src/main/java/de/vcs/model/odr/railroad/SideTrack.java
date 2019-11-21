@@ -1,6 +1,6 @@
 package de.vcs.model.odr.railroad;
 
-import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.SPosition;
 import de.vcs.model.odr.junction.ElementDir;
 
@@ -9,14 +9,42 @@ import de.vcs.model.odr.junction.ElementDir;
  * @version 1.0
  * @created 20-Nov-2019 15:17:47
  */
-public class SideTrack extends _OpenDriveElement {
+public class SideTrack extends AbstractOpenDriveElement {
 
-	public String id;
-	public ElementDir dir;
-	public SPosition linearReference;
+    private String id;
+    private ElementDir dir;
+    private SPosition linearReference;
 
-	public SideTrack(){
+    public SideTrack() {
+    }
 
-	}
+    public SideTrack(String id, ElementDir dir, SPosition linearReference) {
+        this.id = id;
+        this.dir = dir;
+        this.linearReference = linearReference;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ElementDir getDir() {
+        return dir;
+    }
+
+    public void setDir(ElementDir dir) {
+        this.dir = dir;
+    }
+
+    public SPosition getLinearReference() {
+        return linearReference;
+    }
+
+    public void setLinearReference(SPosition linearReference) {
+        this.linearReference = linearReference;
+    }
 }
