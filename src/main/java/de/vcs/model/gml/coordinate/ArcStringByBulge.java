@@ -1,6 +1,8 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
+
 /**
  * This variant of the arc simply stores the parameters of the second constructor
  * of the component Arcs and recalculates the other attributes of the standard arc.
@@ -13,9 +15,9 @@ package de.vcs.model.gml.coordinate;
  */
 public class ArcStringByBulge extends CurveSegment {
 
-	public string bulge;
-	public integer numArc;
-	public string normal;
+	public String bulge;
+	public int numArc;
+	public String normal;
 
 	public ArcStringByBulge(){
 

@@ -18,8 +18,8 @@ package de.vcs.model.gml.coordinate;
  */
 public class DirectPosition {
 
-	public string coordinate;
-	public integer dimension;
+	public String coordinate;
+	public int dimension;
 
 	public DirectPosition(){
 

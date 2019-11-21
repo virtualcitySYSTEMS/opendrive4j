@@ -1,8 +1,10 @@
-package road;
+package de.vcs.model.odr.road;
 
-import core._OpenDriveElement;
-import geometry.SPosition;
-import geometry.STTransform;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STTransform;
+import de.vcs.model.odr.junction.CRGMode;
+import de.vcs.model.odr.junction.CRGPurpose;
 
 /**
  * @author rruhdorfer
@@ -11,7 +13,7 @@ import geometry.STTransform;
  */
 public class SurfaceCRG extends _OpenDriveElement {
 
-	public string file;
+	public String file;
 	public Direction orientation;
 	public CRGMode mode;
 	public CRGPurpose purpose;

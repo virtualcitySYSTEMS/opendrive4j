@@ -1,11 +1,11 @@
-package object;
+package de.vcs.model.odr.object;
 
-import road.Road;
-import core._OpenDriveElement;
-import geometry.STTransform;
-import geometry._AbstractGeometry;
-import lane.LaneValidity;
-import geometry.SPosition;
+import de.vcs.model.odr.road.Road;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.STTransform;
+import de.vcs.model.odr.geometry._AbstractGeometry;
+import de.vcs.model.odr.lane.LaneValidity;
+import de.vcs.model.odr.geometry.SPosition;
 
 /**
  * @author rruhdorfer
@@ -14,8 +14,8 @@ import geometry.SPosition;
  */
 public class _AbstractObject extends _OpenDriveElement {
 
-	private string name;
-	private string id;
+	private String name;
+	private String id;
 	private ObjectType type;
 	private double validLength;
 	private Orientation orientation;

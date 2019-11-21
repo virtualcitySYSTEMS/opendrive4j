@@ -1,6 +1,8 @@
 package de.vcs.model.gml.complex;
 
 
+import de.vcs.model.gml.primitive.Primitive;
+
 /**
  * geometric complex
  * set of disjoint geometric primitives such that the boundary of each primitive

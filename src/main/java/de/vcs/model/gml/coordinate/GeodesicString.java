@@ -1,6 +1,7 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
 
 /**
  * A GeodesicString consists of sequence of geodesic segments. The class

@@ -1,6 +1,9 @@
 package de.vcs.model.gml.complex;
 
 
+import de.vcs.model.gml.primitive.Primitive;
+import de.vcs.model.gml.primitive.Solid;
+
 /**
  * 4.50 geometric composite solid
  * set of geometric solids adjoining one another along common boundary geometric

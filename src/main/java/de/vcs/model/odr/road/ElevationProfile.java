@@ -1,8 +1,8 @@
-package road;
+package de.vcs.model.odr.road;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
-import geometry._ParametricGeometry;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.geometry._ParametricGeometry;
 
 /**
  * @author rruhdorfer

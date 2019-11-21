@@ -1,7 +1,7 @@
-package railroad;
+package de.vcs.model.odr.railroad;
 
-import core._OpenDriveElement;
-import geometry.SPosition;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.SPosition;
 
 /**
  * @author rruhdorfer
@@ -10,7 +10,7 @@ import geometry.SPosition;
  */
 public class Segment extends _OpenDriveElement {
 
-	public string roadId;
+	public String roadId;
 	public PlatformSide side;
 	public SPosition sStart;
 	public SPosition sEnd;

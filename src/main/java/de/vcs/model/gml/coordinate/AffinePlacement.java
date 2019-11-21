@@ -11,7 +11,7 @@ public class AffinePlacement {
 	/**
 	 * {size = outDimension}
 	 */
-	public string refDirection;
+	public String refDirection;
 	public Position location;
 
 	public AffinePlacement(){

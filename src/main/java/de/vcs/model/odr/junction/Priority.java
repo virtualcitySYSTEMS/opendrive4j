@@ -1,6 +1,6 @@
 package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,8 +9,8 @@ import core._OpenDriveElement;
  */
 public class Priority extends _OpenDriveElement {
 
-	public string high;
-	public string low;
+	public String high;
+	public String low;
 
 	public Priority(){
 

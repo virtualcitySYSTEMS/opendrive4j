@@ -1,4 +1,4 @@
-package lane;
+package de.vcs.model.odr.lane;
 
 
 /**
@@ -7,7 +7,7 @@ package lane;
  * @created 20-Nov-2019 15:17:28
  */
 public enum RoadMarkRule {
-	no passing,
+	no_passing,
 	caution,
 	none
 }

@@ -1,7 +1,7 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer

@@ -1,5 +1,7 @@
 package de.vcs.model.gml.primitive;
 
+import de.vcs.model.gml.root.Boundary;
+
 /**
  * The abstract class Primitive boundary is the root for the various return types
  * of the boundary operator for subtypes of Primitive. Since points have no

@@ -1,6 +1,6 @@
-package object;
+package de.vcs.model.odr.object;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -10,7 +10,7 @@ import core._OpenDriveElement;
 public class ParkingSpace extends _AbstractObject _OpenDriveElement {
 
 	public ParkingSpaceAccess access;
-	public string restrictions;
+	public String restrictions;
 
 	public ParkingSpace(){
 

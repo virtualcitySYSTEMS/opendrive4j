@@ -1,6 +1,7 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
 
 /**
  * SplineCurve (Figure 19) acts as a root for subtypes of CurveSegment using some
@@ -11,8 +12,8 @@ package de.vcs.model.gml.coordinate;
  */
 public abstract class SplineCurve extends CurveSegment {
 
-	public integer degree;
-	public string knot;
+	public int degree;
+	public String knot;
 	public PointArray controlPoints;
 
 	public SplineCurve(){

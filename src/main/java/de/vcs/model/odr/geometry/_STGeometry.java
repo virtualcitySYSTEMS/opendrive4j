@@ -1,6 +1,7 @@
 package de.vcs.model.odr.geometry;
 
 
+import de.vcs.model.gml.primitive.Point;
 
 /**
  * @author rruhdorfer

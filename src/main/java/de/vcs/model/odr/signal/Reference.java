@@ -1,6 +1,6 @@
-package signal;
+package de.vcs.model.odr.signal;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -10,8 +10,8 @@ import core._OpenDriveElement;
 public class Reference extends _OpenDriveElement {
 
 	public SignalType elementType;
-	public string elementId;
-	public string type;
+	public String elementId;
+	public String type;
 
 	public Reference(){
 

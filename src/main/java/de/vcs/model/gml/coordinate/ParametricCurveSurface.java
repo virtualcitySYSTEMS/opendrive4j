@@ -1,6 +1,8 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveInterpolation;
+import de.vcs.model.gml.primitive.SurfacePatch;
 
 /**
  * The surface patches that make up the parametric curve surfaces,

@@ -1,5 +1,6 @@
 package de.vcs.model.gml.root;
 
+import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.model.odr.geometry._AbstractGeometry;
 
 /**

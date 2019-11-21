@@ -1,6 +1,8 @@
 package de.vcs.model.gml.primitive;
 
 
+import de.vcs.model.gml.complex.CompositeCurve;
+
 /**
  * A Ring is used to represent a single connected component of a SurfaceBoundary.
  * It consists of a number of references to OrientableCurves connected in a cycle

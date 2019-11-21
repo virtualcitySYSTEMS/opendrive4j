@@ -13,11 +13,11 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:18
  */
-public class Tin extends TriangulatedSurface TriangulatedSurface {
+public class Tin extends TriangulatedSurface {
 
-	public string stopLines;
-	public string breakLines;
-	public string maxLength;
+	public String stopLines;
+	public String breakLines;
+	public String maxLength;
 	public Position controlPoint;
 
 	public Tin(){

@@ -9,9 +9,9 @@ package de.vcs.model.gml.primitive;
  */
 public abstract class CurveSegment {
 
-	public integer numDerivativesAtStart;
-	public integer numDerivativesAtEnd;
-	public integer numDerivativeInterior;
+	public int numDerivativesAtStart;
+	public int numDerivativesAtEnd;
+	public int numDerivativeInterior;
 	public CurveInterpolation interpolation;
 
 	public CurveSegment(){

@@ -1,6 +1,9 @@
 package de.vcs.model.gml.complex;
 
 
+import de.vcs.model.gml.primitive.OrientableCurve;
+import de.vcs.model.gml.primitive.Primitive;
+
 /**
  * geometric composite curve, path
  * list of geometric curves such that the each geometric curve in the set

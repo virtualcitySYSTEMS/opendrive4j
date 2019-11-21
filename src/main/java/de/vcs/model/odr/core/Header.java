@@ -1,6 +1,6 @@
 package de.vcs.model.odr.core;
 
-import geometry.InertialTransform;
+import de.vcs.model.odr.geometry.InertialTransform;
 
 /**
  * @author rruhdorfer

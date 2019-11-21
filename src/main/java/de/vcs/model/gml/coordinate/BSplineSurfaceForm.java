@@ -9,12 +9,12 @@ package de.vcs.model.gml.coordinate;
  */
 public class BSplineSurfaceForm {
 
-	public string planar;
-	public string cylindrical;
-	public string conical;
-	public string spherical;
-	public string toroidal;
-	public string unspecified;
+	public String planar;
+	public String cylindrical;
+	public String conical;
+	public String spherical;
+	public String toroidal;
+	public String unspecified;
 
 	public BSplineSurfaceForm(){
 

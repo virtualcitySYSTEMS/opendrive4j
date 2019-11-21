@@ -1,6 +1,6 @@
-package signal;
+package de.vcs.model.odr.signal;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,8 +9,8 @@ import core._OpenDriveElement;
  */
 public class Dependency extends _OpenDriveElement {
 
-	public string id;
-	public string type;
+	public String id;
+	public String type;
 
 	public Dependency(){
 

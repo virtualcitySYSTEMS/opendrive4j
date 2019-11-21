@@ -1,4 +1,4 @@
-package lane;
+package de.vcs.model.odr.lane;
 
 
 /**
@@ -10,11 +10,11 @@ public enum RoadMarkType {
 	none,
 	solid,
 	broken,
-	solid solid,
-	solid broken,
-	broken solid,
-	broken broken,
-	botts dots,
+	solid_solid,
+	solid_broken,
+	broken_solid,
+	broken_broken,
+	botts_dots,
 	grass,
 	curb,
 	custom,

@@ -1,6 +1,7 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.Point;
 
 /**
  * A PointRef is used to reference an existing point. It is an instantiation of

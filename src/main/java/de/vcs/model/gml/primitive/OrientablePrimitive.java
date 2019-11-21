@@ -44,9 +44,9 @@ package de.vcs.model.gml.primitive;
  * @version 1.0
  * @created 20-Nov-2019 15:50:25
  */
-public abstract class OrientablePrimitive extends Primitive Primitive {
+public abstract class OrientablePrimitive extends Primitive {
 
-	public string orientation;
+	public String orientation;
 
 	public OrientablePrimitive(){
 

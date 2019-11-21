@@ -1,6 +1,6 @@
 package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,7 +9,7 @@ import core._OpenDriveElement;
  */
 public class JunctionReference extends _OpenDriveElement {
 
-	public string junction;
+	public String junction;
 
 	public JunctionReference(){
 

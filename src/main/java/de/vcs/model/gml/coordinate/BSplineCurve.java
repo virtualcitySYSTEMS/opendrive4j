@@ -16,7 +16,7 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:17
  */
-public class BSplineCurve extends SplineCurve SplineCurve {
+public class BSplineCurve extends SplineCurve {
 
 	public boolean isPolynomial;
 	public SplineCurveForm curveForm;

@@ -45,16 +45,16 @@ package de.vcs.model.gml.primitive;
  */
 public class SurfaceInterpolation {
 
-	public string none;
-	public string planar;
-	public string spherical;
-	public string elliptical;
-	public string conic;
-	public string tin;
-	public string parametricCurve;
-	public string polynomialSpline;
-	public string rationalSpline;
-	public string triangulatedSpline;
+	public String none;
+	public String planar;
+	public String spherical;
+	public String elliptical;
+	public String conic;
+	public String tin;
+	public String parametricCurve;
+	public String polynomialSpline;
+	public String rationalSpline;
+	public String triangulatedSpline;
 
 	public SurfaceInterpolation(){
 

@@ -1,6 +1,7 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.STTransform;
 
 /**
  * @author rruhdorfer
@@ -9,9 +10,10 @@ import core._OpenDriveElement;
  */
 public class Material extends _OpenDriveElement {
 
-	public string surface;
+	public String surface;
 	public double friction;
 	public double roughness;
+	public STTransform stTransform;
 
 	public Material(){
 

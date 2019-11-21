@@ -1,7 +1,7 @@
-package signal;
+package de.vcs.model.odr.signal;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * A controller provides consistent states for a group of signals. This may be a
@@ -14,8 +14,8 @@ import core.AdditionalData;
  */
 public class Controller extends _OpenDriveElement {
 
-	public string id;
-	public string name;
+	public String id;
+	public String name;
 	public int sequence;
 	public Control control;
 	public AdditionalData m_AdditionalData;

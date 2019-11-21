@@ -1,9 +1,10 @@
-package signal;
+package de.vcs.model.odr.signal;
 
-import geometry.SPosition;
-import lane.LaneValidity;
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.lane.LaneValidity;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.object.Orientation;
 
 /**
  * @author rruhdorfer
@@ -12,7 +13,7 @@ import core.AdditionalData;
  */
 public class SignalReference extends _OpenDriveElement {
 
-	public string id;
+	public String id;
 	public Orientation orientation;
 	public SPosition linearReference;
 	public LaneValidity validity;

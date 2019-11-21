@@ -6,7 +6,7 @@ package de.vcs.model.gml.coordinate;
  * This code list is used to indicate which sort of curve may be approximated by a
  * particular B-spline. The potential values are:
  * -- polylineform: a connected sequence of line segments represented by a 1
- * degree B-spline (a line string).
+ * degree B-spline (a line String).
  * -- circularArc: an arc of a circle or a complete circle.
  * -- ellipticArc: an arc of an ellipse or a complete ellipse.
  * -- parabolicArc: an arc of a finite length of a parabola.
@@ -17,11 +17,11 @@ package de.vcs.model.gml.coordinate;
  */
 public class SplineCurveForm {
 
-	public string polylineForm;
-	public string circularArc;
-	public string ellipticArc;
-	public string parabolicArc;
-	public string hyperbolicArc;
+	public String polylineForm;
+	public String circularArc;
+	public String ellipticArc;
+	public String parabolicArc;
+	public String hyperbolicArc;
 
 	public SplineCurveForm(){
 

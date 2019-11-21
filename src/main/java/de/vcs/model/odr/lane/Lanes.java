@@ -1,8 +1,8 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
-import geometry.Polynom;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.geometry.Polynom;
 
 /**
  * @author rruhdorfer

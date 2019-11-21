@@ -1,4 +1,4 @@
-package object;
+package de.vcs.model.odr.object;
 
 
 /**

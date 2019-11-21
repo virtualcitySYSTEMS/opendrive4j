@@ -1,9 +1,9 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import core._OpenDriveElement;
-import geometry.SPosition;
-import geometry._AbstractGeometry;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry._AbstractGeometry;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer

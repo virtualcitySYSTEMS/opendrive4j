@@ -10,7 +10,7 @@ package de.vcs.model.gml.primitive;
  */
 public abstract class SurfacePatch {
 
-	public integer numDerivativesOnBoundary;
+	public int numDerivativesOnBoundary;
 	public SurfaceInterpolation interpolation;
 
 	public SurfacePatch(){

@@ -13,7 +13,7 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:18
  */
-public class Geodesic extends GeodesicString GeodesicString {
+public class Geodesic extends GeodesicString {
 
 	public Geodesic(){
 

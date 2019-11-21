@@ -1,7 +1,7 @@
 package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer
@@ -10,8 +10,8 @@ import core.AdditionalData;
  */
 public class Junction extends _OpenDriveElement {
 
-	public string name;
-	public string id;
+	public String name;
+	public String id;
 	public JunctionType type;
 	public Connection connection;
 	public Priority priority;

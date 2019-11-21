@@ -1,6 +1,6 @@
-package road;
+package de.vcs.model.odr.road;
 
-import  Geometry.Geometry root.GM_Object;
+import  de.vcs.model.gml.root.Object;
 
 /**
  * @author rruhdorfer
@@ -9,7 +9,7 @@ import  Geometry.Geometry root.GM_Object;
  */
 public class GmlGeometry {
 
-	public GM_Object geometry;
+	public Object geometry;
 
 	public GmlGeometry(){
 

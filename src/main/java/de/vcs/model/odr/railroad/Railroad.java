@@ -1,7 +1,7 @@
-package railroad;
+package de.vcs.model.odr.railroad;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer
@@ -10,7 +10,7 @@ import core.AdditionalData;
  */
 public class Railroad extends _OpenDriveElement {
 
-	public Switch switch;
+	public Switch railSwitch;	// orig "switch"
 	public AdditionalData m_AdditionalData;
 
 	public Railroad(){

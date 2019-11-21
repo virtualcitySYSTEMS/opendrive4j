@@ -36,7 +36,7 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:17
  */
-public class CubicSpline extends PolynomialSpline PolynomialSpline {
+public class CubicSpline extends PolynomialSpline {
 
 	public CubicSpline(){
 

@@ -29,7 +29,7 @@ package de.vcs.model.gml.primitive;
  * @version 1.0
  * @created 20-Nov-2019 15:50:25
  */
-public class Curve extends OrientableCurve OrientableCurve {
+public class Curve extends OrientableCurve {
 
 	public CurveSegment segment;
 

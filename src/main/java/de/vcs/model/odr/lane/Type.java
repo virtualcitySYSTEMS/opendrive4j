@@ -1,7 +1,7 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer
@@ -10,7 +10,7 @@ import core.AdditionalData;
  */
 public class Type extends _OpenDriveElement {
 
-	public string name;
+	public String name;
 	public double width;
 	public Line line;
 	public AdditionalData m_AdditionalData;

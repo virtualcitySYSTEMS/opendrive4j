@@ -1,6 +1,7 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
 
 /**
  * Clothoid (Figure 19) implements the clothoid (or Cornu's spiral), which is a
@@ -13,9 +14,9 @@ package de.vcs.model.gml.coordinate;
  */
 public class Clothoid extends CurveSegment {
 
-	public string scaleFactor;
-	public string startParameter;
-	public string endParameter;
+	public String scaleFactor;
+	public String startParameter;
+	public String endParameter;
 	public AffinePlacement refLocation;
 
 	public Clothoid(){

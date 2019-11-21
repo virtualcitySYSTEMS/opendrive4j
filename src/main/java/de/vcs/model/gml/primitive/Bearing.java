@@ -14,8 +14,8 @@ package de.vcs.model.gml.primitive;
  */
 public class Bearing {
 
-	public string angle;
-	public string direction;
+	public String angle;
+	public String direction;
 
 	public Bearing(){
 

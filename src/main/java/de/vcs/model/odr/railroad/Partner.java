@@ -1,6 +1,6 @@
-package railroad;
+package de.vcs.model.odr.railroad;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,8 +9,8 @@ import core._OpenDriveElement;
  */
 public class Partner extends _OpenDriveElement {
 
-	public string name;
-	public string id;
+	public String name;
+	public String id;
 
 	public Partner(){
 

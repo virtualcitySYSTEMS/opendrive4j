@@ -1,4 +1,4 @@
-package road;
+package de.vcs.model.odr.road;
 
 
 /**

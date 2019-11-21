@@ -1,7 +1,7 @@
-package object;
+package de.vcs.model.odr.object;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer

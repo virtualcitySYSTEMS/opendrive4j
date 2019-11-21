@@ -1,6 +1,6 @@
 package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer

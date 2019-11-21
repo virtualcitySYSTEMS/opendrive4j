@@ -1,8 +1,8 @@
-package object;
+package de.vcs.model.odr.object;
 
-import core._OpenDriveElement;
-import geometry.SPosition;
-import geometry.STTransform;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STTransform;
 
 /**
  * @author rruhdorfer

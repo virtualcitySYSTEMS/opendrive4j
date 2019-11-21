@@ -1,6 +1,8 @@
 package de.vcs.model.gml.complex;
 
 
+import de.vcs.model.gml.root.Boundary;
+
 /**
  * The boundary operation for Complex objects shall return a ComplexBoundary,
  * which is a collection of primitives and a Complex of dimension 1 less than the

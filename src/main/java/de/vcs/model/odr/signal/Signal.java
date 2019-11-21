@@ -1,12 +1,11 @@
-package signal;
+package de.vcs.model.odr.signal;
 
-import road.CountryCode;
-import core.Unit;
-import core._OpenDriveElement;
-import lane.LaneValidity;
-import core.AdditionalData;
-import geometry.SPosition;
-import geometry.STTransform;
+import de.vcs.model.odr.object.Orientation;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.lane.LaneValidity;
+import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STTransform;
 
 /**
  * @author rruhdorfer
@@ -15,19 +14,19 @@ import geometry.STTransform;
  */
 public class Signal extends _OpenDriveElement {
 
-	public string id;
-	public string name;
+	public String id;
+	public String name;
 	public boolean dynamic;
 	public Orientation orientation;
-	public CountryCode country;
-	public string countryRevision;
-	public string type;
-	public string subtype;
+	public String country;
+	public String countryRevision;
+	public String type;
+	public String subtype;
 	public double value;
-	public Unit unit;
+	public String unit;
 	public double height;
 	public double width;
-	public string text;
+	public String text;
 	public LaneValidity validity;
 	public Dependency dependency;
 	public Reference reference;

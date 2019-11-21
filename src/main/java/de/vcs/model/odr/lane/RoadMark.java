@@ -1,10 +1,10 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import  Geometry.Geometry root.GM_Object;
-import geometry.STTransform;
-import geometry._ParametricGeometry;
-import core._OpenDriveElement;
-import core.AdditionalData;
+import  de.vcs.model.gml.root.Object;
+import de.vcs.model.odr.geometry.STTransform;
+import de.vcs.model.odr.geometry._ParametricGeometry;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer
@@ -16,11 +16,11 @@ public class RoadMark extends _OpenDriveElement {
 	public RoadMarkType type;
 	public RoadMarkWeight weight;
 	public RoadMarkColor color;
-	public string material;
+	public String material;
 	public double width;
 	public LaneChange laneChange;
 	public double height;
-	public GM_Object geometry;
+	public Object geometry;
 	public STTransform stTransform;
 	public ExplicitRoadMark explicit;
 	public _ParametricGeometry sway;

@@ -1,7 +1,7 @@
-package lane;
+package de.vcs.model.odr.lane;
 
-import geometry.STTransform;
-import core._OpenDriveElement;
+import de.vcs.model.odr.geometry.STTransform;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -11,7 +11,7 @@ import core._OpenDriveElement;
 public class Speed extends _OpenDriveElement {
 
 	public double max;
-	public UnitSpeed unit;
+	public String unit;
 	public STTransform stTransform;
 
 	public Speed(){

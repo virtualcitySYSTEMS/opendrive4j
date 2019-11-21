@@ -20,10 +20,10 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:18
  */
-public class GriddedSurface extends ParametricCurveSurface ParametricCurveSurface {
+public class GriddedSurface extends ParametricCurveSurface {
 
-	public integer rows;
-	public integer columns;
+	public int rows;
+	public int columns;
 	public PointGrid controlPoint;
 
 	public GriddedSurface(){

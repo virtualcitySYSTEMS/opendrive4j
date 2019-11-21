@@ -1,6 +1,8 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.Surface;
+
 /**
  * A PolyhedralSurface (Figure 21) is a Surface composed of polygon surfaces
  * (Polygon) connected along their common boundary curves.  This differs from

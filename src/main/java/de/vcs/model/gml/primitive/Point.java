@@ -1,5 +1,7 @@
 package de.vcs.model.gml.primitive;
 
+import de.vcs.model.gml.coordinate.DirectPosition;
+
 /**
  * Point (Figure 9) is the basic data type for a geometric object consisting of
  * one and only one point.
@@ -7,7 +9,7 @@ package de.vcs.model.gml.primitive;
  * @version 1.0
  * @created 20-Nov-2019 15:50:25
  */
-public class Point extends Primitive Primitive {
+public class Point extends Primitive {
 
 	/**
 	 * The attribute "position" shall be the DirectPosition of this Point.

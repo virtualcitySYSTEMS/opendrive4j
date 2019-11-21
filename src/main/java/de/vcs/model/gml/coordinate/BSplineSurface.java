@@ -7,10 +7,10 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:17
  */
-public class BSplineSurface extends GriddedSurface GriddedSurface {
+public class BSplineSurface extends GriddedSurface {
 
-	public integer degree;
-	public string knot;
+	public int degree;
+	public String knot;
 	public boolean isPolynomial;
 	public KnotType knotSpec;
 	public BSplineSurfaceForm surfaceForm;

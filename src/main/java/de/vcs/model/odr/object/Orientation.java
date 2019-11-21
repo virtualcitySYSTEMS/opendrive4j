@@ -1,4 +1,4 @@
-package object;
+package de.vcs.model.odr.object;
 
 
 /**
@@ -7,7 +7,17 @@ package object;
  * @created 20-Nov-2019 15:17:41
  */
 public enum Orientation {
-	+,
-	-,
-	none
+
+	PLUS("+"),
+	MINUS("-"),
+	NONE("none");
+
+	private String value;
+	private Orientation(String value) {
+		this.value = value;
+	}
+
+	public String toString() {
+		return  this.value;
+	}
 }

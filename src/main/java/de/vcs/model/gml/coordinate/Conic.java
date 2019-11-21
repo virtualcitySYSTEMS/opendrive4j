@@ -1,6 +1,7 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
 
 /**
  * The type Conic (Figure 18) represents any general conic curve.
@@ -11,10 +12,10 @@ package de.vcs.model.gml.coordinate;
 public class Conic extends CurveSegment {
 
 	public boolean shifted;
-	public string eccentricity;
-	public string semiLatusRectum;
-	public string startConstrParam;
-	public string endConstrParam;
+	public String eccentricity;
+	public String semiLatusRectum;
+	public String startConstrParam;
+	public String endConstrParam;
 	public AffinePlacement position;
 
 	public Conic(){

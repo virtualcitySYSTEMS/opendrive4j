@@ -1,10 +1,10 @@
-package road;
+package de.vcs.model.odr.road;
 
-import core.AdditionalData;
-import lane.Lanes;
-import signal.Signals;
-import railroad.Railroad;
-import core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.lane.Lanes;
+import de.vcs.model.odr.signal.Signals;
+import de.vcs.model.odr.railroad.Railroad;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -16,7 +16,7 @@ public class Road extends _OpenDriveElement {
 	/**
 	 * name of the road
 	 */
-	public string name;
+	public String name;
 	/**
 	 * total length of the reference line in the xy-plane
 	 */
@@ -26,12 +26,12 @@ public class Road extends _OpenDriveElement {
 	 * (if it represents an integer number, it should preferably comply to uint32_t
 	 * and stay within the given range)
 	 */
-	public string id;
+	public String id;
 	/**
 	 * ID of the junction to which the road belongs as a connecting road (= -1 for
 	 * none)
 	 */
-	public string junction;
+	public String junction;
 	/**
 	 * basic rule for using the road; RHT=right-hand traffic, LHT=left-hand traffic;
 	 * if this attribute is missing, RHT is assumed

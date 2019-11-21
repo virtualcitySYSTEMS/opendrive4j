@@ -39,17 +39,17 @@ package de.vcs.model.gml.primitive;
  * g) Conic arc (conic) - same as elliptical arc but using 5 consecutive
  * controlPoints to determine a conic section.
  * h) Polynomial Spline (polynomialSpline) - the controlPoints are ordered as in a
- * line-string, but they are spanned by a polynomial spline function. Normally,
+ * line-String, but they are spanned by a polynomial spline function. Normally,
  * the degree of continuity is determined by the degree of the polynomials chosen.
  * 
  * i) Cubic spline (cubicSpline) - the control points are interpolated using
  * initial tangents and cubic polynomials, a form of degree 3 polynomial spline.
  * j) Rational Spline (rationalSpline) - the controlPoints are ordered as in a
- * line string, but they are spanned by a rational (quotient of polynomials)
+ * line String, but they are spanned by a rational (quotient of polynomials)
  * spline function. Normally, the degree of continuity is determined by the degree
  * of the polynomials chosen.
  * This list shall be implemented by a code list, and may vary in actual values
- * from the above strings.
+ * from the above Strings.
  * CurveInterpolation::
  * linear
  * geodesic
@@ -67,16 +67,16 @@ package de.vcs.model.gml.primitive;
  */
 public class CurveInterpolation {
 
-	public string linear;
-	public string geodesic;
-	public string circularArc3Points;
-	public string circularArc2PointWithBulge;
-	public string elliptical;
-	public string clothoid;
-	public string conic;
-	public string polynomialSpline;
-	public string cubicSpline;
-	public string rationalSpline;
+	public String linear;
+	public String geodesic;
+	public String circularArc3Points;
+	public String circularArc2PointWithBulge;
+	public String elliptical;
+	public String clothoid;
+	public String conic;
+	public String polynomialSpline;
+	public String cubicSpline;
+	public String rationalSpline;
 
 	public CurveInterpolation(){
 

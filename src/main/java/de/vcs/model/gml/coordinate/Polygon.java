@@ -1,6 +1,10 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.Surface;
+import de.vcs.model.gml.primitive.SurfaceBoundary;
+import de.vcs.model.gml.primitive.SurfacePatch;
+
 /**
  * A Polygon (Figure 21) is a surface patch that is defined by a set of boundary
  * curves and an underlying surface to which these curves adhere. The default is

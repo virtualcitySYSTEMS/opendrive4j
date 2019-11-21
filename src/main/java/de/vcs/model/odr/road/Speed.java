@@ -1,6 +1,6 @@
-package road;
+package de.vcs.model.odr.road;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -10,7 +10,7 @@ import core._OpenDriveElement;
 public class Speed extends _OpenDriveElement {
 
 	public MaxSpeed max;
-	public UnitSpeed unit;
+	public String unit;
 
 	public Speed(){
 

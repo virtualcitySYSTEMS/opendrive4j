@@ -18,10 +18,10 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:18
  */
-public class PolynomialSpline extends SplineCurve SplineCurve {
+public class PolynomialSpline extends SplineCurve {
 
-	public string vectorAtStart;
-	public string vectorAtEnd;
+	public String vectorAtStart;
+	public String vectorAtEnd;
 
 	public PolynomialSpline(){
 

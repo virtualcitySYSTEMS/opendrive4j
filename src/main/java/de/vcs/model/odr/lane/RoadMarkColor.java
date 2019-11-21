@@ -1,4 +1,4 @@
-package lane;
+package de.vcs.model.odr.lane;
 
 
 /**

@@ -14,9 +14,9 @@ package de.vcs.model.gml.coordinate;
  */
 public class Knot {
 
-	public string value;
-	public integer multiplicity;
-	public string weight;
+	public String value;
+	public int multiplicity;
+	public String weight;
 
 	public Knot(){
 

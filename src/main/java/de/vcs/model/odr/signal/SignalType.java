@@ -1,4 +1,4 @@
-package signal;
+package de.vcs.model.odr.signal;
 
 
 /**

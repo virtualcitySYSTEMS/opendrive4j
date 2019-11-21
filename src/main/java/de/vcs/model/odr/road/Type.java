@@ -1,8 +1,8 @@
-package road;
+package de.vcs.model.odr.road;
 
-import core.AdditionalData;
-import core._OpenDriveElement;
-import geometry.SPosition;
+import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.SPosition;
 
 /**
  * @author rruhdorfer
@@ -12,7 +12,7 @@ import geometry.SPosition;
 public class Type extends _OpenDriveElement {
 
 	public RoadType type;
-	public CountryCode country;
+	public String country;
 	public AdditionalData m_AdditionalData;
 	public Speed speed;
 	public SPosition linearReference;

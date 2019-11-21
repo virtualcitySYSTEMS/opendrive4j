@@ -1,6 +1,8 @@
 package de.vcs.model.gml.complex;
 
 
+import de.vcs.model.gml.primitive.Primitive;
+
 /**
  * @author rruhdorfer
  * @version 1.0

@@ -1,6 +1,10 @@
 package de.vcs.model.gml.complex;
 
 
+import de.vcs.model.gml.coordinate.DirectPosition;
+import de.vcs.model.gml.primitive.Point;
+import de.vcs.model.gml.primitive.Primitive;
+
 /**
  * @author rruhdorfer
  * @version 1.0

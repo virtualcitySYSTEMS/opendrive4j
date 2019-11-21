@@ -1,6 +1,8 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
+
 /**
  * A LineString (Figure 16) consists of sequence of line segments, each having a
  * parameterization like the one for LineSegment (See 6.4.11). The class

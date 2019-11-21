@@ -1,6 +1,8 @@
 package de.vcs.model.gml.coordinate;
 
 
+import de.vcs.model.gml.primitive.CurveSegment;
+
 /**
  * A ArcString (Figure 17) is similar to a LineString except that the
  * interpolation is by circular arcs. Since it requires 3 points to determine a
@@ -14,7 +16,7 @@ package de.vcs.model.gml.coordinate;
  */
 public class ArcString extends CurveSegment {
 
-	public integer numArc;
+	public int numArc;
 	public PointArray controlPoints;
 
 	public ArcString(){

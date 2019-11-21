@@ -1,4 +1,4 @@
-package railroad;
+package de.vcs.model.odr.railroad;
 
 
 /**

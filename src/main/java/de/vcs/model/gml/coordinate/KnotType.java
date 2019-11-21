@@ -22,9 +22,9 @@ package de.vcs.model.gml.coordinate;
  */
 public class KnotType {
 
-	public string uniform;
-	public string quasiUniform;
-	public string piecewiseBezier;
+	public String uniform;
+	public String quasiUniform;
+	public String piecewiseBezier;
 
 	public KnotType(){
 

@@ -1,7 +1,8 @@
-package railroad;
+package de.vcs.model.odr.railroad;
 
-import core._OpenDriveElement;
-import geometry.SPosition;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.junction.ElementDir;
 
 /**
  * @author rruhdorfer
@@ -10,7 +11,7 @@ import geometry.SPosition;
  */
 public class MainTrack extends _OpenDriveElement {
 
-	public string id;
+	public String id;
 	public ElementDir dir;
 	public SPosition linearReference;
 

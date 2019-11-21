@@ -1,4 +1,4 @@
-package road;
+package de.vcs.model.odr.road;
 
 
 /**
@@ -7,6 +7,6 @@ package road;
  * @created 20-Nov-2019 15:17:21
  */
 public enum MaxSpeed {
-	no limit,
+	no_limit,
 	undefined
 }

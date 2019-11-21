@@ -6,12 +6,12 @@ package de.vcs.model.gml.coordinate;
  * @version 1.0
  * @created 20-Nov-2019 15:50:17
  */
-public class BicubicGrid extends GriddedSurface GriddedSurface {
+public class BicubicGrid extends GriddedSurface {
 
-	public string horiVectorAtStart;
-	public string horiVectorAtEnd;
-	public string vertVectorAtStart;
-	public string vertVectorAtEnd;
+	public String horiVectorAtStart;
+	public String horiVectorAtEnd;
+	public String vertVectorAtStart;
+	public String vertVectorAtEnd;
 
 	public BicubicGrid(){
 

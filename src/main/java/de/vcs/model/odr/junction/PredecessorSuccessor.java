@@ -1,6 +1,6 @@
 package de.vcs.model.odr.junction;
 
-import core._OpenDriveElement;
+import de.vcs.model.odr.core._OpenDriveElement;
 
 /**
  * @author rruhdorfer
@@ -9,8 +9,8 @@ import core._OpenDriveElement;
  */
 public class PredecessorSuccessor extends _OpenDriveElement {
 
-	public string elementType = road;
-	public string elementId;
+	public String elementType = "road";
+	public String elementId;
 	public double elementS;
 	public ElementDir elementDir;
 

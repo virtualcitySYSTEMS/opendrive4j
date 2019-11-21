@@ -1,7 +1,7 @@
-package railroad;
+package de.vcs.model.odr.railroad;
 
-import core._OpenDriveElement;
-import core.AdditionalData;
+import de.vcs.model.odr.core._OpenDriveElement;
+import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer
@@ -10,8 +10,8 @@ import core.AdditionalData;
  */
 public class Platform extends _OpenDriveElement {
 
-	public string name;
-	public string id;
+	public String name;
+	public String id;
 	public Segment segment;
 	public AdditionalData m_AdditionalData;
 
