@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 group 'de.vcs'
@@ -9,9 +9,10 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation files('libs/xml-objects-0.2.0.jar')
+    implementation files('libs/gml-objects-1.0-SNAPSHOT.jar')
 }

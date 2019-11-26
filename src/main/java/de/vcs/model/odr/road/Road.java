@@ -1,11 +1,10 @@
 package de.vcs.model.odr.road;
 
-import de.vcs.model.gml.root.GMObject;
-import de.vcs.model.odr.core.AdditionalData;
-import de.vcs.model.odr.lane.Lanes;
-import de.vcs.model.odr.signal.Signals;
-import de.vcs.model.odr.railroad.Railroad;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.lane.Lanes;
+import de.vcs.model.odr.railroad.Railroad;
+import de.vcs.model.odr.signal.Signals;
+import org.xmlobjects.gml.model.geometry.AbstractGeometry;
 
 import java.util.ArrayList;
 
@@ -50,7 +49,7 @@ public class Road extends AbstractOpenDriveElement {
     private Lanes lanes;
     private Signals signals;
     private Railroad railroad;
-    public ArrayList<GMObject> geometry;
+    public ArrayList<AbstractGeometry> geometry;
 
     public Road() {
     }
@@ -59,7 +58,7 @@ public class Road extends AbstractOpenDriveElement {
             Road predecessor, Road successor, ArrayList<SurfaceCRG> CRG,
             ArrayList<Type> type, LateralProfile lateralProfile, ElevationProfile elevationProfile,
             PlanView planView, Lanes lanes, Signals signals, Railroad railroad,
-            ArrayList<GMObject> geometry) {
+            ArrayList<AbstractGeometry> geometry) {
         this.name = name;
         this.length = length;
         this.id = id;
