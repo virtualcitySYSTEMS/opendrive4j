@@ -1,10 +1,9 @@
 package de.vcs.model.odr.lane;
 
-import de.vcs.model.gml.root.GMObject;
-import de.vcs.model.odr.geometry.STTransform;
-import de.vcs.model.odr.geometry.AbstractParametricGeometry;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.geometry.AbstractParametricGeometry;
+import de.vcs.model.odr.geometry.STTransform;
+import org.xmlobjects.gml.model.GMLObject;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,7 @@ public class RoadMark extends AbstractOpenDriveElement {
     private double width;
     private LaneChange laneChange;
     private double height;
-    public GMObject geometry;
+    public GMLObject geometry;
     private STTransform stTransform;
     private ExplicitRoadMark explicit;
     private Type detailedType;
@@ -32,9 +31,9 @@ public class RoadMark extends AbstractOpenDriveElement {
     }
 
     public RoadMark(RoadMarkType type, RoadMarkWeight weight, RoadMarkColor color, String material, double width,
-                    LaneChange laneChange, double height, GMObject geometry, STTransform stTransform,
-                    ExplicitRoadMark explicit, Type detailedType,
-                    ArrayList<AbstractParametricGeometry> sway) {
+            LaneChange laneChange, double height, GMLObject geometry, STTransform stTransform,
+            ExplicitRoadMark explicit, Type detailedType,
+            ArrayList<AbstractParametricGeometry> sway) {
         this.type = type;
         this.weight = weight;
         this.color = color;
@@ -105,11 +104,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.height = height;
     }
 
-    public GMObject getGeometry() {
+    public GMLObject getGeometry() {
         return geometry;
     }
 
-    public void setGeometry(GMObject geometry) {
+    public void setGeometry(GMLObject geometry) {
         this.geometry = geometry;
     }
 

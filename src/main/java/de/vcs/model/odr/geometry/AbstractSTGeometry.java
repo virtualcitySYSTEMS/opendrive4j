@@ -1,7 +1,6 @@
 package de.vcs.model.odr.geometry;
 
-
-import de.vcs.model.gml.primitive.Point;
+import org.xmlobjects.gml.model.geometry.primitives.Point;
 
 /**
  * @author rruhdorfer
@@ -10,31 +9,31 @@ import de.vcs.model.gml.primitive.Point;
  */
 public abstract class AbstractSTGeometry extends AbstractParametricGeometry {
 
-	private double length;
-	private Point inertialReference;
-	private SPosition linearReference;
+    private double length;
+    private Point inertialReference;
+    private SPosition linearReference;
 
-	public double getLength() {
-		return length;
-	}
+    public double getLength() {
+        return length;
+    }
 
-	public void setLength(double length) {
-		this.length = length;
-	}
+    public void setLength(double length) {
+        this.length = length;
+    }
 
-	public Point getInertialReference() {
-		return inertialReference;
-	}
+    public Point getInertialReference() {
+        return inertialReference;
+    }
 
-	public void setInertialReference(Point inertialReference) {
-		this.inertialReference = inertialReference;
-	}
+    public void setInertialReference(Point inertialReference) {
+        this.inertialReference = inertialReference;
+    }
 
-	public SPosition getLinearReference() {
-		return linearReference;
-	}
+    public SPosition getLinearReference() {
+        return linearReference;
+    }
 
-	public void setLinearReference(SPosition linearReference) {
-		this.linearReference = linearReference;
-	}
+    public void setLinearReference(SPosition linearReference) {
+        this.linearReference = linearReference;
+    }
 }
