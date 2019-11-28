@@ -15,23 +15,23 @@ public class LaneSection extends AbstractOpenDriveElement {
 
     private boolean singleSide;
     private SPosition linearReference;
-    public ArrayList<ODRGeometry> laneSectionGeometry;
-    private Lane center;
-    private ArrayList<Lane> left;
-    public ArrayList<Lane> right;
+    private ArrayList<ODRGeometry> laneSectionGeometry;
+    private Lane centerLane;
+    private ArrayList<Lane> leftLanes;
+    private ArrayList<Lane> rightLanes;
 
     public LaneSection() {
     }
 
     public LaneSection(boolean singleSide, SPosition linearReference,
-            ArrayList<ODRGeometry> laneSectionGeometry, Lane center, ArrayList<Lane> left,
-            ArrayList<Lane> right) {
+            ArrayList<ODRGeometry> laneSectionGeometry, Lane centerLane, ArrayList<Lane> leftLanes,
+            ArrayList<Lane> rightLanes) {
         this.singleSide = singleSide;
         this.linearReference = linearReference;
         this.laneSectionGeometry = laneSectionGeometry;
-        this.center = center;
-        this.left = left;
-        this.right = right;
+        this.centerLane = centerLane;
+        this.leftLanes = leftLanes;
+        this.rightLanes = rightLanes;
     }
 
     public boolean isSingleSide() {
@@ -50,19 +50,35 @@ public class LaneSection extends AbstractOpenDriveElement {
         this.linearReference = linearReference;
     }
 
-    public Lane getCenter() {
-        return center;
+    public ArrayList<ODRGeometry> getLaneSectionGeometry() {
+        return laneSectionGeometry;
     }
 
-    public void setCenter(Lane center) {
-        this.center = center;
+    public void setLaneSectionGeometry(ArrayList<ODRGeometry> laneSectionGeometry) {
+        this.laneSectionGeometry = laneSectionGeometry;
     }
 
-    public ArrayList<Lane> getLeft() {
-        return left;
+    public Lane getCenterLane() {
+        return centerLane;
     }
 
-    public void setLeft(ArrayList<Lane> left) {
-        this.left = left;
+    public void setCenterLane(Lane centerLane) {
+        this.centerLane = centerLane;
+    }
+
+    public ArrayList<Lane> getLeftLanes() {
+        return leftLanes;
+    }
+
+    public void setLeftLanes(ArrayList<Lane> leftLanes) {
+        this.leftLanes = leftLanes;
+    }
+
+    public ArrayList<Lane> getRightLanes() {
+        return rightLanes;
+    }
+
+    public void setRightLanes(ArrayList<Lane> rightLanes) {
+        this.rightLanes = rightLanes;
     }
 }
