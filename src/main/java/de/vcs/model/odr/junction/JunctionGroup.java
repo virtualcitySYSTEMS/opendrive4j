@@ -1,7 +1,6 @@
 package de.vcs.model.odr.junction;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -12,43 +11,51 @@ import java.util.ArrayList;
  */
 public class JunctionGroup extends AbstractOpenDriveElement {
 
-	private String name;
-	private String id;
-	private JunctionGroupType type;
-	public ArrayList<JunctionReference> junctionReference;
+    private String name;
+    private String id;
+    private JunctionGroupType type;
+    private ArrayList<JunctionReference> junctionReference;
 
-	public JunctionGroup(){
+    public JunctionGroup() {
+    }
 
-	}
+    public JunctionGroup(String name, String id, JunctionGroupType type,
+            ArrayList<JunctionReference> junctionReference) {
+        this.name = name;
+        this.id = id;
+        this.type = type;
+        this.junctionReference = junctionReference;
+    }
 
-	public JunctionGroup(String name, String id, JunctionGroupType type, ArrayList<JunctionReference> junctionReference) {
-		this.name = name;
-		this.id = id;
-		this.type = type;
-		this.junctionReference = junctionReference;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public JunctionGroupType getType() {
+        return type;
+    }
 
-	public JunctionGroupType getType() {
-		return type;
-	}
+    public void setType(JunctionGroupType type) {
+        this.type = type;
+    }
 
-	public void setType(JunctionGroupType type) {
-		this.type = type;
-	}
+    public ArrayList<JunctionReference> getJunctionReference() {
+        return junctionReference;
+    }
+
+    public void setJunctionReference(ArrayList<JunctionReference> junctionReference) {
+        this.junctionReference = junctionReference;
+    }
 }
