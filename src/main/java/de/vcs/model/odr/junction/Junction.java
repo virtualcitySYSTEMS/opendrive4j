@@ -1,7 +1,6 @@
 package de.vcs.model.odr.junction;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -12,57 +11,81 @@ import java.util.ArrayList;
  */
 public class Junction extends AbstractOpenDriveElement {
 
-	private String name;
-	private String id;
-	private JunctionType type;
-	public ArrayList<Connection> connection;
-	public ArrayList<Priority> priority;
-	public ArrayList<Controller> controller;
-	private Surface surface;
+    private String name;
+    private String id;
+    private JunctionType type;
+    private ArrayList<Connection> connections;
+    private ArrayList<Priority> priorities;
+    private ArrayList<Controller> controllers;
+    private Surfaces Surfaces;
 
-	public Junction(){
+    public Junction() {
+    }
 
-	}
+    public Junction(String name, String id, JunctionType type, ArrayList<Connection> connections,
+            ArrayList<Priority> priorities, ArrayList<Controller> controllers, Surfaces Surfaces) {
+        this.name = name;
+        this.id = id;
+        this.type = type;
+        this.connections = connections;
+        this.priorities = priorities;
+        this.controllers = controllers;
+        this.Surfaces = Surfaces;
+    }
 
-	public Junction(String name, String id, JunctionType type, ArrayList<Connection> connection, ArrayList<Priority> priority, ArrayList<Controller> controller, Surface surface) {
-		this.name = name;
-		this.id = id;
-		this.type = type;
-		this.connection = connection;
-		this.priority = priority;
-		this.controller = controller;
-		this.surface = surface;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public JunctionType getType() {
+        return type;
+    }
 
-	public JunctionType getType() {
-		return type;
-	}
+    public void setType(JunctionType type) {
+        this.type = type;
+    }
 
-	public void setType(JunctionType type) {
-		this.type = type;
-	}
+    public Surfaces getSurfaces() {
+        return Surfaces;
+    }
 
-	public Surface getSurface() {
-		return surface;
-	}
+    public void setSurfaces(Surfaces surfaces) {
+        this.Surfaces = surfaces;
+    }
 
-	public void setSurface(Surface surface) {
-		this.surface = surface;
-	}
+    public ArrayList<Connection> getConnections() {
+        return connections;
+    }
+
+    public void setConnections(ArrayList<Connection> connections) {
+        this.connections = connections;
+    }
+
+    public ArrayList<Priority> getPriorities() {
+        return priorities;
+    }
+
+    public void setPriorities(ArrayList<Priority> priorities) {
+        this.priorities = priorities;
+    }
+
+    public ArrayList<Controller> getControllers() {
+        return controllers;
+    }
+
+    public void setControllers(ArrayList<Controller> controllers) {
+        this.controllers = controllers;
+    }
 }
