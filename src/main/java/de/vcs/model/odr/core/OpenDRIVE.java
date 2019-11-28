@@ -11,73 +11,73 @@ import de.vcs.model.odr.railroad.Station;
  * @version 1.0
  * @created 20-Nov-2019 15:16:08
  */
-public class OpenDRIVE {
+public class OpenDRIVE extends AbstractOpenDriveElement {
 
-	private Road road;
-	private Header header;
-	private Controller controller;
-	private Junction junction;
-	private JunctionGroup junctionGroup;
-	private Station station;
+    private Road road;
+    private Header header;
+    private Controller controller;
+    private Junction junction;
+    private JunctionGroup junctionGroup;
+    private Station station;
 
-	public OpenDRIVE(){
+    public OpenDRIVE() {
+    }
 
-	}
+    public OpenDRIVE(Road road, Header header, Controller controller, Junction junction, JunctionGroup junctionGroup,
+            Station station) {
+        this.road = road;
+        this.header = header;
+        this.controller = controller;
+        this.junction = junction;
+        this.junctionGroup = junctionGroup;
+        this.station = station;
+    }
 
-	public OpenDRIVE(Road road, Header header, Controller controller, Junction junction, JunctionGroup junctionGroup, Station station) {
-		this.road = road;
-		this.header = header;
-		this.controller = controller;
-		this.junction = junction;
-		this.junctionGroup = junctionGroup;
-		this.station = station;
-	}
+    public Road getRoad() {
+        return road;
+    }
 
-	public Road getRoad() {
-		return road;
-	}
+    public void setRoad(Road road) {
+        this.road = road;
+    }
 
-	public void setRoad(Road road) {
-		this.road = road;
-	}
+    public Header getHeader() {
+        return header;
+    }
 
-	public Header getHeader() {
-		return header;
-	}
+    public void setHeader(Header header) {
+        this.header = header;
+    }
 
-	public void setHeader(Header header) {
-		this.header = header;
-	}
+    public Controller getController() {
+        return controller;
+    }
 
-	public Controller getController() {
-		return controller;
-	}
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
 
-	public void setController(Controller controller) {
-		this.controller = controller;
-	}
+    public Junction getJunction() {
+        return junction;
+    }
 
-	public Junction getJunction() {
-		return junction;
-	}
+    public void setJunction(Junction junction) {
+        this.junction = junction;
+    }
 
-	public void setJunction(Junction junction) {
-		this.junction = junction;
-	}
+    public JunctionGroup getJunctionGroup() {
+        return junctionGroup;
+    }
 
-	public JunctionGroup getJunctionGroup() {
-		return junctionGroup;
-	}
+    public void setJunctionGroup(JunctionGroup junctionGroup) {
+        this.junctionGroup = junctionGroup;
+    }
 
-	public void setJunctionGroup(JunctionGroup junctionGroup) {
-		this.junctionGroup = junctionGroup;
-	}
+    public Station getStation() {
+        return station;
+    }
 
-	public Station getStation() {
-		return station;
-	}
-
-	public void setStation(Station station) {
-		this.station = station;
-	}
+    public void setStation(Station station) {
+        this.station = station;
+    }
 }
