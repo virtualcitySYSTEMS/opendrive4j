@@ -1,7 +1,6 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 import de.vcs.model.odr.geometry.Polynom;
 
 import java.util.ArrayList;
@@ -13,14 +12,30 @@ import java.util.ArrayList;
  */
 public class Lanes extends AbstractOpenDriveElement {
 
-    public ArrayList<Polynom> laneOffset;
-    public ArrayList<LaneSection> laneSection;
+    private ArrayList<Polynom> laneOffsets;
+    private ArrayList<LaneSection> laneSections;
 
     public Lanes() {
     }
 
-    public Lanes(ArrayList<Polynom> laneOffset, ArrayList<LaneSection> laneSection) {
-        this.laneOffset = laneOffset;
-        this.laneSection = laneSection;
+    public Lanes(ArrayList<Polynom> laneOffsets, ArrayList<LaneSection> laneSections) {
+        this.laneOffsets = laneOffsets;
+        this.laneSections = laneSections;
+    }
+
+    public ArrayList<Polynom> getLaneOffsets() {
+        return laneOffsets;
+    }
+
+    public void setLaneOffsets(ArrayList<Polynom> laneOffsets) {
+        this.laneOffsets = laneOffsets;
+    }
+
+    public ArrayList<LaneSection> getLaneSections() {
+        return laneSections;
+    }
+
+    public void setLaneSections(ArrayList<LaneSection> laneSections) {
+        this.laneSections = laneSections;
     }
 }

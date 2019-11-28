@@ -1,8 +1,7 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
-import de.vcs.model.odr.geometry.AbstractGeometry;
+import de.vcs.model.odr.geometry.ODRGeometry;
 
 import java.util.ArrayList;
 
@@ -24,14 +23,14 @@ public class Lane extends AbstractOpenDriveElement {
     public ArrayList<Rule> rule;
     public ArrayList<RoadMark> roadMark;
     public ArrayList<Height> height;
-    public ArrayList<AbstractGeometry> laneGeometry;
+    public ArrayList<ODRGeometry> laneGeometry;
 
     public Lane() {
     }
 
     public Lane(int id, LaneType type, double level, ArrayList<Material> materials, ArrayList<Access> access,
-                ArrayList<Speed> speed, Lane predecessor, Lane successor, ArrayList<Rule> rule,
-                ArrayList<RoadMark> roadMark, ArrayList<Height> height, ArrayList<AbstractGeometry> laneGeometry) {
+            ArrayList<Speed> speed, Lane predecessor, Lane successor, ArrayList<Rule> rule,
+            ArrayList<RoadMark> roadMark, ArrayList<Height> height, ArrayList<ODRGeometry> laneGeometry) {
         this.id = id;
         this.type = type;
         this.level = level;

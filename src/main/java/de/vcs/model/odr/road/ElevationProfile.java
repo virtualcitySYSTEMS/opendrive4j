@@ -1,7 +1,6 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 import de.vcs.model.odr.geometry.AbstractParametricGeometry;
 
 import java.util.ArrayList;

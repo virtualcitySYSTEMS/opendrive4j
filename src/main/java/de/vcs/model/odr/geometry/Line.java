@@ -1,6 +1,5 @@
 package de.vcs.model.odr.geometry;
 
-
 /**
  * @author rruhdorfer
  * @version 1.0
@@ -8,8 +7,6 @@ package de.vcs.model.odr.geometry;
  */
 public class Line extends AbstractSTGeometry {
 
-	public Line(){
-
-	}
-
+    public Line() {
+    }
 }

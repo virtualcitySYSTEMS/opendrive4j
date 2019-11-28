@@ -1,9 +1,8 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.road.Road;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STTransform;
-import de.vcs.model.odr.geometry.AbstractGeometry;
+import de.vcs.model.odr.geometry.ODRGeometry;
 import de.vcs.model.odr.lane.LaneValidity;
 import de.vcs.model.odr.geometry.SPosition;
 
@@ -25,7 +24,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private double width;
     private double radius;
     private STTransform stTransform;
-    public ArrayList<AbstractGeometry> geometry;
+    public ArrayList<ODRGeometry> geometry;
     public ArrayList<Material> material;
     public ArrayList<LaneValidity> validity;
     private SPosition linearReference;

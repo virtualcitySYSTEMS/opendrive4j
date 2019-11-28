@@ -2,8 +2,7 @@ package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.SPosition;
-import de.vcs.model.odr.geometry.AbstractGeometry;
-import de.vcs.model.odr.core.AdditionalData;
+import de.vcs.model.odr.geometry.ODRGeometry;
 
 import java.util.ArrayList;
 
@@ -16,7 +15,7 @@ public class LaneSection extends AbstractOpenDriveElement {
 
     private boolean singleSide;
     private SPosition linearReference;
-    public ArrayList<AbstractGeometry> laneSectionGeometry;
+    public ArrayList<ODRGeometry> laneSectionGeometry;
     private Lane center;
     private ArrayList<Lane> left;
     public ArrayList<Lane> right;
@@ -24,7 +23,9 @@ public class LaneSection extends AbstractOpenDriveElement {
     public LaneSection() {
     }
 
-    public LaneSection(boolean singleSide, SPosition linearReference, ArrayList<AbstractGeometry> laneSectionGeometry, Lane center, ArrayList<Lane> left, ArrayList<Lane> right) {
+    public LaneSection(boolean singleSide, SPosition linearReference,
+            ArrayList<ODRGeometry> laneSectionGeometry, Lane center, ArrayList<Lane> left,
+            ArrayList<Lane> right) {
         this.singleSide = singleSide;
         this.linearReference = linearReference;
         this.laneSectionGeometry = laneSectionGeometry;

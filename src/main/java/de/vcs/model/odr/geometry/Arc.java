@@ -1,6 +1,5 @@
 package de.vcs.model.odr.geometry;
 
-
 /**
  * @author rruhdorfer
  * @version 1.0
@@ -8,21 +7,20 @@ package de.vcs.model.odr.geometry;
  */
 public class Arc extends AbstractSTGeometry {
 
-	private double curvature;
+    private double curvature;
 
-	public Arc(){
+    public Arc() {
+    }
 
-	}
+    public Arc(double curvature) {
+        this.curvature = curvature;
+    }
 
-	public Arc(double curvature) {
-		this.curvature = curvature;
-	}
+    public double getCurvature() {
+        return curvature;
+    }
 
-	public double getCurvature() {
-		return curvature;
-	}
-
-	public void setCurvature(double curvature) {
-		this.curvature = curvature;
-	}
+    public void setCurvature(double curvature) {
+        this.curvature = curvature;
+    }
 }
