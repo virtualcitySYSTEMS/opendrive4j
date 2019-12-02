@@ -1,7 +1,8 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.ODRGeometry;
+import de.vcs.model.odr.geometry.Polynom;
+import org.xmlobjects.gml.model.GMLObject;
 
 import java.util.ArrayList;
 
@@ -18,31 +19,37 @@ public class Lane extends AbstractOpenDriveElement {
     private ArrayList<Material> materials;
     private ArrayList<Access> accesses;
     private ArrayList<Speed> speeds;
-    private Lane predecessor;
-    private Lane successor;
+    private int predecessorId;
+    private int successorId;
     private ArrayList<Rule> rules;
     private ArrayList<RoadMark> roadMarks;
     private ArrayList<Height> heights;
-    private ArrayList<ODRGeometry> laneGeometries;
+    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<Polynom> widths;
+    private ArrayList<Polynom> borders;
 
     public Lane() {
     }
 
-    public Lane(int id, LaneType type, double level, ArrayList<Material> materials, ArrayList<Access> accesses,
-            ArrayList<Speed> speeds, Lane predecessor, Lane successor, ArrayList<Rule> rules,
-            ArrayList<RoadMark> roadMarks, ArrayList<Height> heights, ArrayList<ODRGeometry> laneGeometries) {
+    public Lane(int id, LaneType type, double level, ArrayList<Material> materials,
+            ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId, int successorId,
+            ArrayList<Rule> rules, ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
+            ArrayList<GMLObject> gmlGeometries, ArrayList<Polynom> widths,
+            ArrayList<Polynom> borders) {
         this.id = id;
         this.type = type;
         this.level = level;
         this.materials = materials;
         this.accesses = accesses;
         this.speeds = speeds;
-        this.predecessor = predecessor;
-        this.successor = successor;
+        this.predecessorId = predecessorId;
+        this.successorId = successorId;
         this.rules = rules;
         this.roadMarks = roadMarks;
         this.heights = heights;
-        this.laneGeometries = laneGeometries;
+        this.gmlGeometries = gmlGeometries;
+        this.widths = widths;
+        this.borders = borders;
     }
 
     public int getId() {
@@ -93,20 +100,20 @@ public class Lane extends AbstractOpenDriveElement {
         this.speeds = speeds;
     }
 
-    public Lane getPredecessor() {
-        return predecessor;
+    public int getPredecessorId() {
+        return predecessorId;
     }
 
-    public void setPredecessor(Lane predecessor) {
-        this.predecessor = predecessor;
+    public void setPredecessorId(int predecessorId) {
+        this.predecessorId = predecessorId;
     }
 
-    public Lane getSuccessor() {
-        return successor;
+    public int getSuccessorId() {
+        return successorId;
     }
 
-    public void setSuccessor(Lane successor) {
-        this.successor = successor;
+    public void setSuccessorId(int successorId) {
+        this.successorId = successorId;
     }
 
     public ArrayList<Rule> getRules() {
@@ -133,11 +140,27 @@ public class Lane extends AbstractOpenDriveElement {
         this.heights = heights;
     }
 
-    public ArrayList<ODRGeometry> getLaneGeometries() {
-        return laneGeometries;
+    public ArrayList<GMLObject> getGmlGeometries() {
+        return gmlGeometries;
     }
 
-    public void setLaneGeometries(ArrayList<ODRGeometry> laneGeometries) {
-        this.laneGeometries = laneGeometries;
+    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+        this.gmlGeometries = gmlGeometries;
+    }
+
+    public ArrayList<Polynom> getWidths() {
+        return widths;
+    }
+
+    public void setWidths(ArrayList<Polynom> widths) {
+        this.widths = widths;
+    }
+
+    public ArrayList<Polynom> getBorders() {
+        return borders;
+    }
+
+    public void setBorders(ArrayList<Polynom> borders) {
+        this.borders = borders;
     }
 }

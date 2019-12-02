@@ -21,19 +21,19 @@ public class RoadMark extends AbstractOpenDriveElement {
     private double width;
     private LaneChange laneChange;
     private double height;
-    public GMLObject geometry;
+    private ArrayList<GMLObject> gmlGeometries;
     private STTransform stTransform;
     private ExplicitRoadMark explicit;
     private Type detailedType;
-    public ArrayList<AbstractParametricGeometry> sway;
+    private ArrayList<AbstractParametricGeometry> sways;
 
     public RoadMark() {
     }
 
     public RoadMark(RoadMarkType type, RoadMarkWeight weight, RoadMarkColor color, String material, double width,
-            LaneChange laneChange, double height, GMLObject geometry, STTransform stTransform,
-            ExplicitRoadMark explicit, Type detailedType,
-            ArrayList<AbstractParametricGeometry> sway) {
+            LaneChange laneChange, double height, ArrayList<GMLObject> gmlGeometries,
+            STTransform stTransform, ExplicitRoadMark explicit, Type detailedType,
+            ArrayList<AbstractParametricGeometry> sways) {
         this.type = type;
         this.weight = weight;
         this.color = color;
@@ -41,11 +41,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.width = width;
         this.laneChange = laneChange;
         this.height = height;
-        this.geometry = geometry;
+        this.gmlGeometries = gmlGeometries;
         this.stTransform = stTransform;
         this.explicit = explicit;
         this.detailedType = detailedType;
-        this.sway = sway;
+        this.sways = sways;
     }
 
     public RoadMarkType getType() {
@@ -104,12 +104,12 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.height = height;
     }
 
-    public GMLObject getGeometry() {
-        return geometry;
+    public ArrayList<GMLObject> getGmlGeometries() {
+        return gmlGeometries;
     }
 
-    public void setGeometry(GMLObject geometry) {
-        this.geometry = geometry;
+    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+        this.gmlGeometries = gmlGeometries;
     }
 
     public STTransform getStTransform() {
@@ -136,11 +136,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.detailedType = detailedType;
     }
 
-    public ArrayList<AbstractParametricGeometry> getSway() {
-        return sway;
+    public ArrayList<AbstractParametricGeometry> getSways() {
+        return sways;
     }
 
-    public void setSway(ArrayList<AbstractParametricGeometry> sway) {
-        this.sway = sway;
+    public void setSways(ArrayList<AbstractParametricGeometry> sways) {
+        this.sways = sways;
     }
 }

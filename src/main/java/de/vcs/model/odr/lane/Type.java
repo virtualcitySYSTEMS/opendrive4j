@@ -1,7 +1,6 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -14,15 +13,15 @@ public class Type extends AbstractOpenDriveElement {
 
     private String name;
     private double width;
-    public ArrayList<Line> line;
+    public ArrayList<Line> lines;
 
     public Type() {
     }
 
-    public Type(String name, double width, ArrayList<Line> line) {
+    public Type(String name, double width, ArrayList<Line> lines) {
         this.name = name;
         this.width = width;
-        this.line = line;
+        this.lines = lines;
     }
 
     public String getName() {
@@ -39,5 +38,13 @@ public class Type extends AbstractOpenDriveElement {
 
     public void setWidth(double width) {
         this.width = width;
+    }
+
+    public ArrayList<Line> getLines() {
+        return lines;
+    }
+
+    public void setLines(ArrayList<Line> lines) {
+        this.lines = lines;
     }
 }
