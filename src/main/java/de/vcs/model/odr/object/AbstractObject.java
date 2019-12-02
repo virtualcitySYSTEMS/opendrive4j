@@ -2,7 +2,6 @@ package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STTransform;
-import de.vcs.model.odr.geometry.ODRGeometry;
 import de.vcs.model.odr.lane.LaneValidity;
 import de.vcs.model.odr.geometry.SPosition;
 

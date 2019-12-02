@@ -5,7 +5,7 @@ package de.vcs.model.odr.geometry;
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public class InertialTransform extends ODRGeometry {
+public class InertialTransform extends AbstractTransformation {
 
     private double xOffset;
     private double yOffset;

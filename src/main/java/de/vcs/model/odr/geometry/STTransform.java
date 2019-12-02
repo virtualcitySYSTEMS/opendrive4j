@@ -1,13 +1,11 @@
 package de.vcs.model.odr.geometry;
 
-import de.vcs.model.odr.ODRObject;
-
 /**
  * @author rruhdorfer
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public class STTransform extends ODRObject {
+public class STTransform extends AbstractTransformation {
 
     private double hdg;
     private double pitch;
