@@ -1,7 +1,7 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.model.odr.junction.CRGMode;
 import de.vcs.model.odr.junction.CRGPurpose;
@@ -18,15 +18,15 @@ public class SurfaceCRG extends AbstractOpenDriveElement {
     private CRGMode mode;
     private CRGPurpose purpose;
     private double zScale;
-    private SPosition sStart;
-    private SPosition sEnd;
+    private STHPosition sStart;
+    private STHPosition sEnd;
     private STTransform stTransform;
 
     public SurfaceCRG() {
     }
 
     public SurfaceCRG(String file, Direction orientation, CRGMode mode, CRGPurpose purpose, double zScale,
-            SPosition sStart, SPosition sEnd, STTransform stTransform) {
+            STHPosition sStart, STHPosition sEnd, STTransform stTransform) {
         this.file = file;
         this.orientation = orientation;
         this.mode = mode;
@@ -77,19 +77,19 @@ public class SurfaceCRG extends AbstractOpenDriveElement {
         this.zScale = zScale;
     }
 
-    public SPosition getsStart() {
+    public STHPosition getsStart() {
         return sStart;
     }
 
-    public void setsStart(SPosition sStart) {
+    public void setsStart(STHPosition sStart) {
         this.sStart = sStart;
     }
 
-    public SPosition getsEnd() {
+    public STHPosition getsEnd() {
         return sEnd;
     }
 
-    public void setsEnd(SPosition sEnd) {
+    public void setsEnd(STHPosition sEnd) {
         this.sEnd = sEnd;
     }
 

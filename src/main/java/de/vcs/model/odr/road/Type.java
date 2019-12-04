@@ -1,8 +1,7 @@
 package de.vcs.model.odr.road;
 
-import de.vcs.model.odr.core.AdditionalData;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
 
 /**
  * @author rruhdorfer
@@ -14,12 +13,12 @@ public class Type extends AbstractOpenDriveElement {
     private RoadType type;
     private String country;
     private Speed speed;
-    private SPosition linearReference;
+    private STHPosition linearReference;
 
     public Type() {
     }
 
-    public Type(RoadType type, String country, Speed speed, SPosition linearReference) {
+    public Type(RoadType type, String country, Speed speed, STHPosition linearReference) {
         this.type = type;
         this.country = country;
         this.speed = speed;
@@ -50,11 +49,11 @@ public class Type extends AbstractOpenDriveElement {
         this.speed = speed;
     }
 
-    public SPosition getLinearReference() {
+    public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    public void setLinearReference(SPosition linearReference) {
+    public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }
 }

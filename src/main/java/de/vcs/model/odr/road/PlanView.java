@@ -1,7 +1,7 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.AbstractParametricGeometry;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 
 import java.util.ArrayList;
 
@@ -12,12 +12,20 @@ import java.util.ArrayList;
  */
 public class PlanView extends AbstractOpenDriveElement {
 
-    public ArrayList<AbstractParametricGeometry> geometry;
+    private ArrayList<AbstractODRGeometry> odrGeometries;
 
     public PlanView() {
     }
 
-    public PlanView(ArrayList<AbstractParametricGeometry> geometry) {
-        this.geometry = geometry;
+    public PlanView(ArrayList<AbstractODRGeometry> odrGeometries) {
+        this.odrGeometries = odrGeometries;
+    }
+
+    public ArrayList<AbstractODRGeometry> getOdrGeometries() {
+        return odrGeometries;
+    }
+
+    public void setOdrGeometries(ArrayList<AbstractODRGeometry> odrGeometries) {
+        this.odrGeometries = odrGeometries;
     }
 }

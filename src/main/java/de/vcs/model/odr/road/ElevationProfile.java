@@ -1,7 +1,7 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.AbstractParametricGeometry;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 
 import java.util.ArrayList;
 
@@ -12,12 +12,20 @@ import java.util.ArrayList;
  */
 public class ElevationProfile extends AbstractOpenDriveElement {
 
-    public ArrayList<AbstractParametricGeometry> elevation;
+    private ArrayList<AbstractODRGeometry> elevations;
 
     public ElevationProfile() {
     }
 
-    public ElevationProfile(ArrayList<AbstractParametricGeometry> elevation) {
-        this.elevation = elevation;
+    public ElevationProfile(ArrayList<AbstractODRGeometry> elevations) {
+        this.elevations = elevations;
+    }
+
+    public ArrayList<AbstractODRGeometry> getElevations() {
+        return elevations;
+    }
+
+    public void setElevations(ArrayList<AbstractODRGeometry> elevations) {
+        this.elevations = elevations;
     }
 }

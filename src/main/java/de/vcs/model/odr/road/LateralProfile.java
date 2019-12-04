@@ -1,7 +1,7 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.AbstractParametricGeometry;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 
 import java.util.ArrayList;
 
@@ -12,15 +12,31 @@ import java.util.ArrayList;
  */
 public class LateralProfile extends AbstractOpenDriveElement {
 
-    public ArrayList<AbstractParametricGeometry> superElevations;
-    public ArrayList<AbstractParametricGeometry> shapes;
+    private ArrayList<AbstractODRGeometry> superElevations;
+    private ArrayList<AbstractODRGeometry> shapes;
 
     public LateralProfile() {
     }
 
-    public LateralProfile(ArrayList<AbstractParametricGeometry> superElevations,
-            ArrayList<AbstractParametricGeometry> shapes) {
+    public LateralProfile(ArrayList<AbstractODRGeometry> superElevations,
+            ArrayList<AbstractODRGeometry> shapes) {
         this.superElevations = superElevations;
+        this.shapes = shapes;
+    }
+
+    public ArrayList<AbstractODRGeometry> getSuperElevations() {
+        return superElevations;
+    }
+
+    public void setSuperElevations(ArrayList<AbstractODRGeometry> superElevations) {
+        this.superElevations = superElevations;
+    }
+
+    public ArrayList<AbstractODRGeometry> getShapes() {
+        return shapes;
+    }
+
+    public void setShapes(ArrayList<AbstractODRGeometry> shapes) {
         this.shapes = shapes;
     }
 }

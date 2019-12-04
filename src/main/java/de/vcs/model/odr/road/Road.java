@@ -1,6 +1,7 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.lane.Lanes;
+import de.vcs.model.odr.object.AbstractObject;
 import de.vcs.model.odr.signal.Signals;
 import de.vcs.model.odr.railroad.Railroad;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
@@ -15,57 +16,39 @@ import java.util.ArrayList;
  */
 public class Road extends AbstractOpenDriveElement {
 
-    /**
-     * name of the road
-     */
     private String name;
-    /**
-     * total length of the reference line in the xy-plane
-     */
     private double length;
-    /**
-     * unique ID within database
-     * (if it represents an integer number, it should preferably comply to uint32_t
-     * and stay within the given range)
-     */
     private String id;
-    /**
-     * ID of the junction to which the road belongs as a connecting road (= -1 for
-     * none)
-     */
     private String junction;
-    /**
-     * basic rule for using the road; RHT=right-hand traffic, LHT=left-hand traffic;
-     * if this attribute is missing, RHT is assumed
-     */
     private TrafficRule rule;
-    private Road predecessor;
-    private Road successor;
-    public ArrayList<SurfaceCRG> CRG;
-    public ArrayList<Type> type;
+    private String predecessorId;
+    private String successorId;
+    private ArrayList<SurfaceCRG> CRG;
+    private ArrayList<Type> type;
     private LateralProfile lateralProfile;
     private ElevationProfile elevationProfile;
     private PlanView planView;
     private Lanes lanes;
     private Signals signals;
     private Railroad railroad;
-    public ArrayList<GMLObject> geometry;
+    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<AbstractObject> objects;
 
     public Road() {
     }
 
-    public Road(String name, double length, String id, String junction, TrafficRule rule,
-            Road predecessor, Road successor, ArrayList<SurfaceCRG> CRG,
-            ArrayList<Type> type, LateralProfile lateralProfile, ElevationProfile elevationProfile,
-            PlanView planView, Lanes lanes, Signals signals, Railroad railroad,
-            ArrayList<GMLObject> geometry) {
+    public Road(String name, double length, String id, String junction, TrafficRule rule, String predecessorId,
+            String successorId, ArrayList<SurfaceCRG> CRG, ArrayList<Type> type,
+            LateralProfile lateralProfile, ElevationProfile elevationProfile, PlanView planView,
+            Lanes lanes, Signals signals, Railroad railroad,
+            ArrayList<GMLObject> gmlGeometries, ArrayList<AbstractObject> objects) {
         this.name = name;
         this.length = length;
         this.id = id;
         this.junction = junction;
         this.rule = rule;
-        this.predecessor = predecessor;
-        this.successor = successor;
+        this.predecessorId = predecessorId;
+        this.successorId = successorId;
         this.CRG = CRG;
         this.type = type;
         this.lateralProfile = lateralProfile;
@@ -74,7 +57,8 @@ public class Road extends AbstractOpenDriveElement {
         this.lanes = lanes;
         this.signals = signals;
         this.railroad = railroad;
-        this.geometry = geometry;
+        this.gmlGeometries = gmlGeometries;
+        this.objects = objects;
     }
 
     public String getName() {
@@ -117,20 +101,36 @@ public class Road extends AbstractOpenDriveElement {
         this.rule = rule;
     }
 
-    public Road getPredecessor() {
-        return predecessor;
+    public String getPredecessorId() {
+        return predecessorId;
     }
 
-    public void setPredecessor(Road predecessor) {
-        this.predecessor = predecessor;
+    public void setPredecessorId(String predecessorId) {
+        this.predecessorId = predecessorId;
     }
 
-    public Road getSuccessor() {
-        return successor;
+    public String getSuccessorId() {
+        return successorId;
     }
 
-    public void setSuccessor(Road successor) {
-        this.successor = successor;
+    public void setSuccessorId(String successorId) {
+        this.successorId = successorId;
+    }
+
+    public ArrayList<SurfaceCRG> getCRG() {
+        return CRG;
+    }
+
+    public void setCRG(ArrayList<SurfaceCRG> CRG) {
+        this.CRG = CRG;
+    }
+
+    public ArrayList<Type> getType() {
+        return type;
+    }
+
+    public void setType(ArrayList<Type> type) {
+        this.type = type;
     }
 
     public LateralProfile getLateralProfile() {
@@ -179,5 +179,21 @@ public class Road extends AbstractOpenDriveElement {
 
     public void setRailroad(Railroad railroad) {
         this.railroad = railroad;
+    }
+
+    public ArrayList<GMLObject> getGmlGeometries() {
+        return gmlGeometries;
+    }
+
+    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+        this.gmlGeometries = gmlGeometries;
+    }
+
+    public ArrayList<AbstractObject> getObjects() {
+        return objects;
+    }
+
+    public void setObjects(ArrayList<AbstractObject> objects) {
+        this.objects = objects;
     }
 }
