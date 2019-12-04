@@ -1,7 +1,5 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.core.AdditionalData;
-
 import java.util.ArrayList;
 
 /**
@@ -9,21 +7,22 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 20-Nov-2019 15:17:41
  */
-public class Object extends AbstractObject {
+public class GenericObject extends AbstractObject {
 
     private ObjectType type;
     private String subtype;
     private boolean dynamic;
-    public ArrayList<RepeatedObject> repeat;
+    private ArrayList<RepeatedObject> repeats;
 
-    public Object() {
+    public GenericObject() {
     }
 
-    public Object(ObjectType type, String subtype, boolean dynamic, ArrayList<RepeatedObject> repeat) {
+    public GenericObject(ObjectType type, String subtype, boolean dynamic,
+            ArrayList<RepeatedObject> repeats) {
         this.type = type;
         this.subtype = subtype;
         this.dynamic = dynamic;
-        this.repeat = repeat;
+        this.repeats = repeats;
     }
 
     public ObjectType getType() {
@@ -48,5 +47,13 @@ public class Object extends AbstractObject {
 
     public void setDynamic(boolean dynamic) {
         this.dynamic = dynamic;
+    }
+
+    public ArrayList<RepeatedObject> getRepeats() {
+        return repeats;
+    }
+
+    public void setRepeats(ArrayList<RepeatedObject> repeats) {
+        this.repeats = repeats;
     }
 }

@@ -1,16 +1,18 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
+import de.vcs.model.odr.lane.LaneValidity;
+import org.xmlobjects.gml.model.GMLObject;
+
+import java.util.ArrayList;
 
 /**
  * @author rruhdorfer
  * @version 1.0
  * @created 20-Nov-2019 15:17:41
  */
-public class RepeatedObject extends AbstractOpenDriveElement {
+public class RepeatedObject extends AbstractObject {
 
-    private double length;
     private double distance;
     private double heightStart;
     private double heightEnd;
@@ -20,17 +22,23 @@ public class RepeatedObject extends AbstractOpenDriveElement {
     private double lengthEnd;
     private double radiusStart;
     private double radiusEnd;
-    private SPosition linearReference;
-    private SPosition start;
-    private SPosition end;
+    private STHPosition linearReference;
+    private STHPosition start;
+    private STHPosition end;
 
     public RepeatedObject() {
     }
 
-    public RepeatedObject(double length, double distance, double heightStart, double heightEnd, double widthStart,
+    public RepeatedObject(String name, String id, double validLength, Orientation orientation, double length,
+            double height,
+            double width, double radius, ArrayList<GMLObject> gmlGeometries,
+            ArrayList<Outline> outlines, ArrayList<Material> materials,
+            ArrayList<LaneValidity> validities,
+            STHPosition linearReference, double distance, double heightStart, double heightEnd, double widthStart,
             double widthEnd, double lengthStart, double lengthEnd, double radiusStart, double radiusEnd,
-            SPosition linearReference, SPosition start, SPosition end) {
-        this.length = length;
+            STHPosition linearReference1, STHPosition start, STHPosition end) {
+        super(name, id, validLength, orientation, length, height, width, radius, gmlGeometries, outlines, materials,
+                validities, linearReference);
         this.distance = distance;
         this.heightStart = heightStart;
         this.heightEnd = heightEnd;
@@ -40,17 +48,9 @@ public class RepeatedObject extends AbstractOpenDriveElement {
         this.lengthEnd = lengthEnd;
         this.radiusStart = radiusStart;
         this.radiusEnd = radiusEnd;
-        this.linearReference = linearReference;
+        this.linearReference = linearReference1;
         this.start = start;
         this.end = end;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
     }
 
     public double getDistance() {
@@ -125,27 +125,29 @@ public class RepeatedObject extends AbstractOpenDriveElement {
         this.radiusEnd = radiusEnd;
     }
 
-    public SPosition getLinearReference() {
+    @Override
+    public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    public void setLinearReference(SPosition linearReference) {
+    @Override
+    public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }
 
-    public SPosition getStart() {
+    public STHPosition getStart() {
         return start;
     }
 
-    public void setStart(SPosition start) {
+    public void setStart(STHPosition start) {
         this.start = start;
     }
 
-    public SPosition getEnd() {
+    public STHPosition getEnd() {
         return end;
     }
 
-    public void setEnd(SPosition end) {
+    public void setEnd(STHPosition end) {
         this.end = end;
     }
 }
