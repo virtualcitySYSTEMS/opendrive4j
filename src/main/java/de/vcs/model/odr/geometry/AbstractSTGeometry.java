@@ -7,11 +7,11 @@ import org.xmlobjects.gml.model.geometry.primitives.Point;
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public abstract class AbstractSTGeometry extends AbstractParametricGeometry {
+public abstract class AbstractSTGeometry extends AbstractODRGeometry {
 
     private double length;
     private Point inertialReference;
-    private SPosition linearReference;
+    private STHPosition linearReference;
 
     public double getLength() {
         return length;
@@ -29,11 +29,11 @@ public abstract class AbstractSTGeometry extends AbstractParametricGeometry {
         this.inertialReference = inertialReference;
     }
 
-    public SPosition getLinearReference() {
+    public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    public void setLinearReference(SPosition linearReference) {
+    public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }
 }
