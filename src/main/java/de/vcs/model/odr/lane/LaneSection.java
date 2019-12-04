@@ -1,7 +1,7 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
 import org.xmlobjects.gml.model.GMLObject;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class LaneSection extends AbstractOpenDriveElement {
 
     private boolean singleSide;
-    private SPosition linearReference;
+    private STHPosition linearReference;
     private ArrayList<GMLObject> gmlGeometries;
     private Lane centerLane;
     private ArrayList<Lane> leftLanes;
@@ -23,7 +23,7 @@ public class LaneSection extends AbstractOpenDriveElement {
     public LaneSection() {
     }
 
-    public LaneSection(boolean singleSide, SPosition linearReference,
+    public LaneSection(boolean singleSide, STHPosition linearReference,
             ArrayList<GMLObject> gmlGeometries, Lane centerLane, ArrayList<Lane> leftLanes,
             ArrayList<Lane> rightLanes) {
         this.singleSide = singleSide;
@@ -42,11 +42,11 @@ public class LaneSection extends AbstractOpenDriveElement {
         this.singleSide = singleSide;
     }
 
-    public SPosition getLinearReference() {
+    public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    public void setLinearReference(SPosition linearReference) {
+    public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }
 

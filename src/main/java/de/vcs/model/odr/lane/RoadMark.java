@@ -1,7 +1,7 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.AbstractParametricGeometry;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.STTransform;
 import org.xmlobjects.gml.model.GMLObject;
 
@@ -25,7 +25,7 @@ public class RoadMark extends AbstractOpenDriveElement {
     private STTransform stTransform;
     private ExplicitRoadMark explicit;
     private Type detailedType;
-    private ArrayList<AbstractParametricGeometry> sways;
+    private ArrayList<AbstractODRGeometry> sways;
 
     public RoadMark() {
     }
@@ -33,7 +33,7 @@ public class RoadMark extends AbstractOpenDriveElement {
     public RoadMark(RoadMarkType type, RoadMarkWeight weight, RoadMarkColor color, String material, double width,
             LaneChange laneChange, double height, ArrayList<GMLObject> gmlGeometries,
             STTransform stTransform, ExplicitRoadMark explicit, Type detailedType,
-            ArrayList<AbstractParametricGeometry> sways) {
+            ArrayList<AbstractODRGeometry> sways) {
         this.type = type;
         this.weight = weight;
         this.color = color;
@@ -136,11 +136,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.detailedType = detailedType;
     }
 
-    public ArrayList<AbstractParametricGeometry> getSways() {
+    public ArrayList<AbstractODRGeometry> getSways() {
         return sways;
     }
 
-    public void setSways(ArrayList<AbstractParametricGeometry> sways) {
+    public void setSways(ArrayList<AbstractODRGeometry> sways) {
         this.sways = sways;
     }
 }
