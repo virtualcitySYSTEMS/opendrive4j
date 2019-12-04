@@ -1,7 +1,6 @@
 package de.vcs.model.odr.railroad;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -12,12 +11,20 @@ import java.util.ArrayList;
  */
 public class Railroad extends AbstractOpenDriveElement {
 
-    public ArrayList<Switch> railSwitches;
+    private ArrayList<Switch> railSwitches;
 
     public Railroad() {
     }
 
     public Railroad(ArrayList<Switch> railSwitch) {
         this.railSwitches = railSwitch;
+    }
+
+    public ArrayList<Switch> getRailSwitches() {
+        return railSwitches;
+    }
+
+    public void setRailSwitches(ArrayList<Switch> railSwitches) {
+        this.railSwitches = railSwitches;
     }
 }

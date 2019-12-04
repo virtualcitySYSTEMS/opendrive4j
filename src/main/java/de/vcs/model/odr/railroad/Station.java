@@ -1,7 +1,6 @@
 package de.vcs.model.odr.railroad;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -15,17 +14,17 @@ public class Station extends AbstractOpenDriveElement {
     private String name;
     private String id;
     private StationType type;
-    public ArrayList<Platform> platform;
+    private ArrayList<Platform> platforms;
 
     public Station() {
     }
 
     public Station(String name, String id, StationType type,
-            ArrayList<Platform> platform) {
+            ArrayList<Platform> platforms) {
         this.name = name;
         this.id = id;
         this.type = type;
-        this.platform = platform;
+        this.platforms = platforms;
     }
 
     public String getName() {
@@ -50,5 +49,13 @@ public class Station extends AbstractOpenDriveElement {
 
     public void setType(StationType type) {
         this.type = type;
+    }
+
+    public ArrayList<Platform> getPlatforms() {
+        return platforms;
+    }
+
+    public void setPlatforms(ArrayList<Platform> platforms) {
+        this.platforms = platforms;
     }
 }

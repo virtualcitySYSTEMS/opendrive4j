@@ -13,7 +13,7 @@ public class Platform extends AbstractOpenDriveElement {
 
     private String name;
     private String id;
-    public ArrayList<Segment> segments;
+    private ArrayList<Segment> segments;
 
     public Platform() {
     }
@@ -38,5 +38,13 @@ public class Platform extends AbstractOpenDriveElement {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ArrayList<Segment> getSegments() {
+        return segments;
+    }
+
+    public void setSegments(ArrayList<Segment> segments) {
+        this.segments = segments;
     }
 }

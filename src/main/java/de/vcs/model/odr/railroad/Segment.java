@@ -1,7 +1,7 @@
 package de.vcs.model.odr.railroad;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
 
 /**
  * @author rruhdorfer
@@ -12,13 +12,13 @@ public class Segment extends AbstractOpenDriveElement {
 
     private String roadId;
     private PlatformSide side;
-    private SPosition sStart;
-    private SPosition sEnd;
+    private STHPosition sStart;
+    private STHPosition sEnd;
 
     public Segment() {
     }
 
-    public Segment(String roadId, PlatformSide side, SPosition sStart, SPosition sEnd) {
+    public Segment(String roadId, PlatformSide side, STHPosition sStart, STHPosition sEnd) {
         this.roadId = roadId;
         this.side = side;
         this.sStart = sStart;
@@ -41,19 +41,19 @@ public class Segment extends AbstractOpenDriveElement {
         this.side = side;
     }
 
-    public SPosition getsStart() {
+    public STHPosition getsStart() {
         return sStart;
     }
 
-    public void setsStart(SPosition sStart) {
+    public void setsStart(STHPosition sStart) {
         this.sStart = sStart;
     }
 
-    public SPosition getsEnd() {
+    public STHPosition getsEnd() {
         return sEnd;
     }
 
-    public void setsEnd(SPosition sEnd) {
+    public void setsEnd(STHPosition sEnd) {
         this.sEnd = sEnd;
     }
 }
