@@ -1,7 +1,6 @@
 package de.vcs.model.odr.signal;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -20,7 +19,7 @@ public class Controller extends AbstractOpenDriveElement {
     private String id;
     private String name;
     private int sequence;
-    public ArrayList<Control> controls;
+    private ArrayList<Control> controls;
 
     public Controller() {
     }

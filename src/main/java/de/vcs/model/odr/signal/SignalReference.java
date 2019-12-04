@@ -1,9 +1,8 @@
 package de.vcs.model.odr.signal;
 
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.lane.LaneValidity;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 import de.vcs.model.odr.object.Orientation;
 
 import java.util.ArrayList;
@@ -17,13 +16,13 @@ public class SignalReference extends AbstractOpenDriveElement {
 
     private String id;
     private Orientation orientation;
-    private SPosition linearReference;
+    private STHPosition linearReference;
     public ArrayList<LaneValidity> validity;
 
     public SignalReference() {
     }
 
-    public SignalReference(String id, Orientation orientation, SPosition linearReference,
+    public SignalReference(String id, Orientation orientation, STHPosition linearReference,
             ArrayList<LaneValidity> validity) {
         this.id = id;
         this.orientation = orientation;
@@ -47,11 +46,11 @@ public class SignalReference extends AbstractOpenDriveElement {
         this.orientation = orientation;
     }
 
-    public SPosition getLinearReference() {
+    public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    public void setLinearReference(SPosition linearReference) {
+    public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }
 }

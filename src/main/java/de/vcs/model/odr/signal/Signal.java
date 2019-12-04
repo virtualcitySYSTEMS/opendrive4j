@@ -3,8 +3,7 @@ package de.vcs.model.odr.signal;
 import de.vcs.model.odr.object.Orientation;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.lane.LaneValidity;
-import de.vcs.model.odr.core.AdditionalData;
-import de.vcs.model.odr.geometry.SPosition;
+import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STTransform;
 
 import java.util.ArrayList;
@@ -29,20 +28,21 @@ public class Signal extends AbstractOpenDriveElement {
     private double height;
     private double width;
     private String text;
-    public ArrayList<LaneValidity> validity;
-    public ArrayList<Dependency> dependency;
-    public ArrayList<Reference> reference;
-    private SPosition linearReference;
+    private ArrayList<LaneValidity> validities;
+    private ArrayList<Dependency> dependencies;
+    private ArrayList<Reference> references;
+    private STHPosition linearReference;
     private STTransform stTransform;
+    private PhysicalPosition physicalPosition;
 
     public Signal() {
     }
 
     public Signal(String id, String name, boolean dynamic, Orientation orientation, String country,
             String countryRevision, String type, String subtype, double value, String unit, double height, double width,
-            String text, ArrayList<LaneValidity> validity,
-            ArrayList<Dependency> dependency, ArrayList<Reference> reference,
-            SPosition linearReference, STTransform stTransform) {
+            String text, ArrayList<LaneValidity> validities,
+            ArrayList<Dependency> dependencies, ArrayList<Reference> references,
+            STHPosition linearReference, STTransform stTransform, PhysicalPosition physicalPosition) {
         this.id = id;
         this.name = name;
         this.dynamic = dynamic;
@@ -56,11 +56,12 @@ public class Signal extends AbstractOpenDriveElement {
         this.height = height;
         this.width = width;
         this.text = text;
-        this.validity = validity;
-        this.dependency = dependency;
-        this.reference = reference;
+        this.validities = validities;
+        this.dependencies = dependencies;
+        this.references = references;
         this.linearReference = linearReference;
         this.stTransform = stTransform;
+        this.physicalPosition = physicalPosition;
     }
 
     public String getId() {
@@ -167,11 +168,35 @@ public class Signal extends AbstractOpenDriveElement {
         this.text = text;
     }
 
-    public SPosition getLinearReference() {
+    public ArrayList<LaneValidity> getValidities() {
+        return validities;
+    }
+
+    public void setValidities(ArrayList<LaneValidity> validities) {
+        this.validities = validities;
+    }
+
+    public ArrayList<Dependency> getDependencies() {
+        return dependencies;
+    }
+
+    public void setDependencies(ArrayList<Dependency> dependencies) {
+        this.dependencies = dependencies;
+    }
+
+    public ArrayList<Reference> getReferences() {
+        return references;
+    }
+
+    public void setReferences(ArrayList<Reference> references) {
+        this.references = references;
+    }
+
+    public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    public void setLinearReference(SPosition linearReference) {
+    public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }
 
@@ -181,5 +206,13 @@ public class Signal extends AbstractOpenDriveElement {
 
     public void setStTransform(STTransform stTransform) {
         this.stTransform = stTransform;
+    }
+
+    public PhysicalPosition getPhysicalPosition() {
+        return physicalPosition;
+    }
+
+    public void setPhysicalPosition(PhysicalPosition physicalPosition) {
+        this.physicalPosition = physicalPosition;
     }
 }
