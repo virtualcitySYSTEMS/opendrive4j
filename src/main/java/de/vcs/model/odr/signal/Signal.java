@@ -1,10 +1,9 @@
 package de.vcs.model.odr.signal;
 
-import de.vcs.model.odr.object.Orientation;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.lane.LaneValidity;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STTransform;
+import de.vcs.model.odr.lane.LaneValidity;
 
 import java.util.ArrayList;
 
@@ -18,7 +17,8 @@ public class Signal extends AbstractOpenDriveElement {
     private String id;
     private String name;
     private boolean dynamic;
-    private Orientation orientation;
+    //
+    private String orientation;
     private String country;
     private String countryRevision;
     private String type;
@@ -38,7 +38,7 @@ public class Signal extends AbstractOpenDriveElement {
     public Signal() {
     }
 
-    public Signal(String id, String name, boolean dynamic, Orientation orientation, String country,
+    public Signal(String id, String name, boolean dynamic, String orientation, String country,
             String countryRevision, String type, String subtype, double value, String unit, double height, double width,
             String text, ArrayList<LaneValidity> validities,
             ArrayList<Dependency> dependencies, ArrayList<Reference> references,
@@ -88,11 +88,11 @@ public class Signal extends AbstractOpenDriveElement {
         this.dynamic = dynamic;
     }
 
-    public Orientation getOrientation() {
+    public String getOrientation() {
         return orientation;
     }
 
-    public void setOrientation(Orientation orientation) {
+    public void setOrientation(String orientation) {
         this.orientation = orientation;
     }
 
