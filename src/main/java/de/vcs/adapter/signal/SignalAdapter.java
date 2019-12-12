@@ -1,5 +1,7 @@
 package de.vcs.adapter.signal;
 
+import de.vcs.adapter.helper.TextContentChecker;
+import de.vcs.model.odr.object.BorderType;
 import de.vcs.model.odr.signal.Signal;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.builder.ObjectBuilder;
@@ -22,7 +24,7 @@ public class SignalAdapter implements ObjectBuilder<Signal> {
         attributes.getValue("id").ifPresent(object::setId);
         attributes.getValue("name").ifPresent(object::setName);
         attributes.getValue("dynamic").ifBoolean(object::setDynamic);
-//        TextContentChecker.check(attributes.getValue("orientation"), BorderType.class, object::setOrientation);
+        TextContentChecker.check(attributes.getValue("orientation"), BorderType.class, object::setOrientation);
         attributes.getValue("country").ifPresent(object::setCountry);
         attributes.getValue("countryRevision").ifPresent(object::setCountryRevision);
         attributes.getValue("type").ifPresent(object::setType);

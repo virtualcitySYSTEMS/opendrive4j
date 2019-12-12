@@ -10,6 +10,7 @@ public class EnumMain {
         ArrayList<Class<? extends Enum<?>>> e = new ArrayList<>();
         e.add(Enum1.class);
         e.add(Enum2.class);
+        String value = "MAX";
         System.out.println(EnumChecker.contains("Peter", e));
     }
 }
