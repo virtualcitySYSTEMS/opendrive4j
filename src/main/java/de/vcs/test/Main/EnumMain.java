@@ -1,6 +1,9 @@
-package de.vcs.test.enums;
+package de.vcs.test.Main;
 
 import de.vcs.adapter.helper.EnumChecker;
+import de.vcs.model.odr.object.Orientation;
+import de.vcs.test.enums.Enum1;
+import de.vcs.test.enums.Enum2;
 
 import java.util.ArrayList;
 
@@ -10,7 +13,7 @@ public class EnumMain {
         ArrayList<Class<? extends Enum<?>>> e = new ArrayList<>();
         e.add(Enum1.class);
         e.add(Enum2.class);
-        String value = "MAX";
-        System.out.println(EnumChecker.contains("Peter", e));
+        e.add(Orientation.class);
+        System.out.println(EnumChecker.contains("+", Orientation.class));
     }
 }
