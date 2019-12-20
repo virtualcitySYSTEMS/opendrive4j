@@ -15,6 +15,8 @@ public class Signals extends AbstractOpenDriveElement {
     private ArrayList<Signal> signals;
 
     public Signals() {
+        signalReferences = new ArrayList<SignalReference>();
+        signals = new ArrayList<Signal>();
     }
 
     public Signals(ArrayList<SignalReference> signalReferences, ArrayList<Signal> signals) {

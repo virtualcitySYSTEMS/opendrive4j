@@ -4,6 +4,8 @@ import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.model.odr.object.Orientation;
 import de.vcs.model.odr.signal.SignalReference;
 import de.vcs.util.ODRConstants;
+import org.xmlobjects.annotation.XMLElement;
+import org.xmlobjects.annotation.XMLElements;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.builder.ObjectBuilder;
 import org.xmlobjects.stream.XMLReadException;
@@ -12,6 +14,10 @@ import org.xmlobjects.xml.Attributes;
 
 import javax.xml.namespace.QName;
 
+@XMLElements({
+        @XMLElement(name = "signalReference",
+                namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
+})
 public class SignalReferenceAdapter implements ObjectBuilder<SignalReference> {
 
     @Override

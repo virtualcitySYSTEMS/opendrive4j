@@ -36,6 +36,12 @@ public class Signal extends AbstractOpenDriveElement {
     private PhysicalPosition physicalPosition;
 
     public Signal() {
+        validities = new ArrayList<LaneValidity>();
+        dependencies = new ArrayList<Dependency>();
+        references = new ArrayList<Reference>();
+        linearReference = new STHPosition();
+        stTransform = new STTransform();
+        physicalPosition = new PhysicalPosition();
     }
 
     public Signal(String id, String name, boolean dynamic, String orientation, String country,
