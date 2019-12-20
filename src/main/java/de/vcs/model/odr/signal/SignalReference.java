@@ -1,9 +1,8 @@
 package de.vcs.model.odr.signal;
 
+import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.lane.LaneValidity;
-import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.object.Orientation;
 
 import java.util.ArrayList;
 
@@ -15,14 +14,16 @@ import java.util.ArrayList;
 public class SignalReference extends AbstractOpenDriveElement {
 
     private String id;
-    private Orientation orientation;
+    private String orientation;
     private STHPosition linearReference;
     public ArrayList<LaneValidity> validity;
 
     public SignalReference() {
+        linearReference = new STHPosition();
+        validity = new ArrayList<LaneValidity>();
     }
 
-    public SignalReference(String id, Orientation orientation, STHPosition linearReference,
+    public SignalReference(String id, String orientation, STHPosition linearReference,
             ArrayList<LaneValidity> validity) {
         this.id = id;
         this.orientation = orientation;
@@ -38,11 +39,11 @@ public class SignalReference extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public Orientation getOrientation() {
+    public String getOrientation() {
         return orientation;
     }
 
-    public void setOrientation(Orientation orientation) {
+    public void setOrientation(String orientation) {
         this.orientation = orientation;
     }
 
@@ -52,5 +53,13 @@ public class SignalReference extends AbstractOpenDriveElement {
 
     public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
+    }
+
+    public ArrayList<LaneValidity> getValidity() {
+        return validity;
+    }
+
+    public void setValidity(ArrayList<LaneValidity> validity) {
+        this.validity = validity;
     }
 }

@@ -9,24 +9,24 @@ import de.vcs.model.odr.core.AbstractOpenDriveElement;
  */
 public class Reference extends AbstractOpenDriveElement {
 
-    private SignalType elementType;
+    private String elementType;
     private String elementId;
     private String type;
 
     public Reference() {
     }
 
-    public Reference(SignalType elementType, String elementId, String type) {
+    public Reference(String elementType, String elementId, String type) {
         this.elementType = elementType;
         this.elementId = elementId;
         this.type = type;
     }
 
-    public SignalType getElementType() {
+    public String getElementType() {
         return elementType;
     }
 
-    public void setElementType(SignalType elementType) {
+    public void setElementType(String elementType) {
         this.elementType = elementType;
     }
 

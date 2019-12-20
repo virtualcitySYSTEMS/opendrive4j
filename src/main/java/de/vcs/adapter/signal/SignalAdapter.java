@@ -52,6 +52,9 @@ public class SignalAdapter implements ObjectBuilder<Signal> {
                 case "dependency":
                     object.getDependencies().add(reader.getObjectUsingBuilder(DependencyAdapter.class));
                     break;
+                case "reference":
+                    object.getReferences().add(reader.getObjectUsingBuilder(ReferenceAdapter.class));
+                    break;
             }
         }
     }
