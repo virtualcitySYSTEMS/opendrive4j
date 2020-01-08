@@ -13,16 +13,20 @@ public class Junction extends AbstractOpenDriveElement {
 
     private String name;
     private String id;
-    private JunctionType type;
+    private String type;
     private ArrayList<Connection> connections;
     private ArrayList<Priority> priorities;
     private ArrayList<Controller> controllers;
-    private Surfaces Surfaces;
+    private Surfaces surfaces;
 
     public Junction() {
+        this.connections = new ArrayList<Connection>();
+        this.priorities = new ArrayList<Priority>();
+        this.controllers = new ArrayList<Controller>();
+        this.surfaces = new Surfaces();
     }
 
-    public Junction(String name, String id, JunctionType type, ArrayList<Connection> connections,
+    public Junction(String name, String id, String type, ArrayList<Connection> connections,
             ArrayList<Priority> priorities, ArrayList<Controller> controllers, Surfaces Surfaces) {
         this.name = name;
         this.id = id;
@@ -30,7 +34,7 @@ public class Junction extends AbstractOpenDriveElement {
         this.connections = connections;
         this.priorities = priorities;
         this.controllers = controllers;
-        this.Surfaces = Surfaces;
+        this.surfaces = Surfaces;
     }
 
     public String getName() {
@@ -49,20 +53,20 @@ public class Junction extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public JunctionType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(JunctionType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
     public Surfaces getSurfaces() {
-        return Surfaces;
+        return surfaces;
     }
 
     public void setSurfaces(Surfaces surfaces) {
-        this.Surfaces = surfaces;
+        this.surfaces = surfaces;
     }
 
     public ArrayList<Connection> getConnections() {

@@ -13,13 +13,14 @@ public class JunctionGroup extends AbstractOpenDriveElement {
 
     private String name;
     private String id;
-    private JunctionGroupType type;
+    private String type;
     private ArrayList<JunctionReference> junctionReference;
 
     public JunctionGroup() {
+        this.junctionReference = new ArrayList<JunctionReference>();
     }
 
-    public JunctionGroup(String name, String id, JunctionGroupType type,
+    public JunctionGroup(String name, String id, String type,
             ArrayList<JunctionReference> junctionReference) {
         this.name = name;
         this.id = id;
@@ -43,11 +44,11 @@ public class JunctionGroup extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public JunctionGroupType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(JunctionGroupType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

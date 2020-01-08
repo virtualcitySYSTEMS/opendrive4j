@@ -11,15 +11,16 @@ import de.vcs.model.odr.core.AbstractOpenDriveElement;
 public class SurfaceCRG extends AbstractOpenDriveElement {
 
     private String file;
-    private CRGMode mode = CRGMode.global;
-    private CRGPurpose purpose;
+    private String mode = String.valueOf(CRGMode.global);
+    private String purpose;
     private double zScale;
     private STTransform stTransform;
 
     public SurfaceCRG() {
+        this.stTransform = new STTransform();
     }
 
-    public SurfaceCRG(String file, CRGMode mode, CRGPurpose purpose, double zScale, STTransform stTransform) {
+    public SurfaceCRG(String file, String mode, String purpose, double zScale, STTransform stTransform) {
         this.file = file;
         this.mode = mode;
         this.purpose = purpose;
@@ -35,19 +36,19 @@ public class SurfaceCRG extends AbstractOpenDriveElement {
         this.file = file;
     }
 
-    public CRGMode getMode() {
+    public String getMode() {
         return mode;
     }
 
-    public void setMode(CRGMode mode) {
+    public void setMode(String mode) {
         this.mode = mode;
     }
 
-    public CRGPurpose getPurpose() {
+    public String getPurpose() {
         return purpose;
     }
 
-    public void setPurpose(CRGPurpose purpose) {
+    public void setPurpose(String purpose) {
         this.purpose = purpose;
     }
 

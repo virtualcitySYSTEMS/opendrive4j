@@ -12,12 +12,12 @@ public class PredecessorSuccessor extends AbstractOpenDriveElement {
     private String elementType = "road";
     private String elementId;
     private double elementS;
-    private ElementDir elementDir;
+    private String elementDir;
 
     public PredecessorSuccessor() {
     }
 
-    public PredecessorSuccessor(String elementType, String elementId, double elementS, ElementDir elementDir) {
+    public PredecessorSuccessor(String elementType, String elementId, double elementS, String elementDir) {
         this.elementType = elementType;
         this.elementId = elementId;
         this.elementS = elementS;
@@ -48,11 +48,11 @@ public class PredecessorSuccessor extends AbstractOpenDriveElement {
         this.elementS = elementS;
     }
 
-    public ElementDir getElementDir() {
+    public String getElementDir() {
         return elementDir;
     }
 
-    public void setElementDir(ElementDir elementDir) {
+    public void setElementDir(String elementDir) {
         this.elementDir = elementDir;
     }
 }

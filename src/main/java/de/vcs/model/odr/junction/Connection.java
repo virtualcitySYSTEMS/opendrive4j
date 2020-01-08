@@ -12,15 +12,18 @@ import java.util.ArrayList;
 public class Connection extends AbstractOpenDriveElement {
 
     private String id;
-    private JunctionType type;
+    private String type;
     private String incomingRoad;
     private String connectingRoad;
-    private ContactPoint contactPoint;
+    private String contactPoint;
     private PredecessorSuccessor predecessor;
     private PredecessorSuccessor successor;
     private ArrayList<LaneLink> laneLinks;
 
     public Connection() {
+        this.predecessor = new PredecessorSuccessor();
+        this.successor = new PredecessorSuccessor();
+        this.laneLinks = new ArrayList<LaneLink>();
     }
 
     /**
@@ -33,8 +36,8 @@ public class Connection extends AbstractOpenDriveElement {
      * @param contactPoint
      * @param laneLinks
      */
-    public Connection(String id, JunctionType type, String incomingRoad, String connectingRoad,
-            ContactPoint contactPoint, ArrayList<LaneLink> laneLinks) {
+    public Connection(String id, String type, String incomingRoad, String connectingRoad,
+            String contactPoint, ArrayList<LaneLink> laneLinks) {
         this.id = id;
         this.type = type;
         this.incomingRoad = incomingRoad;
@@ -52,7 +55,7 @@ public class Connection extends AbstractOpenDriveElement {
      * @param successor
      * @param laneLinks
      */
-    public Connection(String id, JunctionType type, PredecessorSuccessor predecessor, PredecessorSuccessor successor,
+    public Connection(String id, String type, PredecessorSuccessor predecessor, PredecessorSuccessor successor,
             ArrayList<LaneLink> laneLinks) {
         this.id = id;
         this.type = type;
@@ -69,11 +72,11 @@ public class Connection extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public JunctionType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(JunctionType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -93,11 +96,11 @@ public class Connection extends AbstractOpenDriveElement {
         this.connectingRoad = connectingRoad;
     }
 
-    public ContactPoint getContactPoint() {
+    public String getContactPoint() {
         return contactPoint;
     }
 
-    public void setContactPoint(ContactPoint contactPoint) {
+    public void setContactPoint(String contactPoint) {
         this.contactPoint = contactPoint;
     }
 

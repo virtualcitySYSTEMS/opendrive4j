@@ -14,6 +14,7 @@ public class Surfaces extends AbstractOpenDriveElement {
     private ArrayList<SurfaceCRG> crg;
 
     public Surfaces() {
+        this.crg = new ArrayList<SurfaceCRG>();
     }
 
     public Surfaces(ArrayList<SurfaceCRG> crg) {
