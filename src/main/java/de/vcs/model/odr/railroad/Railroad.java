@@ -14,6 +14,7 @@ public class Railroad extends AbstractOpenDriveElement {
     private ArrayList<Switch> railSwitches;
 
     public Railroad() {
+        this.railSwitches = new ArrayList<Switch>();
     }
 
     public Railroad(ArrayList<Switch> railSwitch) {

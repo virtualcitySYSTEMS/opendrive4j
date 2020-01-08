@@ -12,15 +12,18 @@ public class Switch extends AbstractOpenDriveElement {
 
     private String name;
     private String id;
-    private SwitchPosition position;
+    private String position;
     private MainTrack mainTrack;
     private SideTrack sideTrack;
     private Partner partner;
 
     public Switch() {
+        this.mainTrack = new MainTrack();
+        this.sideTrack = new SideTrack();
+        this.partner = new Partner();
     }
 
-    public Switch(String name, String id, SwitchPosition position, MainTrack mainTrack,
+    public Switch(String name, String id, String position, MainTrack mainTrack,
             SideTrack sideTrack, Partner partner) {
         this.name = name;
         this.id = id;
@@ -46,11 +49,11 @@ public class Switch extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public SwitchPosition getPosition() {
+    public String getPosition() {
         return position;
     }
 
-    public void setPosition(SwitchPosition position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 

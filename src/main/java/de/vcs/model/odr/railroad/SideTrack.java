@@ -12,13 +12,13 @@ import de.vcs.model.odr.junction.ElementDir;
 public class SideTrack extends AbstractOpenDriveElement {
 
     private String id;
-    private ElementDir dir;
+    private String dir;
     private STHPosition linearReference;
 
     public SideTrack() {
     }
 
-    public SideTrack(String id, ElementDir dir, STHPosition linearReference) {
+    public SideTrack(String id, String dir, STHPosition linearReference) {
         this.id = id;
         this.dir = dir;
         this.linearReference = linearReference;
@@ -32,11 +32,11 @@ public class SideTrack extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public ElementDir getDir() {
+    public String getDir() {
         return dir;
     }
 
-    public void setDir(ElementDir dir) {
+    public void setDir(String dir) {
         this.dir = dir;
     }
 
