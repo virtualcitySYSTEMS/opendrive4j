@@ -11,14 +11,16 @@ import de.vcs.model.odr.geometry.STHPosition;
 public class Segment extends AbstractOpenDriveElement {
 
     private String roadId;
-    private PlatformSide side;
+    private String side;
     private STHPosition sStart;
     private STHPosition sEnd;
 
     public Segment() {
+        this.sStart = new STHPosition();
+        this.sEnd = new STHPosition();
     }
 
-    public Segment(String roadId, PlatformSide side, STHPosition sStart, STHPosition sEnd) {
+    public Segment(String roadId, String side, STHPosition sStart, STHPosition sEnd) {
         this.roadId = roadId;
         this.side = side;
         this.sStart = sStart;
@@ -33,11 +35,11 @@ public class Segment extends AbstractOpenDriveElement {
         this.roadId = roadId;
     }
 
-    public PlatformSide getSide() {
+    public String getSide() {
         return side;
     }
 
-    public void setSide(PlatformSide side) {
+    public void setSide(String side) {
         this.side = side;
     }
 

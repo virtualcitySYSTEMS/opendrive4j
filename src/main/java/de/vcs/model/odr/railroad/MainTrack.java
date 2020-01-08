@@ -16,6 +16,7 @@ public class MainTrack extends AbstractOpenDriveElement {
     private STHPosition linearReference;
 
     public MainTrack() {
+        this.linearReference = new STHPosition();
     }
 
     public MainTrack(String id, String dir, STHPosition linearReference) {

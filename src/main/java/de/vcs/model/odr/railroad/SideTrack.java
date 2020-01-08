@@ -16,6 +16,7 @@ public class SideTrack extends AbstractOpenDriveElement {
     private STHPosition linearReference;
 
     public SideTrack() {
+        this.linearReference = new STHPosition();
     }
 
     public SideTrack(String id, String dir, STHPosition linearReference) {

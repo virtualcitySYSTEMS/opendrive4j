@@ -16,6 +16,7 @@ public class Platform extends AbstractOpenDriveElement {
     private ArrayList<Segment> segments;
 
     public Platform() {
+        this.segments = new ArrayList<Segment>();
     }
 
     public Platform(String name, String id, ArrayList<Segment> segments) {
