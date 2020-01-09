@@ -13,6 +13,8 @@ public class DataQuality extends ODRObject {
     private RawData rawData;
 
     public DataQuality() {
+        this.error = new Error();
+        this.rawData = new RawData();
     }
 
     public DataQuality(Error error, RawData rawData) {

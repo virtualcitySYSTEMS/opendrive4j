@@ -5,6 +5,7 @@ import de.vcs.model.odr.junction.JunctionGroup;
 import de.vcs.model.odr.road.Road;
 import de.vcs.model.odr.signal.Controller;
 import de.vcs.model.odr.railroad.Station;
+import jdk.javadoc.internal.doclets.formats.html.markup.Head;
 
 /**
  * @author rruhdorfer
@@ -21,6 +22,12 @@ public class OpenDRIVE extends AbstractOpenDriveElement {
     private Station station;
 
     public OpenDRIVE() {
+        this.road = new Road();
+        this.header = new Header();
+        this.controller = new Controller();
+        this.junction = new Junction();
+        this.junctionGroup = new JunctionGroup();
+        this.station = new Station();
     }
 
     public OpenDRIVE(Road road, Header header, Controller controller, Junction junction, JunctionGroup junctionGroup,

@@ -13,16 +13,18 @@ public class AdditionalData extends ODRObject {
 
     private ArrayList<UserData> userData;
     private ArrayList<Include> includes;
-    private ArrayList<DataQuality> dataQualities;
+    private DataQuality dataQuality;
 
     public AdditionalData() {
+        this.userData = new ArrayList<UserData>();
+        this.includes = new ArrayList<Include>();
     }
 
     public AdditionalData(ArrayList<UserData> userData, ArrayList<Include> includes,
-            ArrayList<DataQuality> dataQualities) {
+            DataQuality dataQuality) {
         this.userData = userData;
         this.includes = includes;
-        this.dataQualities = dataQualities;
+        this.dataQuality = dataQuality;
     }
 
     public ArrayList<UserData> getUserData() {
@@ -41,11 +43,11 @@ public class AdditionalData extends ODRObject {
         this.includes = includes;
     }
 
-    public ArrayList<DataQuality> getDataQualities() {
-        return dataQualities;
+    public DataQuality getDataQuality() {
+        return dataQuality;
     }
 
-    public void setDataQualities(ArrayList<DataQuality> dataQualities) {
-        this.dataQualities = dataQualities;
+    public void setDataQuality(DataQuality dataQuality) {
+        this.dataQuality = dataQuality;
     }
 }

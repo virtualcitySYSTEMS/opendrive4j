@@ -16,6 +16,7 @@ public class UserData extends ODRObject {
     private ArrayList<UserDataContent> userDataContents;
 
     public UserData() {
+        this.userDataContents = new ArrayList<UserDataContent>();
     }
 
     public UserData(String code, String value, ArrayList<UserDataContent> userDataContents) {

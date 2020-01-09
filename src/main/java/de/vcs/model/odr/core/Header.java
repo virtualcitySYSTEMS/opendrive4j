@@ -12,7 +12,7 @@ public class Header extends AbstractOpenDriveElement {
     private int revMajor;
     private int revMinor;
     private String name;
-    private double version;
+    private String version;
     private String date;
     private double north;
     private double south;
@@ -23,9 +23,11 @@ public class Header extends AbstractOpenDriveElement {
     private InertialTransform offset;
 
     public Header() {
+        this.geoReference = new GeoReference();
+        this.offset = new InertialTransform();
     }
 
-    public Header(int revMajor, int revMinor, String name, double version, String date, double north, double south,
+    public Header(int revMajor, int revMinor, String name, String version, String date, double north, double south,
             double east, double west, String vendor, GeoReference geoReference, InertialTransform offset) {
         this.revMajor = revMajor;
         this.revMinor = revMinor;
@@ -65,11 +67,11 @@ public class Header extends AbstractOpenDriveElement {
         this.name = name;
     }
 
-    public double getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(double version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 

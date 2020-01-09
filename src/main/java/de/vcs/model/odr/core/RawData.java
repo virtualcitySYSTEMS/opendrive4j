@@ -10,15 +10,15 @@ import de.vcs.model.odr.ODRObject;
 public class RawData extends ODRObject {
 
     private String date;
-    private Source source;
+    private String source;
     private String sourceComment;
-    private PostProcessing postProcessing;
+    private String postProcessing;
     private String postProcessingComment;
 
     public RawData() {
     }
 
-    public RawData(String date, Source source, String sourceComment, PostProcessing postProcessing,
+    public RawData(String date, String source, String sourceComment, String postProcessing,
             String postProcessingComment) {
         this.date = date;
         this.source = source;
@@ -35,11 +35,11 @@ public class RawData extends ODRObject {
         this.date = date;
     }
 
-    public Source getSource() {
+    public String getSource() {
         return source;
     }
 
-    public void setSource(Source source) {
+    public void setSource(String source) {
         this.source = source;
     }
 
@@ -51,11 +51,11 @@ public class RawData extends ODRObject {
         this.sourceComment = sourceComment;
     }
 
-    public PostProcessing getPostProcessing() {
+    public String getPostProcessing() {
         return postProcessing;
     }
 
-    public void setPostProcessing(PostProcessing postProcessing) {
+    public void setPostProcessing(String postProcessing) {
         this.postProcessing = postProcessing;
     }
 
