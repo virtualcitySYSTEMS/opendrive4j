@@ -5,7 +5,6 @@ import de.vcs.model.odr.junction.JunctionGroup;
 import de.vcs.model.odr.road.Road;
 import de.vcs.model.odr.signal.Controller;
 import de.vcs.model.odr.railroad.Station;
-import jdk.javadoc.internal.doclets.formats.html.markup.Head;
 
 /**
  * @author rruhdorfer

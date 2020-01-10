@@ -1,6 +1,7 @@
 package de.vcs.model.odr.junction;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.signal.Controller;
 
 import java.util.ArrayList;
 

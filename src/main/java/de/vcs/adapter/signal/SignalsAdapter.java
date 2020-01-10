@@ -13,7 +13,7 @@ import org.xmlobjects.xml.Attributes;
 import javax.xml.namespace.QName;
 
 @XMLElements({
-        @XMLElement(name = "validity",
+        @XMLElement(name = "signals",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
 public class SignalsAdapter implements ObjectBuilder<Signals> {

@@ -1,5 +1,6 @@
 package de.vcs.adapter.junction;
 
+import de.vcs.adapter.road.SurfaceCRGAdapter;
 import de.vcs.model.odr.junction.Surfaces;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;

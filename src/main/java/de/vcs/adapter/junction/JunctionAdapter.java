@@ -1,6 +1,7 @@
 package de.vcs.adapter.junction;
 
 import de.vcs.adapter.helper.TextContentChecker;
+import de.vcs.adapter.signal.ControllerAdapter;
 import de.vcs.model.odr.junction.Junction;
 import de.vcs.model.odr.junction.JunctionType;
 import de.vcs.util.ODRConstants;
@@ -29,6 +30,7 @@ public class JunctionAdapter implements ObjectBuilder<Junction> {
     public void initializeObject(Junction object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         attributes.getValue("name").ifPresent(object::setName);
+        attributes.getValue("type").ifPresent(object::setName);     // in junction attr type is used instead of name
         attributes.getValue("id").ifPresent(object::setId);
         TextContentChecker.check(attributes.getValue("type"), JunctionType.class, object::setType);
     }
