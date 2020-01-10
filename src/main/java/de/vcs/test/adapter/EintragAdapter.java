@@ -31,6 +31,9 @@ public class EintragAdapter implements ObjectBuilder<Eintrag> {
             case "stadt":
                 object.setStadt(reader.getObjectUsingBuilder(StadtAdapter.class));
                 break;
+            case "dorf":
+                object.setDorf(reader.getObjectUsingBuilder(DorfAdapter.class));
+                break;
             case "beschreibung":
                 object.setBeschreibung(reader.getObjectUsingBuilder(BeschreibungAdapter.class));
                 break;

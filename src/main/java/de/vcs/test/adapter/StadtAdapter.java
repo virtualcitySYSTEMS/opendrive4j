@@ -35,4 +35,12 @@ public class StadtAdapter implements ObjectBuilder<Stadt> {
         e.add(Enum2.class);
         TextContentChecker.check(attributes.getValue("name"), e, object::setName);
     }
+
+    public static void setSuperAttributes(Stadt object, QName name, Attributes attributes,
+            XMLReader reader) {
+        ArrayList<Class<? extends Enum<?>>> e = new ArrayList<>();
+        e.add(Enum1.class);
+        e.add(Enum2.class);
+        TextContentChecker.check(attributes.getValue("name"), e, object::setName);
+    }
 }

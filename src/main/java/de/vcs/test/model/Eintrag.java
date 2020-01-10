@@ -5,6 +5,7 @@ import org.xmlobjects.gml.model.geometry.primitives.Point;
 public class Eintrag extends TestObject {
 
     private Stadt stadt;
+    private Dorf dorf;
     private Beschreibung beschreibung;
     private Point point;
 
@@ -23,6 +24,14 @@ public class Eintrag extends TestObject {
 
     public void setStadt(Stadt stadt) {
         this.stadt = stadt;
+    }
+
+    public Dorf getDorf() {
+        return dorf;
+    }
+
+    public void setDorf(Dorf dorf) {
+        this.dorf = dorf;
     }
 
     public Beschreibung getBeschreibung() {

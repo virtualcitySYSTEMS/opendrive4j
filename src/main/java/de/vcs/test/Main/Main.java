@@ -20,7 +20,12 @@ public class Main {
         }
         System.out.println(verzeichnis.getTitel().getName());
         for (Eintrag e : verzeichnis.getEinraege()) {
-            System.out.println(e.getStadt().getName());
+            if (e.getDorf() != null) {
+                System.out.println(e.getDorf().getName());
+                System.out.println(e.getDorf().getBoazn());
+            } else {
+                System.out.println(e.getStadt().getName());
+            }
             System.out.println(e.getBeschreibung().getText());
             System.out.println(e.getPoint().getPos().getValue());
         }
