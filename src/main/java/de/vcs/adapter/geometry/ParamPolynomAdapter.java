@@ -19,6 +19,7 @@ public class ParamPolynomAdapter implements ObjectBuilder<ParamPolynom> {
     @Override
     public void initializeObject(ParamPolynom object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
+        AbstractSTGeometryAdapter.setSuperAttributes(object, name, attributes, reader);
         attributes.getValue("aU").ifDouble(object::setaU);
         attributes.getValue("bU").ifDouble(object::setbU);
         attributes.getValue("cU").ifDouble(object::setcU);
@@ -27,5 +28,11 @@ public class ParamPolynomAdapter implements ObjectBuilder<ParamPolynom> {
         attributes.getValue("bV").ifDouble(object::setbV);
         attributes.getValue("cV").ifDouble(object::setcV);
         attributes.getValue("dV").ifDouble(object::setdV);
+    }
+
+    @Override
+    public void buildChildObject(ParamPolynom object, QName name, Attributes attributes, XMLReader reader)
+            throws ObjectBuildException, XMLReadException {
+        AbstractSTGeometryAdapter.buildSuperChildObject(object, name, attributes, reader);
     }
 }

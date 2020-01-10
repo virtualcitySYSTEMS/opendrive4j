@@ -13,6 +13,11 @@ public abstract class AbstractSTGeometry extends AbstractODRGeometry {
     private Point inertialReference;
     private STHPosition linearReference;
 
+    public AbstractSTGeometry() {
+        this.inertialReference = new Point();
+        this.linearReference = new STHPosition();
+    }
+
     public double getLength() {
         return length;
     }

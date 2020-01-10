@@ -19,9 +19,7 @@ public class STTransformAdapter implements ObjectBuilder<STTransform> {
     @Override
     public void initializeObject(STTransform object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
-        attributes.getValue("hdg").ifDouble(object::setHdg);
-        attributes.getValue("pitch").ifDouble(object::setPitch);
-        attributes.getValue("roll").ifDouble(object::setRoll);
+        AbstractTransformationAdapter.setSuperAttributes(object, name, attributes, reader);
         attributes.getValue("sOffset").ifDouble(object::setsOffset);
         attributes.getValue("tOffset").ifDouble(object::settOffset);
         attributes.getValue("hOffset").ifDouble(object::sethOffset);

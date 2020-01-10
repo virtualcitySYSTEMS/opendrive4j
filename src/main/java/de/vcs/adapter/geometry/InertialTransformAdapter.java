@@ -26,6 +26,7 @@ public class InertialTransformAdapter implements ObjectBuilder<InertialTransform
     @Override
     public void initializeObject(InertialTransform object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
+        AbstractTransformationAdapter.setSuperAttributes(object, name, attributes, reader);
         attributes.getValue("xOffset").ifDouble(object::setxOffset);
         attributes.getValue("yOffset").ifDouble(object::setyOffset);
         attributes.getValue("zOffset").ifDouble(object::setzOffset);

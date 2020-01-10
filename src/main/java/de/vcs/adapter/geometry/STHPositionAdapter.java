@@ -1,5 +1,6 @@
 package de.vcs.adapter.geometry;
 
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -14,6 +15,12 @@ import javax.xml.namespace.QName;
 
 @XMLElements({
         @XMLElement(name = "linearReference",
+                namespaceURI = ODRConstants.ODR_1_6_NAMESPACE),
+        @XMLElement(name = "start",
+                namespaceURI = ODRConstants.ODR_1_6_NAMESPACE),
+        @XMLElement(name = "end",
+                namespaceURI = ODRConstants.ODR_1_6_NAMESPACE),
+        @XMLElement(name = "cornerRoad",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
 public class STHPositionAdapter implements ObjectBuilder<STHPosition> {
@@ -26,8 +33,15 @@ public class STHPositionAdapter implements ObjectBuilder<STHPosition> {
     @Override
     public void initializeObject(STHPosition object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
+        AbstractODRGeometryAdapter.setSuperAttributes(object, name, attributes, reader);
         attributes.getValue("s").ifDouble(object::setS);
         attributes.getValue("t").ifDouble(object::setT);
         attributes.getValue("h").ifDouble(object::setH);
+    }
+
+    @Override
+    public void buildChildObject(STHPosition object, QName name, Attributes attributes, XMLReader reader)
+            throws ObjectBuildException, XMLReadException {
+        AbstractODRGeometryAdapter.setSuperAttributes(object, name, attributes, reader);
     }
 }

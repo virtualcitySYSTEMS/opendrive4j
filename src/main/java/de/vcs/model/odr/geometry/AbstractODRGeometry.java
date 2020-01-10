@@ -14,6 +14,8 @@ public abstract class AbstractODRGeometry extends ODRObject {
     private InertialTransform intertialTransform;
 
     public AbstractODRGeometry() {
+        this.stTransform = new STTransform();
+        this.intertialTransform = new InertialTransform();
     }
 
     public AbstractODRGeometry(String id, STTransform stTransform,

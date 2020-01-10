@@ -19,6 +19,13 @@ public class ArcAdapter implements ObjectBuilder<Arc> {
     @Override
     public void initializeObject(Arc object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
+        AbstractSTGeometryAdapter.setSuperAttributes(object, name, attributes, reader);
         attributes.getValue("curvature").ifDouble(object::setCurvature);
+    }
+
+    @Override
+    public void buildChildObject(Arc object, QName name, Attributes attributes, XMLReader reader)
+            throws ObjectBuildException, XMLReadException {
+        AbstractSTGeometryAdapter.buildSuperChildObject(object, name, attributes, reader);
     }
 }
