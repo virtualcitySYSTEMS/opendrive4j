@@ -1,6 +1,7 @@
 package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.model.odr.junction.CRGMode;
@@ -14,19 +15,24 @@ import de.vcs.model.odr.junction.CRGPurpose;
 public class SurfaceCRG extends AbstractOpenDriveElement {
 
     private String file;
-    private Direction orientation;
-    private CRGMode mode;
-    private CRGPurpose purpose;
+    private String orientation;
+    private String mode;
+    private String purpose;
     private double zScale;
     private STHPosition sStart;
     private STHPosition sEnd;
     private STTransform stTransform;
+    private InertialTransform inertialTransform;
 
     public SurfaceCRG() {
+        this.sStart = new STHPosition();
+        this.sEnd = new STHPosition();
+        this.stTransform = new STTransform();
+        this.inertialTransform = new InertialTransform();
     }
 
-    public SurfaceCRG(String file, Direction orientation, CRGMode mode, CRGPurpose purpose, double zScale,
-            STHPosition sStart, STHPosition sEnd, STTransform stTransform) {
+    public SurfaceCRG(String file, String orientation, String mode, String purpose, double zScale,
+            STHPosition sStart, STHPosition sEnd, STTransform stTransform, InertialTransform inertialTransform) {
         this.file = file;
         this.orientation = orientation;
         this.mode = mode;
@@ -35,6 +41,7 @@ public class SurfaceCRG extends AbstractOpenDriveElement {
         this.sStart = sStart;
         this.sEnd = sEnd;
         this.stTransform = stTransform;
+        this.inertialTransform = inertialTransform;
     }
 
     public String getFile() {
@@ -45,27 +52,27 @@ public class SurfaceCRG extends AbstractOpenDriveElement {
         this.file = file;
     }
 
-    public Direction getOrientation() {
+    public String getOrientation() {
         return orientation;
     }
 
-    public void setOrientation(Direction orientation) {
+    public void setOrientation(String orientation) {
         this.orientation = orientation;
     }
 
-    public CRGMode getMode() {
+    public String getMode() {
         return mode;
     }
 
-    public void setMode(CRGMode mode) {
+    public void setMode(String mode) {
         this.mode = mode;
     }
 
-    public CRGPurpose getPurpose() {
+    public String getPurpose() {
         return purpose;
     }
 
-    public void setPurpose(CRGPurpose purpose) {
+    public void setPurpose(String purpose) {
         this.purpose = purpose;
     }
 
@@ -99,5 +106,13 @@ public class SurfaceCRG extends AbstractOpenDriveElement {
 
     public void setStTransform(STTransform stTransform) {
         this.stTransform = stTransform;
+    }
+
+    public InertialTransform getInertialTransform() {
+        return inertialTransform;
+    }
+
+    public void setInertialTransform(InertialTransform inertialTransform) {
+        this.inertialTransform = inertialTransform;
     }
 }

@@ -9,22 +9,22 @@ import de.vcs.model.odr.core.AbstractOpenDriveElement;
  */
 public class Speed extends AbstractOpenDriveElement {
 
-    private MaxSpeed max;
+    private String max;
     private String unit;
 
     public Speed() {
     }
 
-    public Speed(MaxSpeed max, String unit) {
+    public Speed(String max, String unit) {
         this.max = max;
         this.unit = unit;
     }
 
-    public MaxSpeed getMax() {
+    public String getMax() {
         return max;
     }
 
-    public void setMax(MaxSpeed max) {
+    public void setMax(String max) {
         this.max = max;
     }
 

@@ -20,7 +20,7 @@ public class Road extends AbstractOpenDriveElement {
     private double length;
     private String id;
     private String junction;
-    private TrafficRule rule;
+    private String rule;
     private String predecessorId;
     private String successorId;
     private ArrayList<SurfaceCRG> CRG;
@@ -35,9 +35,19 @@ public class Road extends AbstractOpenDriveElement {
     private ArrayList<AbstractObject> objects;
 
     public Road() {
+        this.CRG = new ArrayList<SurfaceCRG>();
+        this.type = new ArrayList<Type>();
+        this.lateralProfile = new LateralProfile();
+        this.elevationProfile = new ElevationProfile();
+        this.planView = new PlanView();
+        this.lanes = new Lanes();
+        this.signals = new Signals();
+        this.railroad = new Railroad();
+        this.gmlGeometries = new ArrayList<GMLObject>();
+        this.objects = new ArrayList<AbstractObject>();
     }
 
-    public Road(String name, double length, String id, String junction, TrafficRule rule, String predecessorId,
+    public Road(String name, double length, String id, String junction, String rule, String predecessorId,
             String successorId, ArrayList<SurfaceCRG> CRG, ArrayList<Type> type,
             LateralProfile lateralProfile, ElevationProfile elevationProfile, PlanView planView,
             Lanes lanes, Signals signals, Railroad railroad,
@@ -93,11 +103,11 @@ public class Road extends AbstractOpenDriveElement {
         this.junction = junction;
     }
 
-    public TrafficRule getRule() {
+    public String getRule() {
         return rule;
     }
 
-    public void setRule(TrafficRule rule) {
+    public void setRule(String rule) {
         this.rule = rule;
     }
 

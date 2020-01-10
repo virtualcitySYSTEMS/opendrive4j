@@ -10,26 +10,28 @@ import de.vcs.model.odr.geometry.STHPosition;
  */
 public class Type extends AbstractOpenDriveElement {
 
-    private RoadType type;
+    private String type;
     private String country;
     private Speed speed;
     private STHPosition linearReference;
 
     public Type() {
+        this.speed = new Speed();
+        this.linearReference = new STHPosition();
     }
 
-    public Type(RoadType type, String country, Speed speed, STHPosition linearReference) {
+    public Type(String type, String country, Speed speed, STHPosition linearReference) {
         this.type = type;
         this.country = country;
         this.speed = speed;
         this.linearReference = linearReference;
     }
 
-    public RoadType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(RoadType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
