@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 public class Border extends AbstractObject {
 
-    private BorderType type;
+    private String type;
     private int outlineId;
     private boolean useCompleteOutline;
     private ArrayList<CornerReference> cornerReferences;
 
     public Border() {
+        this.cornerReferences = new ArrayList<CornerReference>();
     }
 
-    public Border(BorderType type, int outlineId, boolean useCompleteOutline,
+    public Border(String type, int outlineId, boolean useCompleteOutline,
             ArrayList<CornerReference> cornerReferences) {
         this.type = type;
         this.outlineId = outlineId;
@@ -20,11 +21,11 @@ public class Border extends AbstractObject {
         this.cornerReferences = cornerReferences;
     }
 
-    public BorderType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BorderType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

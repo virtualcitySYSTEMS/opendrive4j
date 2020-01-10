@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class Marking extends AbstractObject {
 
-    private SideType side;
-    private RoadMarkWeight weight;
-    private RoadMarkColor color;
+    private String side;
+    private String weight;
+    private String color;
     private double spaceLength;
     private double lineLength;
     private double startOffset;
@@ -17,9 +17,10 @@ public class Marking extends AbstractObject {
     private ArrayList<CornerReference> cornerReferences;
 
     public Marking() {
+        this.cornerReferences = new ArrayList<CornerReference>();
     }
 
-    public Marking(SideType side, RoadMarkWeight weight, RoadMarkColor color, double spaceLength, double lineLength,
+    public Marking(String side, String weight, String color, double spaceLength, double lineLength,
             double startOffset, double stopOffset,
             ArrayList<CornerReference> cornerReferences) {
         this.side = side;
@@ -32,27 +33,27 @@ public class Marking extends AbstractObject {
         this.cornerReferences = cornerReferences;
     }
 
-    public SideType getSide() {
+    public String getSide() {
         return side;
     }
 
-    public void setSide(SideType side) {
+    public void setSide(String side) {
         this.side = side;
     }
 
-    public RoadMarkWeight getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(RoadMarkWeight weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public RoadMarkColor getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(RoadMarkColor color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

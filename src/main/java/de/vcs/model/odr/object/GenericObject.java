@@ -9,15 +9,16 @@ import java.util.ArrayList;
  */
 public class GenericObject extends AbstractObject {
 
-    private ObjectType type;
+    private String type;
     private String subtype;
     private boolean dynamic;
     private ArrayList<RepeatedObject> repeats;
 
     public GenericObject() {
+        this.repeats = new ArrayList<RepeatedObject>();
     }
 
-    public GenericObject(ObjectType type, String subtype, boolean dynamic,
+    public GenericObject(String type, String subtype, boolean dynamic,
             ArrayList<RepeatedObject> repeats) {
         this.type = type;
         this.subtype = subtype;
@@ -25,11 +26,11 @@ public class GenericObject extends AbstractObject {
         this.repeats = repeats;
     }
 
-    public ObjectType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(ObjectType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

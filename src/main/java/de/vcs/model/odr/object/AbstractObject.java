@@ -2,6 +2,7 @@ package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STHPosition;
+import de.vcs.model.odr.lane.Lane;
 import de.vcs.model.odr.lane.LaneValidity;
 import org.xmlobjects.gml.model.GMLObject;
 
@@ -17,7 +18,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private String name;
     private String id;
     private double validLength;
-    private Orientation orientation;
+    private String orientation;
     private double length;
     private double height;
     private double width;
@@ -29,9 +30,14 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private STHPosition linearReference;
 
     public AbstractObject() {
+        this.gmlGeometries = new ArrayList<GMLObject>();
+        this.outlines = new ArrayList<Outline>();
+        this.materials = new ArrayList<Material>();
+        this.validities = new ArrayList<LaneValidity>();
+        this.linearReference = new STHPosition();
     }
 
-    public AbstractObject(String name, String id, double validLength, Orientation orientation, double length,
+    public AbstractObject(String name, String id, double validLength, String orientation, double length,
             double height,
             double width, double radius, ArrayList<GMLObject> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
@@ -75,11 +81,11 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.validLength = validLength;
     }
 
-    public Orientation getOrientation() {
+    public String getOrientation() {
         return orientation;
     }
 
-    public void setOrientation(Orientation orientation) {
+    public void setOrientation(String orientation) {
         this.orientation = orientation;
     }
 

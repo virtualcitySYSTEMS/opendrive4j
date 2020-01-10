@@ -9,24 +9,24 @@ import de.vcs.model.odr.core.AdditionalData;
  */
 public class Tunnel extends AbstractObject {
 
-    private TunnelType type;
+    private String type;
     private boolean lighting;
     private boolean daylight;
 
     public Tunnel() {
     }
 
-    public Tunnel(TunnelType type, boolean lighting, boolean daylight) {
+    public Tunnel(String type, boolean lighting, boolean daylight) {
         this.type = type;
         this.lighting = lighting;
         this.daylight = daylight;
     }
 
-    public TunnelType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TunnelType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

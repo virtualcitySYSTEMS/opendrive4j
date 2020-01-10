@@ -10,17 +10,19 @@ import java.util.ArrayList;
 public class Outline extends AbstractOpenDriveElement {
 
     private int id;
-    private OutlineFillType fillType;
+    private String fillType;
     private boolean outer;
     private boolean closed;
-    private LaneType laneType;
+    private String laneType;
     private ArrayList<UVZPosition> cornerLocal;
     private ArrayList<STHPosition> cornerRoad;
 
     public Outline() {
+        this.cornerLocal = new ArrayList<UVZPosition>();
+        this.cornerRoad = new ArrayList<STHPosition>();
     }
 
-    public Outline(int id, OutlineFillType fillType, boolean outer, boolean closed, LaneType laneType,
+    public Outline(int id, String fillType, boolean outer, boolean closed, String laneType,
             ArrayList<UVZPosition> cornerLocal, ArrayList<STHPosition> cornerRoad) {
         this.id = id;
         this.fillType = fillType;
@@ -39,11 +41,11 @@ public class Outline extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public OutlineFillType getFillType() {
+    public String getFillType() {
         return fillType;
     }
 
-    public void setFillType(OutlineFillType fillType) {
+    public void setFillType(String fillType) {
         this.fillType = fillType;
     }
 
@@ -63,11 +65,11 @@ public class Outline extends AbstractOpenDriveElement {
         this.closed = closed;
     }
 
-    public LaneType getLaneType() {
+    public String getLaneType() {
         return laneType;
     }
 
-    public void setLaneType(LaneType laneType) {
+    public void setLaneType(String laneType) {
         this.laneType = laneType;
     }
 

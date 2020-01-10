@@ -7,20 +7,20 @@ package de.vcs.model.odr.object;
  */
 public class Bridge extends AbstractObject {
 
-    private BridgeType type;
+    private String type;
 
     public Bridge() {
     }
 
-    public Bridge(BridgeType type) {
+    public Bridge(String type) {
         this.type = type;
     }
 
-    public BridgeType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BridgeType type) {
+    public void setType(String type) {
         this.type = type;
     }
 }

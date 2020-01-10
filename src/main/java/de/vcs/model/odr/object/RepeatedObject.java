@@ -23,13 +23,16 @@ public class RepeatedObject extends AbstractObject {
     private double radiusStart;
     private double radiusEnd;
     private STHPosition linearReference;
-    private STHPosition start;
+    private STHPosition start; // same as linearReference ???
     private STHPosition end;
 
     public RepeatedObject() {
+        this.linearReference = new STHPosition();
+        this.start = new STHPosition();
+        this.end = new STHPosition();
     }
 
-    public RepeatedObject(String name, String id, double validLength, Orientation orientation, double length,
+    public RepeatedObject(String name, String id, double validLength, String orientation, double length,
             double height,
             double width, double radius, ArrayList<GMLObject> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,

@@ -7,22 +7,22 @@ package de.vcs.model.odr.object;
  */
 public class ParkingSpace extends AbstractObject {
 
-    private ParkingSpaceAccess access;
+    private String access;
     private String restrictions;
 
     public ParkingSpace() {
     }
 
-    public ParkingSpace(ParkingSpaceAccess access, String restrictions) {
+    public ParkingSpace(String access, String restrictions) {
         this.access = access;
         this.restrictions = restrictions;
     }
 
-    public ParkingSpaceAccess getAccess() {
+    public String getAccess() {
         return access;
     }
 
-    public void setAccess(ParkingSpaceAccess access) {
+    public void setAccess(String access) {
         this.access = access;
     }
 
