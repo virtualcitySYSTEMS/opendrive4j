@@ -15,6 +15,7 @@ public class PlanView extends AbstractOpenDriveElement {
     private ArrayList<AbstractODRGeometry> odrGeometries;
 
     public PlanView() {
+        this.odrGeometries = new ArrayList<AbstractODRGeometry>();
     }
 
     public PlanView(ArrayList<AbstractODRGeometry> odrGeometries) {

@@ -15,6 +15,7 @@ public class ElevationProfile extends AbstractOpenDriveElement {
     private ArrayList<AbstractODRGeometry> elevations;
 
     public ElevationProfile() {
+        this.elevations = new ArrayList<AbstractODRGeometry>();
     }
 
     public ElevationProfile(ArrayList<AbstractODRGeometry> elevations) {

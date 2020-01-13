@@ -16,6 +16,8 @@ public class LateralProfile extends AbstractOpenDriveElement {
     private ArrayList<AbstractODRGeometry> shapes;
 
     public LateralProfile() {
+        this.superElevations = new ArrayList<AbstractODRGeometry>();
+        this.shapes = new ArrayList<AbstractODRGeometry>();
     }
 
     public LateralProfile(ArrayList<AbstractODRGeometry> superElevations,

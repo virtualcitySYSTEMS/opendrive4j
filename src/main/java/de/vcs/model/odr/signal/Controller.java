@@ -22,6 +22,7 @@ public class Controller extends AbstractOpenDriveElement {
     private ArrayList<Control> controls;
 
     public Controller() {
+        this.controls = new ArrayList<Control>();
     }
 
     public Controller(String id, String name, int sequence, ArrayList<Control> controls) {

@@ -11,6 +11,8 @@ public class PhysicalPosition extends AbstractOpenDriveElement {
     private Point positionInertial;
 
     public PhysicalPosition() {
+        this.inertialTransform = new InertialTransform();
+        this.positionInertial = new Point();
     }
 
     public PhysicalPosition(String roadId, InertialTransform inertialTransform,

@@ -1,6 +1,10 @@
 package de.vcs.adapter.road;
 
+import de.vcs.adapter.geometry.AbstractODRGeometryAdapter;
+import de.vcs.adapter.geometry.AbstractSTGeometryAdapter;
+import de.vcs.adapter.geometry.LineAdapter;
 import de.vcs.adapter.geometry.STHPositionAdapter;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.road.PlanView;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -30,7 +34,7 @@ public class PlanViewAdapter implements ObjectBuilder<PlanView> {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
                 case "geometry":
-                    object.getOdrGeometries().add(reader.getObjectUsingBuilder(STHPositionAdapter.class));
+                    object.getOdrGeometries().add(reader.getObjectUsingBuilder(AbstractSTGeometryAdapter.class));
                     break;
             }
         }

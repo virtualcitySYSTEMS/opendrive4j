@@ -6,6 +6,8 @@ import de.vcs.model.odr.road.Road;
 import de.vcs.model.odr.signal.Controller;
 import de.vcs.model.odr.railroad.Station;
 
+import java.util.ArrayList;
+
 /**
  * @author rruhdorfer
  * @version 1.0
@@ -13,38 +15,40 @@ import de.vcs.model.odr.railroad.Station;
  */
 public class OpenDRIVE extends AbstractOpenDriveElement {
 
-    private Road road;
+    private ArrayList<Road> roads;
     private Header header;
-    private Controller controller;
-    private Junction junction;
-    private JunctionGroup junctionGroup;
-    private Station station;
+    private ArrayList<Controller> controller;
+    private ArrayList<Junction> junctions;
+    private ArrayList<JunctionGroup> junctionGroups;
+    private ArrayList<Station> stations;
 
     public OpenDRIVE() {
-        this.road = new Road();
+        this.roads = new ArrayList<Road>();
         this.header = new Header();
-        this.controller = new Controller();
-        this.junction = new Junction();
-        this.junctionGroup = new JunctionGroup();
-        this.station = new Station();
+        this.controller = new ArrayList<Controller>();
+        this.junctions = new ArrayList<Junction>();
+        this.junctionGroups = new ArrayList<JunctionGroup>();
+        this.stations = new ArrayList<Station>();
     }
 
-    public OpenDRIVE(Road road, Header header, Controller controller, Junction junction, JunctionGroup junctionGroup,
-            Station station) {
-        this.road = road;
+    public OpenDRIVE(ArrayList<Road> roads, Header header, ArrayList<Controller> controller,
+            ArrayList<Junction> junctions,
+            ArrayList<JunctionGroup> junctionGroups,
+            ArrayList<Station> stations) {
+        this.roads = roads;
         this.header = header;
         this.controller = controller;
-        this.junction = junction;
-        this.junctionGroup = junctionGroup;
-        this.station = station;
+        this.junctions = junctions;
+        this.junctionGroups = junctionGroups;
+        this.stations = stations;
     }
 
-    public Road getRoad() {
-        return road;
+    public ArrayList<Road> getRoads() {
+        return roads;
     }
 
-    public void setRoad(Road road) {
-        this.road = road;
+    public void setRoads(ArrayList<Road> roads) {
+        this.roads = roads;
     }
 
     public Header getHeader() {
@@ -55,35 +59,35 @@ public class OpenDRIVE extends AbstractOpenDriveElement {
         this.header = header;
     }
 
-    public Controller getController() {
+    public ArrayList<Controller> getController() {
         return controller;
     }
 
-    public void setController(Controller controller) {
+    public void setController(ArrayList<Controller> controller) {
         this.controller = controller;
     }
 
-    public Junction getJunction() {
-        return junction;
+    public ArrayList<Junction> getJunctions() {
+        return junctions;
     }
 
-    public void setJunction(Junction junction) {
-        this.junction = junction;
+    public void setJunctions(ArrayList<Junction> junction) {
+        this.junctions = junctions;
     }
 
-    public JunctionGroup getJunctionGroup() {
-        return junctionGroup;
+    public ArrayList<JunctionGroup> getJunctionGroups() {
+        return junctionGroups;
     }
 
-    public void setJunctionGroup(JunctionGroup junctionGroup) {
-        this.junctionGroup = junctionGroup;
+    public void setJunctionGroup(ArrayList<JunctionGroup> junctionGroups) {
+        this.junctionGroups = junctionGroups;
     }
 
-    public Station getStation() {
-        return station;
+    public ArrayList<Station> getStations() {
+        return stations;
     }
 
-    public void setStation(Station station) {
-        this.station = station;
+    public void setStation(ArrayList<Station> station) {
+        this.stations = stations;
     }
 }
