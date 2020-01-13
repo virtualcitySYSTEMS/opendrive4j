@@ -5,6 +5,7 @@ import de.vcs.adapter.geometry.AbstractSTGeometryAdapter;
 import de.vcs.adapter.geometry.LineAdapter;
 import de.vcs.adapter.geometry.STHPositionAdapter;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
+import de.vcs.model.odr.geometry.Line;
 import de.vcs.model.odr.road.PlanView;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -32,10 +33,16 @@ public class PlanViewAdapter implements ObjectBuilder<PlanView> {
     public void buildChildObject(PlanView object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
-            switch (name.getLocalPart()) {
-                case "geometry":
-                    object.getOdrGeometries().add(reader.getObjectUsingBuilder(AbstractSTGeometryAdapter.class));
-                    break;
+            if (name.getLocalPart().equalsIgnoreCase("geometry")) {
+                reader.nextTag();
+                switch (reader.getName().getLocalPart()) {
+                    case "line":
+                        Line line = reader.getObjectUsingBuilder(LineAdapter.class);
+                        AbstractSTGeometryAdapter.setSuperAttributes(line, name, attributes, reader);
+                        AbstractSTGeometryAdapter.buildSuperChildObject(line, name, attributes, reader);
+                        object.getOdrGeometries().add(line);
+                        break;
+                }
             }
         }
     }
