@@ -14,12 +14,12 @@ import java.util.ArrayList;
  */
 public class RoadMark extends AbstractOpenDriveElement {
 
-    private RoadMarkType type;
-    private RoadMarkWeight weight;
-    private RoadMarkColor color;
+    private String type;
+    private String weight;
+    private String color;
     private String material;
     private double width;
-    private LaneChange laneChange;
+    private String laneChange;
     private double height;
     private ArrayList<GMLObject> gmlGeometries;
     private STTransform stTransform;
@@ -28,11 +28,16 @@ public class RoadMark extends AbstractOpenDriveElement {
     private ArrayList<AbstractODRGeometry> sways;
 
     public RoadMark() {
+        stTransform = new STTransform();
+        explicit = new ExplicitRoadMark();
+        sways = new ArrayList<AbstractODRGeometry>();
+        detailedType = new Type();
+        gmlGeometries = new ArrayList<GMLObject>();
     }
 
-    public RoadMark(RoadMarkType type, RoadMarkWeight weight, RoadMarkColor color, String material, double width,
-            LaneChange laneChange, double height, ArrayList<GMLObject> gmlGeometries,
-            STTransform stTransform, ExplicitRoadMark explicit, Type detailedType,
+    public RoadMark(String type, String weight, String color, String material, double width, String laneChange,
+            double height, ArrayList<GMLObject> gmlGeometries, STTransform stTransform,
+            ExplicitRoadMark explicit, Type detailedType,
             ArrayList<AbstractODRGeometry> sways) {
         this.type = type;
         this.weight = weight;
@@ -48,27 +53,27 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.sways = sways;
     }
 
-    public RoadMarkType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(RoadMarkType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public RoadMarkWeight getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(RoadMarkWeight weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public RoadMarkColor getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(RoadMarkColor color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -88,11 +93,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.width = width;
     }
 
-    public LaneChange getLaneChange() {
+    public String getLaneChange() {
         return laneChange;
     }
 
-    public void setLaneChange(LaneChange laneChange) {
+    public void setLaneChange(String laneChange) {
         this.laneChange = laneChange;
     }
 

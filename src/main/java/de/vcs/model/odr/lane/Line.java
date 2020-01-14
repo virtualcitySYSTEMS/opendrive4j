@@ -12,15 +12,17 @@ public class Line extends AbstractOpenDriveElement {
 
     private double length;
     private double space;
-    private RoadMarkRule rule;
+    private String rule;
     private double width;
-    private RoadMarkColor color;
+    private String color;
     private STTransform stTransform;
 
     public Line() {
+        stTransform = new STTransform();
     }
 
-    public Line(double length, double space, RoadMarkRule rule, double width, RoadMarkColor color, STTransform stTransform) {
+    public Line(double length, double space, String rule, double width, String color,
+            STTransform stTransform) {
         this.length = length;
         this.space = space;
         this.rule = rule;
@@ -45,11 +47,11 @@ public class Line extends AbstractOpenDriveElement {
         this.space = space;
     }
 
-    public RoadMarkRule getRule() {
+    public String getRule() {
         return rule;
     }
 
-    public void setRule(RoadMarkRule rule) {
+    public void setRule(String rule) {
         this.rule = rule;
     }
 
@@ -61,11 +63,11 @@ public class Line extends AbstractOpenDriveElement {
         this.width = width;
     }
 
-    public RoadMarkColor getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(RoadMarkColor color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

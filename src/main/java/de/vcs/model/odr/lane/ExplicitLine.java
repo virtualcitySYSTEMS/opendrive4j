@@ -11,18 +11,12 @@ import de.vcs.model.odr.core.AbstractOpenDriveElement;
 public class ExplicitLine extends AbstractOpenDriveElement {
 
     private double length;
-    private RoadMarkRule rule;
+    private String rule;
     private double width;
     private STTransform stTransform;
 
     public ExplicitLine() {
-    }
-
-    public ExplicitLine(double length, RoadMarkRule rule, double width, STTransform stTransform) {
-        this.length = length;
-        this.rule = rule;
-        this.width = width;
-        this.stTransform = stTransform;
+        stTransform = new STTransform();
     }
 
     public double getLength() {
@@ -33,11 +27,11 @@ public class ExplicitLine extends AbstractOpenDriveElement {
         this.length = length;
     }
 
-    public RoadMarkRule getRule() {
+    public String getRule() {
         return rule;
     }
 
-    public void setRule(RoadMarkRule rule) {
+    public void setRule(String rule) {
         this.rule = rule;
     }
 

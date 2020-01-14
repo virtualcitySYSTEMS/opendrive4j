@@ -14,13 +14,13 @@ import java.util.ArrayList;
 public class Lane extends AbstractOpenDriveElement {
 
     private int id;
-    private LaneType type;
+    private String type;
     private double level;
     private ArrayList<Material> materials;
     private ArrayList<Access> accesses;
     private ArrayList<Speed> speeds;
-    private int predecessorId;
-    private int successorId;
+    private ArrayList<Integer> predecessorIds;
+    private ArrayList<Integer> successorIds;
     private ArrayList<Rule> rules;
     private ArrayList<RoadMark> roadMarks;
     private ArrayList<Height> heights;
@@ -29,11 +29,23 @@ public class Lane extends AbstractOpenDriveElement {
     private ArrayList<Polynom> borders;
 
     public Lane() {
+        materials = new ArrayList<Material>();
+        accesses = new ArrayList<Access>();
+        speeds = new ArrayList<Speed>();
+        rules = new ArrayList<Rule>();
+        roadMarks = new ArrayList<RoadMark>();
+        heights = new ArrayList<Height>();
+        gmlGeometries = new ArrayList<GMLObject>();
+        widths = new ArrayList<Polynom>();
+        borders = new ArrayList<Polynom>();
+        predecessorIds = new ArrayList<Integer>();
+        successorIds = new ArrayList<Integer>();
     }
 
-    public Lane(int id, LaneType type, double level, ArrayList<Material> materials,
-            ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId, int successorId,
-            ArrayList<Rule> rules, ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
+    public Lane(int id, String type, double level, ArrayList<Material> materials,
+            ArrayList<Access> accesses, ArrayList<Speed> speeds, ArrayList<Integer> predecessorIds,
+            ArrayList<Integer> successorIds, ArrayList<Rule> rules,
+            ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
             ArrayList<GMLObject> gmlGeometries, ArrayList<Polynom> widths,
             ArrayList<Polynom> borders) {
         this.id = id;
@@ -42,8 +54,8 @@ public class Lane extends AbstractOpenDriveElement {
         this.materials = materials;
         this.accesses = accesses;
         this.speeds = speeds;
-        this.predecessorId = predecessorId;
-        this.successorId = successorId;
+        this.predecessorIds = predecessorIds;
+        this.successorIds = successorIds;
         this.rules = rules;
         this.roadMarks = roadMarks;
         this.heights = heights;
@@ -60,11 +72,11 @@ public class Lane extends AbstractOpenDriveElement {
         this.id = id;
     }
 
-    public LaneType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(LaneType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -100,20 +112,20 @@ public class Lane extends AbstractOpenDriveElement {
         this.speeds = speeds;
     }
 
-    public int getPredecessorId() {
-        return predecessorId;
+    public ArrayList<Integer> getPredecessorIds() {
+        return predecessorIds;
     }
 
-    public void setPredecessorId(int predecessorId) {
-        this.predecessorId = predecessorId;
+    public void setPredecessorIds(ArrayList<Integer> predecessorIds) {
+        this.predecessorIds = predecessorIds;
     }
 
-    public int getSuccessorId() {
-        return successorId;
+    public ArrayList<Integer> getSuccessorIds() {
+        return successorIds;
     }
 
-    public void setSuccessorId(int successorId) {
-        this.successorId = successorId;
+    public void setSuccessorIds(ArrayList<Integer> successorIds) {
+        this.successorIds = successorIds;
     }
 
     public ArrayList<Rule> getRules() {

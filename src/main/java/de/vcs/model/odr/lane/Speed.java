@@ -15,6 +15,7 @@ public class Speed extends AbstractOpenDriveElement {
     private STTransform stTransform;
 
     public Speed() {
+        stTransform = new STTransform();
     }
 
     public Speed(double max, String unit, STTransform stTransform) {

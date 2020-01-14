@@ -1,7 +1,6 @@
 package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 import java.util.ArrayList;
 
@@ -12,12 +11,21 @@ import java.util.ArrayList;
  */
 public class ExplicitRoadMark extends AbstractOpenDriveElement {
 
-    public ArrayList<ExplicitLine> lines;
+    private ArrayList<ExplicitLine> lines;
 
     public ExplicitRoadMark() {
+        lines = new ArrayList<ExplicitLine>();
     }
 
     public ExplicitRoadMark(ArrayList<ExplicitLine> lines) {
+        this.lines = lines;
+    }
+
+    public ArrayList<ExplicitLine> getLines() {
+        return lines;
+    }
+
+    public void setLines(ArrayList<ExplicitLine> lines) {
         this.lines = lines;
     }
 }

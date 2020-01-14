@@ -16,6 +16,7 @@ public class Type extends AbstractOpenDriveElement {
     public ArrayList<Line> lines;
 
     public Type() {
+        lines = new ArrayList<Line>();
     }
 
     public Type(String name, double width, ArrayList<Line> lines) {

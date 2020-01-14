@@ -16,6 +16,7 @@ public class Material extends AbstractOpenDriveElement {
     private STTransform stTransform;
 
     public Material() {
+        stTransform = new STTransform();
     }
 
     public Material(String surface, double friction, double roughness, STTransform stTransform) {

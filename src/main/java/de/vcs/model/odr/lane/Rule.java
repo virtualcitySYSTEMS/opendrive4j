@@ -14,6 +14,7 @@ public class Rule extends AbstractOpenDriveElement {
     private STTransform stTransform;
 
     public Rule() {
+        stTransform = new STTransform();
     }
 
     public Rule(String value, STTransform stTransform) {

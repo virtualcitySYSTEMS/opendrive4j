@@ -10,32 +10,33 @@ import de.vcs.model.odr.geometry.STTransform;
  */
 public class Access extends AbstractOpenDriveElement {
 
-    private AccessRule rule;
-    private AccessRestriction restriction;
+    private String rule;
+    private String restriction;
     private STTransform stTransform;
 
     public Access() {
+        stTransform = new STTransform();
     }
 
-    public Access(AccessRule rule, AccessRestriction restriction, STTransform stTransform) {
+    public Access(String rule, String restriction, STTransform stTransform) {
         this.rule = rule;
         this.restriction = restriction;
         this.stTransform = stTransform;
     }
 
-    public AccessRule getRule() {
+    public String getRule() {
         return rule;
     }
 
-    public void setRule(AccessRule rule) {
+    public void setRule(String rule) {
         this.rule = rule;
     }
 
-    public AccessRestriction getRestriction() {
+    public String getRestriction() {
         return restriction;
     }
 
-    public void setRestriction(AccessRestriction restriction) {
+    public void setRestriction(String restriction) {
         this.restriction = restriction;
     }
 
