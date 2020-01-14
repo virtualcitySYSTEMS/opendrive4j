@@ -1,5 +1,6 @@
 package de.vcs.adapter.lane;
 
+import de.vcs.adapter.geometry.PolynomAdapter;
 import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.model.odr.lane.Lane;
 import de.vcs.model.odr.lane.LaneType;
@@ -36,5 +37,32 @@ public class LaneAdapter implements ObjectBuilder<Lane> {
     @Override
     public void buildChildObject(Lane object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
+        if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
+            switch (name.getLocalPart()) {
+                case "material":
+                    object.getMaterials().add(reader.getObjectUsingBuilder(MaterialAdaper.class));
+                    break;
+                case "speed":
+                    object.getSpeeds().add(reader.getObjectUsingBuilder(SpeedAdapter.class));
+                    break;
+                case "access":
+                    object.getAccesses().add(reader.getObjectUsingBuilder(AccessAdapter.class));
+                    break;
+                case "roadMark":
+                    object.getRoadMarks().add(reader.getObjectUsingBuilder(RoadMarkAdapter.class));
+                    break;
+                case "rule":
+                    object.getRules().add(reader.getObjectUsingBuilder(RuleAdapter.class));
+                    break;
+                case "height":
+                    object.getHeights().add(reader.getObjectUsingBuilder(HeightAdapter.class));
+                    break;
+                case "width":
+                    object.getWidths().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    break;
+                case "border":
+                    object.getBorders().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+            }
+        }
     }
 }

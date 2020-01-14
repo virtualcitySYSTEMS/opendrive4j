@@ -16,6 +16,8 @@ public class Lanes extends AbstractOpenDriveElement {
     private ArrayList<LaneSection> laneSections;
 
     public Lanes() {
+        laneOffsets = new ArrayList<Polynom>();
+        laneSections = new ArrayList<LaneSection>();
     }
 
     public Lanes(ArrayList<Polynom> laneOffsets, ArrayList<LaneSection> laneSections) {

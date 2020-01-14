@@ -1,10 +1,7 @@
 package de.vcs.test;
 
 import de.vcs.model.odr.core.OpenDRIVE;
-import de.vcs.model.odr.geometry.Line;
 import de.vcs.model.odr.road.Road;
-import de.vcs.test.model.Eintrag;
-import de.vcs.test.model.Verzeichnis;
 import org.xmlobjects.XMLObjects;
 import org.xmlobjects.stream.XMLReader;
 import org.xmlobjects.stream.XMLReaderFactory;
@@ -14,7 +11,6 @@ import java.io.File;
 public class MainTestODR {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("----------------------------------------");
         XMLObjects xmlObjects = XMLObjects.newInstance();
         XMLReaderFactory factory = XMLReaderFactory.newInstance(xmlObjects);
         OpenDRIVE odr;
@@ -24,12 +20,8 @@ public class MainTestODR {
         }
         System.out.println(odr.getHeader().getRevMajor());
         for (Road r : odr.getRoads()) {
-            System.out.println("ID: " + r.getId());
-            System.out.println("Length: " + r.getLength());
-            System.out.println("PlanView0: [ l:" + ((Line) r.getPlanView().getOdrGeometries().get(0)).getLength() +
-                    ", hdg: " + ((Line) r.getPlanView().getOdrGeometries().get(0)).getStTransform().getHdg() + " ]");
-            System.out.println("++++++");
+            r.getLanes().getLaneSections()
+                    .forEach(s -> s.getCenterLanes().forEach(l -> System.out.println(l.getType())));
         }
-        System.out.println("----------------------------------------");
     }
 }

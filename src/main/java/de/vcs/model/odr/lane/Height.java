@@ -15,6 +15,7 @@ public class Height extends AbstractOpenDriveElement {
     private STTransform stTransform;
 
     public Height() {
+        stTransform = new STTransform();
     }
 
     public Height(double inner, double outer, STTransform stTransform) {
