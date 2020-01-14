@@ -26,7 +26,9 @@ public class MainTestODR {
         for (Road r : odr.getRoads()) {
             System.out.println("ID: " + r.getId());
             System.out.println("Length: " + r.getLength());
-            // System.out.println((Line) r.getPlanView().getOdrGeometries().get(0).getLinearReference());
+            System.out.println("PlanView0: [ l:" + ((Line) r.getPlanView().getOdrGeometries().get(0)).getLength() +
+                    ", hdg: " + ((Line) r.getPlanView().getOdrGeometries().get(0)).getStTransform().getHdg() + " ]");
+            System.out.println("++++++");
         }
         System.out.println("----------------------------------------");
     }

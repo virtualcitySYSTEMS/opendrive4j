@@ -1,9 +1,11 @@
 package de.vcs.adapter.geometry;
 
 import de.vcs.model.odr.geometry.AbstractSTGeometry;
+import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.gml.adapter.geometry.primitives.PointAdapter;
+import org.xmlobjects.gml.model.geometry.DirectPosition;
 import org.xmlobjects.stream.XMLReadException;
 import org.xmlobjects.stream.XMLReader;
 import org.xmlobjects.xml.Attributes;
@@ -16,6 +18,12 @@ public abstract class AbstractSTGeometryAdapter {
             XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         attributes.getValue("length").ifDouble(object::setLength);
+        // odr
+        attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
+        //TODO
+        // attributes.getValue("x").ifDouble(object.getInertialReference()::setPos);
+        // attributes.getValue("y")
+        attributes.getValue("hdg").ifDouble(object.getStTransform()::setHdg);
     }
 
     public static void buildSuperChildObject(AbstractSTGeometry object, QName name, Attributes attributes,
@@ -28,6 +36,9 @@ public abstract class AbstractSTGeometryAdapter {
                     break;
                 case "inertialReference":
                     object.setInertialReference(reader.getObjectUsingBuilder(PointAdapter.class));
+                    break;
+                case "stTransform":
+                    object.setStTransform(reader.getObjectUsingBuilder(STTransformAdapter.class));
                     break;
             }
         }
