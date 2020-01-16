@@ -1,6 +1,7 @@
 package de.vcs.adapter.road;
 
 import de.vcs.adapter.helper.TextContentChecker;
+import de.vcs.adapter.lane.LanesAdapter;
 import de.vcs.adapter.railroad.RailroadAdapter;
 import de.vcs.adapter.signal.SignalsAdapter;
 import de.vcs.model.odr.road.*;
@@ -17,8 +18,11 @@ import org.xmlobjects.gml.model.geometry.AbstractGeometry;
 import org.xmlobjects.stream.XMLReadException;
 import org.xmlobjects.stream.XMLReader;
 import org.xmlobjects.xml.Attributes;
+import sun.awt.image.ImageWatched;
 
 import javax.xml.namespace.QName;
+
+import static org.xmlobjects.stream.EventType.START_ELEMENT;
 
 @XMLElements({
         @XMLElement(name = "road",
@@ -50,12 +54,28 @@ public class RoadAdapter implements ObjectBuilder<Road> {
                     object.getType().add(reader.getObjectUsingBuilder(TypeAdapter.class));
                     break;
                 case "link":
-                    // TODO t_road_link
-                    //  object.setPredecessorId(reader.getObjectUsingBuilder(.class));
-                    //  object.setSuccessorId(reader.getObjectUsingBuilder(.class));
+                    boolean isLinkChild = true;
+                    while (isLinkChild) {
+                        if (reader.nextTag().equals(START_ELEMENT)) {
+                            Attributes childAttributes = reader.getAttributes();
+                            switch (reader.getName().getLocalPart()) {
+                                case "predecessor":
+                                    childAttributes.getValue("elementId").ifPresent(object::setPredecessorId);
+                                    reader.nextTag();   // close tag
+                                    break;
+                                case "successor":
+                                    childAttributes.getValue("elementId").ifPresent(object::setSuccessorId);
+                                    reader.nextTag();   // close tag
+                                    break;
+                                default:
+                                    isLinkChild = false;
+                                    break;
+                            }
+                        }
+                    }
                     break;
                 case "lanes":
-                    // object.getLanes().add(reader.getObjectUsingBuilder(LanesAdapter.class));
+                    object.setLanes(reader.getObjectUsingBuilder(LanesAdapter.class));
                     break;
                 case "objects":
                     // TODO which object child class shall be initialized

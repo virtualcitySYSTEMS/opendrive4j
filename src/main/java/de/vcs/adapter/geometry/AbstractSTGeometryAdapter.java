@@ -6,11 +6,13 @@ import de.vcs.util.ODRConstants;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.gml.adapter.geometry.primitives.PointAdapter;
 import org.xmlobjects.gml.model.geometry.DirectPosition;
+import org.xmlobjects.gml.model.geometry.primitives.Point;
 import org.xmlobjects.stream.XMLReadException;
 import org.xmlobjects.stream.XMLReader;
 import org.xmlobjects.xml.Attributes;
 
 import javax.xml.namespace.QName;
+import java.util.ArrayList;
 
 public abstract class AbstractSTGeometryAdapter {
 
@@ -20,9 +22,10 @@ public abstract class AbstractSTGeometryAdapter {
         attributes.getValue("length").ifDouble(object::setLength);
         // odr
         attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
-        //TODO
-        // attributes.getValue("x").ifDouble(object.getInertialReference()::setPos);
-        // attributes.getValue("y")
+        ArrayList<Double> xyList = new ArrayList<>();
+        attributes.getValue("x").ifDouble(xyList::add);
+        attributes.getValue("y").ifDouble(xyList::add);
+        object.setInertialReference(new Point(new DirectPosition(xyList)));
         attributes.getValue("hdg").ifDouble(object.getStTransform()::setHdg);
     }
 

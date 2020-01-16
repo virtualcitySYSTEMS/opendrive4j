@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OpenDRIVE xmlns="http://www.asam.de/ODR/16/">
-    <header revMajor="1" revMinor="1" name="" version="1.00" date="Thu Dec 10 10:35:57 2009"
+    <header revMajor="1" revMinor="1" name="Crossing8Course" version="1.00" date="Thu Dec 10 10:35:57 2009"
             north="0.0000000000000000e+00" south="0.0000000000000000e+00" east="0.0000000000000000e+00"
             west="0.0000000000000000e+00" maxRoad="517" maxJunc="2" maxPrg="0">
     </header>

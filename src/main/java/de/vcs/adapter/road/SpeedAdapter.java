@@ -30,6 +30,8 @@ public class SpeedAdapter implements ObjectBuilder<Speed> {
     public void initializeObject(Speed object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         TextContentChecker.check(attributes.getValue("max"), MaxSpeed.class, object::setMax);
+        attributes.getValue("max").ifDouble(object::setMaxValue);
         TextContentChecker.check(attributes.getValue("unit"), UnitSpeed.class, object::setMax);
+        attributes.getValue("sOffset").ifDouble(object.getStTransform()::setsOffset);
     }
 }

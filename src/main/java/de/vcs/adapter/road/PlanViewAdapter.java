@@ -1,11 +1,7 @@
 package de.vcs.adapter.road;
 
-import de.vcs.adapter.geometry.AbstractODRGeometryAdapter;
-import de.vcs.adapter.geometry.AbstractSTGeometryAdapter;
-import de.vcs.adapter.geometry.LineAdapter;
-import de.vcs.adapter.geometry.STHPositionAdapter;
-import de.vcs.model.odr.geometry.AbstractODRGeometry;
-import de.vcs.model.odr.geometry.Line;
+import de.vcs.adapter.geometry.*;
+import de.vcs.model.odr.geometry.*;
 import de.vcs.model.odr.road.PlanView;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -41,6 +37,30 @@ public class PlanViewAdapter implements ObjectBuilder<PlanView> {
                         AbstractSTGeometryAdapter.setSuperAttributes(line, name, attributes, reader);
                         AbstractSTGeometryAdapter.buildSuperChildObject(line, name, attributes, reader);
                         object.getOdrGeometries().add(line);
+                        break;
+                    case "arc":
+                        Arc arc = reader.getObjectUsingBuilder(ArcAdapter.class);
+                        AbstractSTGeometryAdapter.setSuperAttributes(arc, name, attributes, reader);
+                        AbstractSTGeometryAdapter.buildSuperChildObject(arc, name, attributes, reader);
+                        object.getOdrGeometries().add(arc);
+                        break;
+                    case "spiral":
+                        Spiral spiral = reader.getObjectUsingBuilder(SpiralAdapter.class);
+                        AbstractSTGeometryAdapter.setSuperAttributes(spiral, name, attributes, reader);
+                        AbstractSTGeometryAdapter.buildSuperChildObject(spiral, name, attributes, reader);
+                        object.getOdrGeometries().add(spiral);
+                        break;
+                    case "poly3":
+                        Polynom poly = reader.getObjectUsingBuilder(PolynomAdapter.class);
+                        AbstractSTGeometryAdapter.setSuperAttributes(poly, name, attributes, reader);
+                        AbstractSTGeometryAdapter.buildSuperChildObject(poly, name, attributes, reader);
+                        object.getOdrGeometries().add(poly);
+                        break;
+                    case "paramPoly3":
+                        ParamPolynom paramPoly = reader.getObjectUsingBuilder(ParamPolynomAdapter.class);
+                        AbstractSTGeometryAdapter.setSuperAttributes(paramPoly, name, attributes, reader);
+                        AbstractSTGeometryAdapter.buildSuperChildObject(paramPoly, name, attributes, reader);
+                        object.getOdrGeometries().add(paramPoly);
                         break;
                 }
             }
