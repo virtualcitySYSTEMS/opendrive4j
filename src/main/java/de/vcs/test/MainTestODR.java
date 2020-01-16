@@ -1,6 +1,9 @@
 package de.vcs.test;
 
 import de.vcs.model.odr.core.OpenDRIVE;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
+import de.vcs.model.odr.geometry.AbstractSTGeometry;
+import de.vcs.model.odr.geometry.Line;
 import de.vcs.model.odr.road.Road;
 import org.xmlobjects.XMLObjects;
 import org.xmlobjects.stream.XMLReader;
@@ -18,10 +21,28 @@ public class MainTestODR {
                 "src/main/resources/Crossing8Course.xodr"))) {
             odr = xmlObjects.fromXML(reader, OpenDRIVE.class);
         }
-        System.out.println(odr.getHeader().getRevMajor());
+        System.out.println("header name: " + odr.getHeader().getName());
         for (Road r : odr.getRoads()) {
+            System.out.println("===== road id: " + r.getId() + " =====");
+            System.out.println(" + preID: " + r.getPredecessorId());
+            System.out.println(" + sucID: " + r.getSuccessorId());
+            System.out.println(" + type: " + r.getType().get(0).getType());
+            System.out.println(" -- planview -- ");
+            for (AbstractODRGeometry geom : r.getPlanView().getOdrGeometries()) {
+                AbstractSTGeometry g = (AbstractSTGeometry) geom;
+                System.out.println(g.getClass().getName() + " s: " + g.getLinearReference().getS() +
+                        " xy: " + g.getInertialReference().getPos().getValue());
+            }
             r.getLanes().getLaneSections()
-                    .forEach(s -> s.getCenterLanes().forEach(l -> System.out.println(l.getType())));
+                    .forEach(ls -> {
+                        System.out.println("-- laneSection: " + ls.getLinearReference().getS() + " --");
+                        ls.getCenterLanes()
+                                .forEach(l -> System.out.println("center id: " + l.getId() + " type: " + l.getType()));
+                        ls.getRightLanes()
+                                .forEach(l -> System.out.println("right id: " + l.getId() + " type: " + l.getType()));
+                        ls.getLeftLanes()
+                                .forEach(l -> System.out.println("left id: " + l.getId() + " type: " + l.getType()));
+                    });
         }
     }
 }

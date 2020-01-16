@@ -2,6 +2,7 @@ package de.vcs.adapter.lane;
 
 import de.vcs.adapter.geometry.PolynomAdapter;
 import de.vcs.adapter.helper.TextContentChecker;
+import de.vcs.adapter.road.SpeedAdapter;
 import de.vcs.model.odr.lane.Lane;
 import de.vcs.model.odr.lane.LaneType;
 import de.vcs.util.ODRConstants;

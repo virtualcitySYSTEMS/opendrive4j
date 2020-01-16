@@ -2,6 +2,7 @@ package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.Polynom;
+import de.vcs.model.odr.road.Speed;
 import org.xmlobjects.gml.model.GMLObject;
 
 import java.util.ArrayList;

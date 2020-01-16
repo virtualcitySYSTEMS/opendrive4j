@@ -11,21 +11,21 @@ import java.util.ArrayList;
  */
 public class ExplicitRoadMark extends AbstractOpenDriveElement {
 
-    private ArrayList<ExplicitLine> lines;
+    private ArrayList<Line> lines;
 
     public ExplicitRoadMark() {
-        lines = new ArrayList<ExplicitLine>();
+        lines = new ArrayList<Line>();
     }
 
-    public ExplicitRoadMark(ArrayList<ExplicitLine> lines) {
+    public ExplicitRoadMark(ArrayList<Line> lines) {
         this.lines = lines;
     }
 
-    public ArrayList<ExplicitLine> getLines() {
+    public ArrayList<Line> getLines() {
         return lines;
     }
 
-    public void setLines(ArrayList<ExplicitLine> lines) {
+    public void setLines(ArrayList<Line> lines) {
         this.lines = lines;
     }
 }

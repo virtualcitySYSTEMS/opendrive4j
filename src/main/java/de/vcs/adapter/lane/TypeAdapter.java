@@ -13,7 +13,7 @@ import org.xmlobjects.xml.Attributes;
 import javax.xml.namespace.QName;
 
 @XMLElements({
-        @XMLElement(name = "type",
+        @XMLElement(name = "lane/type",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
 public class TypeAdapter implements ObjectBuilder<Type> {

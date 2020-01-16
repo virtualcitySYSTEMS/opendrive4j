@@ -28,8 +28,8 @@ public class ExplicitRoadMarkAdapter implements ObjectBuilder<ExplicitRoadMark> 
             throws ObjectBuildException, XMLReadException {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
-                case "lines":
-                    object.getLines().add(reader.getObjectUsingBuilder(ExplicitLineAdapter.class));
+                case "line":
+                    object.getLines().add(reader.getObjectUsingBuilder(LineAdapter.class));
             }
         }
     }
