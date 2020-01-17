@@ -20,8 +20,8 @@ public class Lane extends AbstractOpenDriveElement {
     private ArrayList<Material> materials;
     private ArrayList<Access> accesses;
     private ArrayList<Speed> speeds;
-    private ArrayList<Integer> predecessorIds;
-    private ArrayList<Integer> successorIds;
+    private int predecessorId;
+    private int successorId;
     private ArrayList<Rule> rules;
     private ArrayList<RoadMark> roadMarks;
     private ArrayList<Height> heights;
@@ -39,13 +39,11 @@ public class Lane extends AbstractOpenDriveElement {
         gmlGeometries = new ArrayList<GMLObject>();
         widths = new ArrayList<Polynom>();
         borders = new ArrayList<Polynom>();
-        predecessorIds = new ArrayList<Integer>();
-        successorIds = new ArrayList<Integer>();
     }
 
     public Lane(int id, String type, double level, ArrayList<Material> materials,
-            ArrayList<Access> accesses, ArrayList<Speed> speeds, ArrayList<Integer> predecessorIds,
-            ArrayList<Integer> successorIds, ArrayList<Rule> rules,
+            ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId,
+            int successorId, ArrayList<Rule> rules,
             ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
             ArrayList<GMLObject> gmlGeometries, ArrayList<Polynom> widths,
             ArrayList<Polynom> borders) {
@@ -55,8 +53,8 @@ public class Lane extends AbstractOpenDriveElement {
         this.materials = materials;
         this.accesses = accesses;
         this.speeds = speeds;
-        this.predecessorIds = predecessorIds;
-        this.successorIds = successorIds;
+        this.predecessorId = predecessorId;
+        this.successorId = successorId;
         this.rules = rules;
         this.roadMarks = roadMarks;
         this.heights = heights;
@@ -113,20 +111,20 @@ public class Lane extends AbstractOpenDriveElement {
         this.speeds = speeds;
     }
 
-    public ArrayList<Integer> getPredecessorIds() {
-        return predecessorIds;
+    public int getPredecessorId() {
+        return predecessorId;
     }
 
-    public void setPredecessorIds(ArrayList<Integer> predecessorIds) {
-        this.predecessorIds = predecessorIds;
+    public void setPredecessorId(int predecessorId) {
+        this.predecessorId = predecessorId;
     }
 
-    public ArrayList<Integer> getSuccessorIds() {
-        return successorIds;
+    public int getSuccessorId() {
+        return successorId;
     }
 
-    public void setSuccessorIds(ArrayList<Integer> successorIds) {
-        this.successorIds = successorIds;
+    public void setSuccessorId(int successorId) {
+        this.successorId = successorId;
     }
 
     public ArrayList<Rule> getRules() {

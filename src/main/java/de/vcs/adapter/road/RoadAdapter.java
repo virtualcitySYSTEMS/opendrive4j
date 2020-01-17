@@ -54,8 +54,8 @@ public class RoadAdapter implements ObjectBuilder<Road> {
                     object.getType().add(reader.getObjectUsingBuilder(TypeAdapter.class));
                     break;
                 case "link":
-                    boolean isLinkChild = true;
-                    while (isLinkChild) {
+                    int xmlDepth = reader.getDepth();
+                    while (reader.getDepth() >= xmlDepth) {
                         if (reader.nextTag().equals(START_ELEMENT)) {
                             Attributes childAttributes = reader.getAttributes();
                             switch (reader.getName().getLocalPart()) {
@@ -66,9 +66,6 @@ public class RoadAdapter implements ObjectBuilder<Road> {
                                 case "successor":
                                     childAttributes.getValue("elementId").ifPresent(object::setSuccessorId);
                                     reader.nextTag();   // close tag
-                                    break;
-                                default:
-                                    isLinkChild = false;
                                     break;
                             }
                         }

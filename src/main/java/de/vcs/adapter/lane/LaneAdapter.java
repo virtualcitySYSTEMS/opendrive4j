@@ -16,6 +16,8 @@ import org.xmlobjects.xml.Attributes;
 
 import javax.xml.namespace.QName;
 
+import static org.xmlobjects.stream.EventType.START_ELEMENT;
+
 @XMLElements({
         @XMLElement(name = "lane",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
@@ -40,6 +42,24 @@ public class LaneAdapter implements ObjectBuilder<Lane> {
             throws ObjectBuildException, XMLReadException {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
+                case "link":
+                    int xmlDepth = reader.getDepth();
+                    while (reader.getDepth() >= xmlDepth) {
+                        if (reader.nextTag().equals(START_ELEMENT)) {
+                            Attributes childAttributes = reader.getAttributes();
+                            switch (reader.getName().getLocalPart()) {
+                                case "predecessor":
+                                    childAttributes.getValue("id").ifInteger(object::setPredecessorId);
+                                    reader.nextTag();   // close tag
+                                    break;
+                                case "successor":
+                                    childAttributes.getValue("id").ifInteger(object::setSuccessorId);
+                                    reader.nextTag();   // close tag
+                                    break;
+                            }
+                        }
+                    }
+                    break;
                 case "material":
                     object.getMaterials().add(reader.getObjectUsingBuilder(MaterialAdaper.class));
                     break;

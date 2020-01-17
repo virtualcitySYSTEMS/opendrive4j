@@ -28,21 +28,34 @@ public class LaneSectionAdapter implements ObjectBuilder<LaneSection> {
     public void buildChildObject(LaneSection object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
+            int xmlDepth = reader.getDepth();
             switch (name.getLocalPart()) {
                 case "center":
-                    if (reader.nextTag().equals(EventType.START_ELEMENT)) {
-                        object.getCenterLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
-                    }
+                    do {
+                        if (reader.nextTag().equals(EventType.START_ELEMENT)) {
+                            if (reader.getName().getLocalPart().equalsIgnoreCase("lane")) {
+                                object.getCenterLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
+                            }
+                        }
+                    } while (reader.getDepth() >= xmlDepth);
                     break;
                 case "right":
-                    if (reader.nextTag().equals(EventType.START_ELEMENT)) {
-                        object.getRightLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
-                    }
+                    do {
+                        if (reader.nextTag().equals(EventType.START_ELEMENT)) {
+                            if (reader.getName().getLocalPart().equalsIgnoreCase("lane")) {
+                                object.getRightLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
+                            }
+                        }
+                    } while (reader.getDepth() >= xmlDepth);
                     break;
                 case "left":
-                    if (reader.nextTag().equals(EventType.START_ELEMENT)) {
-                        object.getLeftLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
-                    }
+                    do {
+                        if (reader.nextTag().equals(EventType.START_ELEMENT)) {
+                            if (reader.getName().getLocalPart().equalsIgnoreCase("lane")) {
+                                object.getLeftLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
+                            }
+                        }
+                    } while (reader.getDepth() >= xmlDepth);
                     break;
             }
         }
