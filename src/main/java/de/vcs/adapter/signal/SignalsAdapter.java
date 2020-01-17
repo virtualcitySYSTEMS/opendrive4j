@@ -1,5 +1,6 @@
 package de.vcs.adapter.signal;
 
+import de.vcs.model.odr.signal.SignalReference;
 import de.vcs.model.odr.signal.Signals;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -24,12 +25,17 @@ public class SignalsAdapter implements ObjectBuilder<Signals> {
     }
 
     @Override
-    public void initializeObject(Signals object, QName name, Attributes attributes, XMLReader reader)
-            throws ObjectBuildException, XMLReadException {
-    }
-
-    @Override
     public void buildChildObject(Signals object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
+        if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
+            switch (name.getLocalPart()) {
+                case "signal":
+                    object.getSignals().add(reader.getObjectUsingBuilder(SignalAdapter.class));
+                    break;
+                case "signalReference":
+                    object.getSignalReferences().add(reader.getObjectUsingBuilder(SignalReferenceAdapter.class));
+                    break;
+            }
+        }
     }
 }

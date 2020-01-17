@@ -36,13 +36,20 @@ public class MainTestODR {
             r.getLanes().getLaneSections()
                     .forEach(ls -> {
                         System.out.println("-- laneSection: " + ls.getLinearReference().getS() + " --");
+                        ls.getLeftLanes()
+                                .forEach(l -> System.out.println("left id: " + l.getId() + " type: " + l.getType() +
+                                        " width: " + l.getWidths().get(0).getStTransform().getsOffset() +
+                                        " preID: " + l.getPredecessorId() + " sucID: " + l.getSuccessorId()));
                         ls.getCenterLanes()
                                 .forEach(l -> System.out.println("center id: " + l.getId() + " type: " + l.getType()));
                         ls.getRightLanes()
-                                .forEach(l -> System.out.println("right id: " + l.getId() + " type: " + l.getType()));
-                        ls.getLeftLanes()
-                                .forEach(l -> System.out.println("left id: " + l.getId() + " type: " + l.getType()));
+                                .forEach(l -> System.out.println("right id: " + l.getId() + " type: " + l.getType() +
+                                        " width: " + l.getWidths().get(0).getStTransform().getsOffset() +
+                                        " preID: " + l.getPredecessorId() + " sucID: " + l.getSuccessorId()));
                     });
+            System.out.println("-- signals --");
+            r.getSignals().getSignals()
+                    .forEach(sig -> System.out.println("signalId: " + sig.getId() + " type: " + sig.getType()));
         }
     }
 }
