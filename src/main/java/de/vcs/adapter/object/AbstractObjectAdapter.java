@@ -43,6 +43,7 @@ public abstract class AbstractObjectAdapter implements ObjectBuilder<AbstractObj
             throws ObjectBuildException, XMLReadException {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
+                case "outline":
                 case "outlines":
                     object.getOutlines().add(reader.getObjectUsingBuilder(OutlineAdapter.class));
                     break;
