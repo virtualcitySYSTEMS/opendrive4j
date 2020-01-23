@@ -22,6 +22,7 @@ public class LaneSectionAdapter implements ObjectBuilder<LaneSection> {
     public void initializeObject(LaneSection object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         attributes.getValue("singleSide").ifBoolean(object::setSingleSide);
+        attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
     }
 
     @Override

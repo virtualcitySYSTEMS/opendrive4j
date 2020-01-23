@@ -22,11 +22,12 @@ public abstract class AbstractSTGeometryAdapter {
         attributes.getValue("length").ifDouble(object::setLength);
         // odr
         attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
+        attributes.getValue("sOffset").ifDouble(object.getStTransform()::setsOffset);
         ArrayList<Double> xyList = new ArrayList<>();
         attributes.getValue("x").ifDouble(xyList::add);
         attributes.getValue("y").ifDouble(xyList::add);
         object.setInertialReference(new Point(new DirectPosition(xyList)));
-        attributes.getValue("hdg").ifDouble(object.getStTransform()::setHdg);
+        attributes.getValue("hdg").ifDouble(object.getIntertialTransform()::setHdg);
     }
 
     public static void buildSuperChildObject(AbstractSTGeometry object, QName name, Attributes attributes,
