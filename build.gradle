@@ -1,10 +1,13 @@
 plugins {
-    id 'java'
+    id 'java-library'
     id 'com.jfrog.bintray' version '1.8.4'
+    id "com.jfrog.artifactory" version "4.13.0"
+    id 'maven-publish'
 }
 
-group 'de.vcs'
-version '0.1.0'
+group 'max'
+version '0.1.0-SNAPSHOT'
+description 'A Java mapping for ASAM e.V. OpenDRIVE standard'
 
 sourceCompatibility = 1.8
 
@@ -13,10 +16,35 @@ repositories {
     jcenter()
 }
 
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'org.xml-objects:xml-objects:0.3.0'
-    implementation files('libs/gml-objects-0.3.0.jar')
+    api 'org.xmlobjects:xml-objects:0.9.0'
+    api 'org.xmlobjects.gml:gml-objects:0.9.0'
     annotationProcessor 'org.xml-objects:xml-objects:0.3.0'
 }
+
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"
+    publish {
+        repository {
+            repoKey = 'libs-snapshot'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+
+        }
+        defaults {
+            publications('mavenJava')
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+
