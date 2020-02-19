@@ -5,7 +5,7 @@ plugins {
     id 'maven-publish'
 }
 
-group 'max'
+group 'odr'
 version '0.1.0-SNAPSHOT'
 description 'A Java mapping for ASAM e.V. OpenDRIVE standard'
 
