@@ -7,7 +7,7 @@ import org.xmlobjects.gml.model.geometry.primitives.Point;
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public abstract class AbstractSTGeometry extends AbstractODRGeometry {
+public abstract class AbstractSTGeometry extends AbstractODRGeometry implements Comparable<AbstractSTGeometry> {
 
     private double length;
     private Point inertialReference;
@@ -40,5 +40,11 @@ public abstract class AbstractSTGeometry extends AbstractODRGeometry {
 
     public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
+    }
+
+    @Override
+    public int compareTo(AbstractSTGeometry o) {
+        return linearReference.getS() < o.getLinearReference().getS() ? -1 :
+                linearReference.getS() > o.getLinearReference().getS() ? 1 : 0;
     }
 }
