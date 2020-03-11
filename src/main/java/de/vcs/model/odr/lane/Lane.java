@@ -6,6 +6,7 @@ import de.vcs.model.odr.road.Speed;
 import org.xmlobjects.gml.model.GMLObject;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author rruhdorfer
@@ -26,8 +27,8 @@ public class Lane extends AbstractOpenDriveElement {
     private ArrayList<RoadMark> roadMarks;
     private ArrayList<Height> heights;
     private ArrayList<GMLObject> gmlGeometries;
-    private ArrayList<Polynom> widths;
-    private ArrayList<Polynom> borders;
+    private TreeMap<Double, Polynom> widths;
+    private TreeMap<Double, Polynom> borders;
 
     public Lane() {
         materials = new ArrayList<Material>();
@@ -37,16 +38,16 @@ public class Lane extends AbstractOpenDriveElement {
         roadMarks = new ArrayList<RoadMark>();
         heights = new ArrayList<Height>();
         gmlGeometries = new ArrayList<GMLObject>();
-        widths = new ArrayList<Polynom>();
-        borders = new ArrayList<Polynom>();
+        widths = new TreeMap<Double, Polynom>();
+        borders = new TreeMap<Double, Polynom>();
     }
 
     public Lane(int id, String type, double level, ArrayList<Material> materials,
             ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId,
             int successorId, ArrayList<Rule> rules,
             ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
-            ArrayList<GMLObject> gmlGeometries, ArrayList<Polynom> widths,
-            ArrayList<Polynom> borders) {
+            ArrayList<GMLObject> gmlGeometries, TreeMap<Double, Polynom> widths,
+            TreeMap<Double, Polynom> borders) {
         this.id = id;
         this.type = type;
         this.level = level;
@@ -159,19 +160,19 @@ public class Lane extends AbstractOpenDriveElement {
         this.gmlGeometries = gmlGeometries;
     }
 
-    public ArrayList<Polynom> getWidths() {
+    public TreeMap<Double, Polynom> getWidths() {
         return widths;
     }
 
-    public void setWidths(ArrayList<Polynom> widths) {
+    public void setWidths(TreeMap<Double, Polynom> widths) {
         this.widths = widths;
     }
 
-    public ArrayList<Polynom> getBorders() {
+    public TreeMap<Double, Polynom> getBorders() {
         return borders;
     }
 
-    public void setBorders(ArrayList<Polynom> borders) {
+    public void setBorders(TreeMap<Double, Polynom> borders) {
         this.borders = borders;
     }
 }

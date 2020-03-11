@@ -6,6 +6,7 @@ import de.vcs.model.odr.geometry.STTransform;
 import org.xmlobjects.gml.model.GMLObject;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author rruhdorfer
@@ -25,12 +26,12 @@ public class RoadMark extends AbstractOpenDriveElement {
     private STTransform stTransform;
     private ExplicitRoadMark explicit;
     private Type detailedType;
-    private ArrayList<AbstractODRGeometry> sways;
+    private TreeMap<Double, AbstractODRGeometry> sways;
 
     public RoadMark() {
         stTransform = new STTransform();
         explicit = new ExplicitRoadMark();
-        sways = new ArrayList<AbstractODRGeometry>();
+        sways = new TreeMap<Double, AbstractODRGeometry>();
         detailedType = new Type();
         gmlGeometries = new ArrayList<GMLObject>();
     }
@@ -38,7 +39,7 @@ public class RoadMark extends AbstractOpenDriveElement {
     public RoadMark(String type, String weight, String color, String material, double width, String laneChange,
             double height, ArrayList<GMLObject> gmlGeometries, STTransform stTransform,
             ExplicitRoadMark explicit, Type detailedType,
-            ArrayList<AbstractODRGeometry> sways) {
+            TreeMap<Double, AbstractODRGeometry> sways) {
         this.type = type;
         this.weight = weight;
         this.color = color;
@@ -141,11 +142,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.detailedType = detailedType;
     }
 
-    public ArrayList<AbstractODRGeometry> getSways() {
+    public TreeMap<Double, AbstractODRGeometry> getSways() {
         return sways;
     }
 
-    public void setSways(ArrayList<AbstractODRGeometry> sways) {
+    public void setSways(TreeMap<Double, AbstractODRGeometry> sways) {
         this.sways = sways;
     }
 }
