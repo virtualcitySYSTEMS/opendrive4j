@@ -3,7 +3,7 @@ package de.vcs.model.odr.road;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
 
-import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author rruhdorfer
@@ -12,21 +12,21 @@ import java.util.ArrayList;
  */
 public class ElevationProfile extends AbstractOpenDriveElement {
 
-    private ArrayList<AbstractODRGeometry> elevations;
+    private TreeMap<Double, AbstractODRGeometry> elevations;
 
     public ElevationProfile() {
-        this.elevations = new ArrayList<AbstractODRGeometry>();
+        this.elevations = new TreeMap<Double, AbstractODRGeometry>();
     }
 
-    public ElevationProfile(ArrayList<AbstractODRGeometry> elevations) {
+    public ElevationProfile(TreeMap<Double, AbstractODRGeometry> elevations) {
         this.elevations = elevations;
     }
 
-    public ArrayList<AbstractODRGeometry> getElevations() {
+    public TreeMap<Double, AbstractODRGeometry> getElevations() {
         return elevations;
     }
 
-    public void setElevations(ArrayList<AbstractODRGeometry> elevations) {
+    public void setElevations(TreeMap<Double, AbstractODRGeometry> elevations) {
         this.elevations = elevations;
     }
 }

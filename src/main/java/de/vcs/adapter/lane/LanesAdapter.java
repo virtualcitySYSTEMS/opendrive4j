@@ -30,7 +30,8 @@ public class LanesAdapter implements ObjectBuilder<Lanes> {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
                 case "laneOffset":
-                    object.getLaneOffsets().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    object.getLaneOffsets().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
                 case "laneSection":
                     object.getLaneSections().add(reader.getObjectUsingBuilder(LaneSectionAdapter.class));

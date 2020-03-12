@@ -50,7 +50,8 @@ public class RoadMarkAdapter implements ObjectBuilder<RoadMark> {
                     object.setExplicit(reader.getObjectUsingBuilder(ExplicitRoadMarkAdapter.class));
                     break;
                 case "sway":
-                    object.getSways().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    object.getSways().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(PolynomAdapter.class));
             }
         }
     }

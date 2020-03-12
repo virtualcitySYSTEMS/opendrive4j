@@ -36,31 +36,31 @@ public class PlanViewAdapter implements ObjectBuilder<PlanView> {
                         Line line = reader.getObjectUsingBuilder(LineAdapter.class);
                         AbstractSTGeometryAdapter.setSuperAttributes(line, name, attributes, reader);
                         AbstractSTGeometryAdapter.buildSuperChildObject(line, name, attributes, reader);
-                        object.getOdrGeometries().add(line);
+                        object.getOdrGeometries().put(attributes.getValue("s").getAsDouble(), line);
                         break;
                     case "arc":
                         Arc arc = reader.getObjectUsingBuilder(ArcAdapter.class);
                         AbstractSTGeometryAdapter.setSuperAttributes(arc, name, attributes, reader);
                         AbstractSTGeometryAdapter.buildSuperChildObject(arc, name, attributes, reader);
-                        object.getOdrGeometries().add(arc);
+                        object.getOdrGeometries().put(attributes.getValue("s").getAsDouble(), arc);
                         break;
                     case "spiral":
                         Spiral spiral = reader.getObjectUsingBuilder(SpiralAdapter.class);
                         AbstractSTGeometryAdapter.setSuperAttributes(spiral, name, attributes, reader);
                         AbstractSTGeometryAdapter.buildSuperChildObject(spiral, name, attributes, reader);
-                        object.getOdrGeometries().add(spiral);
+                        object.getOdrGeometries().put(attributes.getValue("s").getAsDouble(), spiral);
                         break;
                     case "poly3":
                         Polynom poly = reader.getObjectUsingBuilder(PolynomAdapter.class);
                         AbstractSTGeometryAdapter.setSuperAttributes(poly, name, attributes, reader);
                         AbstractSTGeometryAdapter.buildSuperChildObject(poly, name, attributes, reader);
-                        object.getOdrGeometries().add(poly);
+                        object.getOdrGeometries().put(attributes.getValue("s").getAsDouble(), poly);
                         break;
                     case "paramPoly3":
                         ParamPolynom paramPoly = reader.getObjectUsingBuilder(ParamPolynomAdapter.class);
                         AbstractSTGeometryAdapter.setSuperAttributes(paramPoly, name, attributes, reader);
                         AbstractSTGeometryAdapter.buildSuperChildObject(paramPoly, name, attributes, reader);
-                        object.getOdrGeometries().add(paramPoly);
+                        object.getOdrGeometries().put(attributes.getValue("s").getAsDouble(), paramPoly);
                         break;
                 }
             }

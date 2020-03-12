@@ -79,10 +79,12 @@ public class LaneAdapter implements ObjectBuilder<Lane> {
                     object.getHeights().add(reader.getObjectUsingBuilder(HeightAdapter.class));
                     break;
                 case "width":
-                    object.getWidths().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    object.getWidths().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
                 case "border":
-                    object.getBorders().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    object.getBorders().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(PolynomAdapter.class));
             }
         }
     }

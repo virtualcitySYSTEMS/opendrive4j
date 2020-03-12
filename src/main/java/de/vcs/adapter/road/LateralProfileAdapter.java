@@ -1,7 +1,6 @@
 package de.vcs.adapter.road;
 
 import de.vcs.adapter.geometry.PolynomAdapter;
-import de.vcs.model.odr.road.ElevationProfile;
 import de.vcs.model.odr.road.LateralProfile;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -31,10 +30,12 @@ public class LateralProfileAdapter implements ObjectBuilder<LateralProfile> {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
                 case "superElevation":
-                    object.getSuperElevations().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    object.getSuperElevations().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
                 case "shape":
-                    object.getShapes().add(reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    object.getShapes().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
             }
         }

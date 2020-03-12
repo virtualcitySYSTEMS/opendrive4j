@@ -3,7 +3,7 @@ package de.vcs.model.odr.road;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
 
-import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author rruhdorfer
@@ -12,21 +12,22 @@ import java.util.ArrayList;
  */
 public class PlanView extends AbstractOpenDriveElement {
 
-    private ArrayList<AbstractODRGeometry> odrGeometries;
+    private TreeMap<Double, AbstractODRGeometry> odrGeometries;
 
     public PlanView() {
-        this.odrGeometries = new ArrayList<AbstractODRGeometry>();
+        this.odrGeometries = new TreeMap<Double, AbstractODRGeometry>();
     }
 
-    public PlanView(ArrayList<AbstractODRGeometry> odrGeometries) {
+    public PlanView(TreeMap<Double, AbstractODRGeometry> odrGeometries) {
         this.odrGeometries = odrGeometries;
     }
 
-    public ArrayList<AbstractODRGeometry> getOdrGeometries() {
+    public TreeMap<Double, AbstractODRGeometry> getOdrGeometries() {
         return odrGeometries;
     }
 
-    public void setOdrGeometries(ArrayList<AbstractODRGeometry> odrGeometries) {
+    public void setOdrGeometries(
+            TreeMap<Double, AbstractODRGeometry> odrGeometries) {
         this.odrGeometries = odrGeometries;
     }
 }
