@@ -3,7 +3,7 @@ package de.vcs.model.odr.lane;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.STTransform;
-import org.xmlobjects.gml.model.GMLObject;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
@@ -22,7 +22,7 @@ public class RoadMark extends AbstractOpenDriveElement {
     private double width;
     private String laneChange;
     private double height;
-    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<Geometry> gmlGeometries;
     private STTransform stTransform;
     private ExplicitRoadMark explicit;
     private Type detailedType;
@@ -33,11 +33,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         explicit = new ExplicitRoadMark();
         sways = new TreeMap<Double, AbstractODRGeometry>();
         detailedType = new Type();
-        gmlGeometries = new ArrayList<GMLObject>();
+        gmlGeometries = new ArrayList<Geometry>();
     }
 
     public RoadMark(String type, String weight, String color, String material, double width, String laneChange,
-            double height, ArrayList<GMLObject> gmlGeometries, STTransform stTransform,
+            double height, ArrayList<Geometry> gmlGeometries, STTransform stTransform,
             ExplicitRoadMark explicit, Type detailedType,
             TreeMap<Double, AbstractODRGeometry> sways) {
         this.type = type;
@@ -110,11 +110,11 @@ public class RoadMark extends AbstractOpenDriveElement {
         this.height = height;
     }
 
-    public ArrayList<GMLObject> getGmlGeometries() {
+    public ArrayList<Geometry> getGmlGeometries() {
         return gmlGeometries;
     }
 
-    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
         this.gmlGeometries = gmlGeometries;
     }
 

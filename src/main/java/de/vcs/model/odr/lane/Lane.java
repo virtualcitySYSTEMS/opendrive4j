@@ -3,7 +3,7 @@ package de.vcs.model.odr.lane;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.Polynom;
 import de.vcs.model.odr.road.Speed;
-import org.xmlobjects.gml.model.GMLObject;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
@@ -26,7 +26,7 @@ public class Lane extends AbstractOpenDriveElement {
     private ArrayList<Rule> rules;
     private ArrayList<RoadMark> roadMarks;
     private ArrayList<Height> heights;
-    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<Geometry> gmlGeometries;
     private TreeMap<Double, Polynom> widths;
     private TreeMap<Double, Polynom> borders;
 
@@ -37,7 +37,7 @@ public class Lane extends AbstractOpenDriveElement {
         rules = new ArrayList<Rule>();
         roadMarks = new ArrayList<RoadMark>();
         heights = new ArrayList<Height>();
-        gmlGeometries = new ArrayList<GMLObject>();
+        gmlGeometries = new ArrayList<Geometry>();
         widths = new TreeMap<Double, Polynom>();
         borders = new TreeMap<Double, Polynom>();
     }
@@ -46,7 +46,7 @@ public class Lane extends AbstractOpenDriveElement {
             ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId,
             int successorId, ArrayList<Rule> rules,
             ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
-            ArrayList<GMLObject> gmlGeometries, TreeMap<Double, Polynom> widths,
+            ArrayList<Geometry> gmlGeometries, TreeMap<Double, Polynom> widths,
             TreeMap<Double, Polynom> borders) {
         this.id = id;
         this.type = type;
@@ -152,11 +152,11 @@ public class Lane extends AbstractOpenDriveElement {
         this.heights = heights;
     }
 
-    public ArrayList<GMLObject> getGmlGeometries() {
+    public ArrayList<Geometry> getGmlGeometries() {
         return gmlGeometries;
     }
 
-    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
         this.gmlGeometries = gmlGeometries;
     }
 

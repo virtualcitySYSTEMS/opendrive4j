@@ -2,9 +2,8 @@ package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STHPosition;
-import de.vcs.model.odr.lane.Lane;
 import de.vcs.model.odr.lane.LaneValidity;
-import org.xmlobjects.gml.model.GMLObject;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 
@@ -23,14 +22,14 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private double height;
     private double width;
     private double radius;
-    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<Geometry> gmlGeometries;
     private ArrayList<Outline> outlines;
     private ArrayList<Material> materials;
     private ArrayList<LaneValidity> validities;
     private STHPosition linearReference;
 
     public AbstractObject() {
-        this.gmlGeometries = new ArrayList<GMLObject>();
+        this.gmlGeometries = new ArrayList<Geometry>();
         this.outlines = new ArrayList<Outline>();
         this.materials = new ArrayList<Material>();
         this.validities = new ArrayList<LaneValidity>();
@@ -39,7 +38,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
 
     public AbstractObject(String name, String id, double validLength, String orientation, double length,
             double height,
-            double width, double radius, ArrayList<GMLObject> gmlGeometries,
+            double width, double radius, ArrayList<Geometry> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
             ArrayList<LaneValidity> validities, STHPosition linearReference) {
         this.name = name;
@@ -121,11 +120,11 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.radius = radius;
     }
 
-    public ArrayList<GMLObject> getGmlGeometries() {
+    public ArrayList<Geometry> getGmlGeometries() {
         return gmlGeometries;
     }
 
-    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
         this.gmlGeometries = gmlGeometries;
     }
 

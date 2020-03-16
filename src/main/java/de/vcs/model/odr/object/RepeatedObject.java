@@ -2,7 +2,7 @@ package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.lane.LaneValidity;
-import org.xmlobjects.gml.model.GMLObject;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class RepeatedObject extends AbstractObject {
 
     public RepeatedObject(String name, String id, double validLength, String orientation, double length,
             double height,
-            double width, double radius, ArrayList<GMLObject> gmlGeometries,
+            double width, double radius, ArrayList<Geometry> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
             ArrayList<LaneValidity> validities,
             STHPosition linearReference, double distance, double heightStart, double heightEnd, double widthStart,

@@ -5,7 +5,7 @@ import de.vcs.model.odr.object.AbstractObject;
 import de.vcs.model.odr.signal.Signals;
 import de.vcs.model.odr.railroad.Railroad;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import org.xmlobjects.gml.model.GMLObject;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class Road extends AbstractOpenDriveElement {
     private Lanes lanes;
     private Signals signals;
     private Railroad railroad;
-    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<Geometry> gmlGeometries;
     private ArrayList<AbstractObject> objects;
 
     public Road() {
@@ -43,7 +43,7 @@ public class Road extends AbstractOpenDriveElement {
         this.lanes = new Lanes();
         this.signals = new Signals();
         this.railroad = new Railroad();
-        this.gmlGeometries = new ArrayList<GMLObject>();
+        this.gmlGeometries = new ArrayList<Geometry>();
         this.objects = new ArrayList<AbstractObject>();
     }
 
@@ -51,7 +51,7 @@ public class Road extends AbstractOpenDriveElement {
             String successorId, ArrayList<SurfaceCRG> CRG, ArrayList<Type> type,
             LateralProfile lateralProfile, ElevationProfile elevationProfile, PlanView planView,
             Lanes lanes, Signals signals, Railroad railroad,
-            ArrayList<GMLObject> gmlGeometries, ArrayList<AbstractObject> objects) {
+            ArrayList<Geometry> gmlGeometries, ArrayList<AbstractObject> objects) {
         this.name = name;
         this.length = length;
         this.id = id;
@@ -191,11 +191,11 @@ public class Road extends AbstractOpenDriveElement {
         this.railroad = railroad;
     }
 
-    public ArrayList<GMLObject> getGmlGeometries() {
+    public ArrayList<Geometry> getGmlGeometries() {
         return gmlGeometries;
     }
 
-    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
         this.gmlGeometries = gmlGeometries;
     }
 

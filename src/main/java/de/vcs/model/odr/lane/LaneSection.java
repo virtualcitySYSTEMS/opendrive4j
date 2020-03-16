@@ -2,7 +2,7 @@ package de.vcs.model.odr.lane;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STHPosition;
-import org.xmlobjects.gml.model.GMLObject;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 
@@ -15,21 +15,21 @@ public class LaneSection extends AbstractOpenDriveElement {
 
     private boolean singleSide;
     private STHPosition linearReference;
-    private ArrayList<GMLObject> gmlGeometries;
+    private ArrayList<Geometry> gmlGeometries;
     private ArrayList<Lane> centerLanes;
     private ArrayList<Lane> leftLanes;
     private ArrayList<Lane> rightLanes;
 
     public LaneSection() {
         linearReference = new STHPosition();
-        gmlGeometries = new ArrayList<GMLObject>();
+        gmlGeometries = new ArrayList<Geometry>();
         centerLanes = new ArrayList<Lane>();
         leftLanes = new ArrayList<Lane>();
         rightLanes = new ArrayList<Lane>();
     }
 
     public LaneSection(boolean singleSide, STHPosition linearReference,
-            ArrayList<GMLObject> gmlGeometries, ArrayList<Lane> centerLanes,
+            ArrayList<Geometry> gmlGeometries, ArrayList<Lane> centerLanes,
             ArrayList<Lane> leftLanes, ArrayList<Lane> rightLanes) {
         this.singleSide = singleSide;
         this.linearReference = linearReference;
@@ -55,11 +55,11 @@ public class LaneSection extends AbstractOpenDriveElement {
         this.linearReference = linearReference;
     }
 
-    public ArrayList<GMLObject> getGmlGeometries() {
+    public ArrayList<Geometry> getGmlGeometries() {
         return gmlGeometries;
     }
 
-    public void setGmlGeometries(ArrayList<GMLObject> gmlGeometries) {
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
         this.gmlGeometries = gmlGeometries;
     }
 
