@@ -34,7 +34,8 @@ public class LanesAdapter implements ObjectBuilder<Lanes> {
                             reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
                 case "laneSection":
-                    object.getLaneSections().add(reader.getObjectUsingBuilder(LaneSectionAdapter.class));
+                    object.getLaneSections().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(LaneSectionAdapter.class));
                     break;
             }
         }

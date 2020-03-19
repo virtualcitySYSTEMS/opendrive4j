@@ -3,7 +3,6 @@ package de.vcs.model.odr.lane;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.Polynom;
 
-import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
@@ -14,14 +13,14 @@ import java.util.TreeMap;
 public class Lanes extends AbstractOpenDriveElement {
 
     private TreeMap<Double, Polynom> laneOffsets;
-    private ArrayList<LaneSection> laneSections;
+    private TreeMap<Double, LaneSection> laneSections;
 
     public Lanes() {
         laneOffsets = new TreeMap<Double, Polynom>();
-        laneSections = new ArrayList<LaneSection>();
+        laneSections = new TreeMap<Double, LaneSection>();
     }
 
-    public Lanes(TreeMap<Double, Polynom> laneOffsets, ArrayList<LaneSection> laneSections) {
+    public Lanes(TreeMap<Double, Polynom> laneOffsets, TreeMap<Double, LaneSection> laneSections) {
         this.laneOffsets = laneOffsets;
         this.laneSections = laneSections;
     }
@@ -34,11 +33,11 @@ public class Lanes extends AbstractOpenDriveElement {
         this.laneOffsets = laneOffsets;
     }
 
-    public ArrayList<LaneSection> getLaneSections() {
+    public TreeMap<Double, LaneSection> getLaneSections() {
         return laneSections;
     }
 
-    public void setLaneSections(ArrayList<LaneSection> laneSections) {
+    public void setLaneSections(TreeMap<Double, LaneSection> laneSections) {
         this.laneSections = laneSections;
     }
 }

@@ -16,25 +16,25 @@ public class LaneSection extends AbstractOpenDriveElement {
     private boolean singleSide;
     private STHPosition linearReference;
     private ArrayList<Geometry> gmlGeometries;
-    private ArrayList<Lane> centerLanes;
+    private Lane centerLane;
     private ArrayList<Lane> leftLanes;
     private ArrayList<Lane> rightLanes;
 
     public LaneSection() {
         linearReference = new STHPosition();
         gmlGeometries = new ArrayList<Geometry>();
-        centerLanes = new ArrayList<Lane>();
+        centerLane = new Lane();
         leftLanes = new ArrayList<Lane>();
         rightLanes = new ArrayList<Lane>();
     }
 
     public LaneSection(boolean singleSide, STHPosition linearReference,
-            ArrayList<Geometry> gmlGeometries, ArrayList<Lane> centerLanes,
+            ArrayList<Geometry> gmlGeometries, Lane centerLane,
             ArrayList<Lane> leftLanes, ArrayList<Lane> rightLanes) {
         this.singleSide = singleSide;
         this.linearReference = linearReference;
         this.gmlGeometries = gmlGeometries;
-        this.centerLanes = centerLanes;
+        this.centerLane = centerLane;
         this.leftLanes = leftLanes;
         this.rightLanes = rightLanes;
     }
@@ -63,12 +63,12 @@ public class LaneSection extends AbstractOpenDriveElement {
         this.gmlGeometries = gmlGeometries;
     }
 
-    public ArrayList<Lane> getCenterLanes() {
-        return centerLanes;
+    public Lane getCenterLane() {
+        return centerLane;
     }
 
-    public void setCenterLanes(ArrayList<Lane> centerLanes) {
-        this.centerLanes = centerLanes;
+    public void setCenterLane(Lane centerLane) {
+        this.centerLane = centerLane;
     }
 
     public ArrayList<Lane> getLeftLanes() {

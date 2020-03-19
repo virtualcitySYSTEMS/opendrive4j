@@ -35,7 +35,7 @@ public class LaneSectionAdapter implements ObjectBuilder<LaneSection> {
                     do {
                         if (reader.nextTag().equals(EventType.START_ELEMENT)) {
                             if (reader.getName().getLocalPart().equalsIgnoreCase("lane")) {
-                                object.getCenterLanes().add(reader.getObjectUsingBuilder(LaneAdapter.class));
+                                object.setCenterLane(reader.getObjectUsingBuilder(LaneAdapter.class));
                             }
                         }
                     } while (reader.getDepth() >= xmlDepth);
