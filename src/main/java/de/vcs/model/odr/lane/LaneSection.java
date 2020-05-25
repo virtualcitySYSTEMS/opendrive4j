@@ -5,6 +5,7 @@ import de.vcs.model.odr.geometry.STHPosition;
 import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author rruhdorfer
@@ -17,20 +18,20 @@ public class LaneSection extends AbstractOpenDriveElement {
     private STHPosition linearReference;
     private ArrayList<Geometry> gmlGeometries;
     private Lane centerLane;
-    private ArrayList<Lane> leftLanes;
-    private ArrayList<Lane> rightLanes;
+    private TreeMap<Integer, Lane> leftLanes;
+    private TreeMap<Integer, Lane> rightLanes;
 
     public LaneSection() {
         linearReference = new STHPosition();
-        gmlGeometries = new ArrayList<Geometry>();
+        gmlGeometries = new ArrayList<>();
         centerLane = new Lane();
-        leftLanes = new ArrayList<Lane>();
-        rightLanes = new ArrayList<Lane>();
+        leftLanes = new TreeMap<>();
+        rightLanes = new TreeMap<>();
     }
 
     public LaneSection(boolean singleSide, STHPosition linearReference,
             ArrayList<Geometry> gmlGeometries, Lane centerLane,
-            ArrayList<Lane> leftLanes, ArrayList<Lane> rightLanes) {
+            TreeMap<Integer, Lane> leftLanes, TreeMap<Integer, Lane> rightLanes) {
         this.singleSide = singleSide;
         this.linearReference = linearReference;
         this.gmlGeometries = gmlGeometries;
@@ -71,19 +72,19 @@ public class LaneSection extends AbstractOpenDriveElement {
         this.centerLane = centerLane;
     }
 
-    public ArrayList<Lane> getLeftLanes() {
+    public TreeMap<Integer, Lane> getLeftLanes() {
         return leftLanes;
     }
 
-    public void setLeftLanes(ArrayList<Lane> leftLanes) {
+    public void setLeftLanes(TreeMap<Integer, Lane> leftLanes) {
         this.leftLanes = leftLanes;
     }
 
-    public ArrayList<Lane> getRightLanes() {
+    public TreeMap<Integer, Lane> getRightLanes() {
         return rightLanes;
     }
 
-    public void setRightLanes(ArrayList<Lane> rightLanes) {
+    public void setRightLanes(TreeMap<Integer, Lane> rightLanes) {
         this.rightLanes = rightLanes;
     }
 }
