@@ -43,8 +43,10 @@ public class LaneSectionAdapter implements ObjectBuilder<LaneSection> {
                 case "right":
                     do {
                         if (reader.nextTag().equals(EventType.START_ELEMENT)) {
+                            Attributes childAttributes = reader.getAttributes();
                             if (reader.getName().getLocalPart().equalsIgnoreCase("lane")) {
-                                object.getRightLanes().put(attributes.getValue("id").getAsInteger(), reader.getObjectUsingBuilder(LaneAdapter.class));
+                                object.getRightLanes().put(childAttributes.getValue("id").getAsInteger(),
+                                        reader.getObjectUsingBuilder(LaneAdapter.class));
                             }
                         }
                     } while (reader.getDepth() >= xmlDepth);
@@ -52,8 +54,10 @@ public class LaneSectionAdapter implements ObjectBuilder<LaneSection> {
                 case "left":
                     do {
                         if (reader.nextTag().equals(EventType.START_ELEMENT)) {
+                            Attributes childAttributes = reader.getAttributes();
                             if (reader.getName().getLocalPart().equalsIgnoreCase("lane")) {
-                                object.getLeftLanes().put(attributes.getValue("id").getAsInteger(),reader.getObjectUsingBuilder(LaneAdapter.class));
+                                object.getLeftLanes().put(childAttributes.getValue("id").getAsInteger(),
+                                        reader.getObjectUsingBuilder(LaneAdapter.class));
                             }
                         }
                     } while (reader.getDepth() >= xmlDepth);

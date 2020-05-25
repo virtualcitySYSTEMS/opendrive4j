@@ -1,9 +1,13 @@
 package de.vcs.adapter.road;
 
+import com.sun.jdi.ObjectReference;
 import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.adapter.lane.LanesAdapter;
+import de.vcs.adapter.object.*;
 import de.vcs.adapter.railroad.RailroadAdapter;
 import de.vcs.adapter.signal.SignalsAdapter;
+import de.vcs.model.odr.object.AbstractObject;
+import de.vcs.model.odr.object.GenericObject;
 import de.vcs.model.odr.road.*;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -75,8 +79,30 @@ public class RoadAdapter implements ObjectBuilder<Road> {
                     object.setLanes(reader.getObjectUsingBuilder(LanesAdapter.class));
                     break;
                 case "objects":
-                    // TODO which object child class shall be initialized
-                    // object.getObjects().add(reader.getObjectUsingBuilder(ObjectsAdapter.class));
+                    int xmlDepth2 = reader.getDepth();
+                    while (reader.getDepth() >= xmlDepth2) {
+                        if (reader.nextTag().equals(START_ELEMENT)) {
+                            attributes = reader.getAttributes();
+                            switch (reader.getName().getLocalPart()) {
+                                case "object":
+                                    object.getObjects().add(reader.getObjectUsingBuilder(GenericObjectAdapter.class));
+                                    reader.nextTag();   // close tag
+                                    break;
+                                case "tunnel":
+                                    object.getObjects().add(reader.getObjectUsingBuilder(TunnelAdapter.class));
+                                    reader.nextTag();   // close tag
+                                    break;
+                                case "bridge":
+                                    object.getObjects().add(reader.getObjectUsingBuilder(BridgeAdapter.class));
+                                    reader.nextTag();   // close tag
+                                    break;
+                                case "objectReference":
+                                    object.getObjects().add(reader.getObjectUsingBuilder(ObjectReferenceAdapter.class));
+                                    reader.nextTag();   // close tag
+                                    break;
+                            }
+                        }
+                    }
                     break;
                 case "signals":
                     object.setSignals(reader.getObjectUsingBuilder(SignalsAdapter.class));

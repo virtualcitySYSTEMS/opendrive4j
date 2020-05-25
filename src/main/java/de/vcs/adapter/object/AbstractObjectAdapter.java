@@ -21,8 +21,6 @@ import javax.xml.namespace.QName;
 // is this neccessary here? do we have to implement ObjectBuilder in an AbstractClass
 @XMLElements({
         @XMLElement(name = "object",
-                namespaceURI = ODRConstants.ODR_1_6_NAMESPACE),
-        @XMLElement(name = "objects",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
 public abstract class AbstractObjectAdapter implements ObjectBuilder<AbstractObject> {
