@@ -7,6 +7,7 @@ import de.vcs.model.odr.lane.LaneValidity;
 import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author rruhdorfer
@@ -23,7 +24,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private double height;
     private double width;
     private double radius;
-    private ArrayList<STHRepeat> repeat;
+    private TreeMap<Double, STHRepeat> repeat;
     private ArrayList<Geometry> gmlGeometries;
     private ArrayList<Outline> outlines;
     private ArrayList<Material> materials;
@@ -31,7 +32,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private STHPosition linearReference;
 
     public AbstractObject() {
-        this.repeat = new ArrayList<>();
+        this.repeat = new TreeMap<>();
         this.gmlGeometries = new ArrayList<Geometry>();
         this.outlines = new ArrayList<Outline>();
         this.materials = new ArrayList<Material>();
@@ -41,7 +42,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
 
     public AbstractObject(String name, String id, double validLength, String orientation, double length,
             double height,
-            double width, double radius, ArrayList<STHRepeat> repeat, ArrayList<Geometry> gmlGeometries,
+            double width, double radius, TreeMap<Double, STHRepeat> repeat, ArrayList<Geometry> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
             ArrayList<LaneValidity> validities, STHPosition linearReference) {
         this.name = name;
@@ -124,11 +125,11 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.radius = radius;
     }
 
-    public ArrayList<STHRepeat> getRepeat() {
+    public TreeMap<Double, STHRepeat> getRepeat() {
         return repeat;
     }
 
-    public void setRepeat(ArrayList<STHRepeat> repeat) {
+    public void setRepeat(TreeMap<Double, STHRepeat> repeat) {
         this.repeat = repeat;
     }
 

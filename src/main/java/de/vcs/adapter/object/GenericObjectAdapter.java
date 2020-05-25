@@ -40,7 +40,8 @@ public class GenericObjectAdapter implements ObjectBuilder<GenericObject> {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
                 case "repeat":
-                    object.getRepeats().add(reader.getObjectUsingBuilder(RepeatedObjectAdapter.class));
+                    object.getRepeat().put(attributes.getValue("s").getAsDouble(),
+                            reader.getObjectUsingBuilder(RepeatedObjectAdapter.class));
                     break;
             }
         }

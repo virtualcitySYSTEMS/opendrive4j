@@ -28,10 +28,12 @@ public class RepeatedObjectAdapter implements ObjectBuilder<STHRepeat> {
     public void initializeObject(STHRepeat object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
         attributes.getValue("distance").ifDouble(object::setDistance);
+        attributes.getValue("zOffsetStart").ifDouble(object.getStart().getIntertialTransform()::setzOffset);
+        attributes.getValue("zOffsetEnd").ifDouble(object.getEnd().getIntertialTransform()::setzOffset);
         attributes.getValue("heightStart").ifDouble(object::setHeightStart);
         attributes.getValue("heightEnd").ifDouble(object::setHeightEnd);
-        attributes.getValue("weightStart").ifDouble(object::setWidthStart);
-        attributes.getValue("weightEnd").ifDouble(object::setWidthEnd);
+        attributes.getValue("widthStart").ifDouble(object::setWidthStart);
+        attributes.getValue("widthEnd").ifDouble(object::setWidthEnd);
         attributes.getValue("lengthStart").ifDouble(object::setLengthStart);
         attributes.getValue("lengthEnd").ifDouble(object::setLengthEnd);
         attributes.getValue("radiusStart").ifDouble(object::setRadiusStart);

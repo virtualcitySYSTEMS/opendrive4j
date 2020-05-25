@@ -14,18 +14,14 @@ public class GenericObject extends AbstractObject {
     private String type;
     private String subtype;
     private boolean dynamic;
-    private ArrayList<STHRepeat> repeats;
 
     public GenericObject() {
-        this.repeats = new ArrayList<STHRepeat>();
     }
 
-    public GenericObject(String type, String subtype, boolean dynamic,
-            ArrayList<STHRepeat> repeats) {
+    public GenericObject(String type, String subtype, boolean dynamic) {
         this.type = type;
         this.subtype = subtype;
         this.dynamic = dynamic;
-        this.repeats = repeats;
     }
 
     public String getType() {
@@ -50,13 +46,5 @@ public class GenericObject extends AbstractObject {
 
     public void setDynamic(boolean dynamic) {
         this.dynamic = dynamic;
-    }
-
-    public ArrayList<STHRepeat> getRepeats() {
-        return repeats;
-    }
-
-    public void setRepeats(ArrayList<STHRepeat> repeats) {
-        this.repeats = repeats;
     }
 }
