@@ -1,7 +1,8 @@
-package de.vcs.model.odr.object;
+package de.vcs.model.odr.geometry;
 
-import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.lane.LaneValidity;
+import de.vcs.model.odr.object.Material;
+import de.vcs.model.odr.object.Outline;
 import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
@@ -11,8 +12,9 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 20-Nov-2019 15:17:41
  */
-public class RepeatedObject extends AbstractObject {
+public class STHRepeat extends AbstractODRGeometry {
 
+    private double length;
     private double distance;
     private double heightStart;
     private double heightEnd;
@@ -23,25 +25,21 @@ public class RepeatedObject extends AbstractObject {
     private double radiusStart;
     private double radiusEnd;
     private STHPosition linearReference;
-    private STHPosition start; // same as linearReference ???
+    private STHPosition start;
     private STHPosition end;
 
-    public RepeatedObject() {
+    public STHRepeat() {
         this.linearReference = new STHPosition();
         this.start = new STHPosition();
         this.end = new STHPosition();
     }
 
-    public RepeatedObject(String name, String id, double validLength, String orientation, double length,
-            double height,
-            double width, double radius, ArrayList<Geometry> gmlGeometries,
-            ArrayList<Outline> outlines, ArrayList<Material> materials,
-            ArrayList<LaneValidity> validities,
-            STHPosition linearReference, double distance, double heightStart, double heightEnd, double widthStart,
-            double widthEnd, double lengthStart, double lengthEnd, double radiusStart, double radiusEnd,
-            STHPosition linearReference1, STHPosition start, STHPosition end) {
-        super(name, id, validLength, orientation, length, height, width, radius, gmlGeometries, outlines, materials,
-                validities, linearReference);
+    public STHRepeat(double length, double distance,
+            double heightStart, double heightEnd, double widthStart, double widthEnd, double lengthStart,
+            double lengthEnd,
+            double radiusStart, double radiusEnd, STHPosition linearReference, STHPosition start,
+            STHPosition end) {
+        this.length = length;
         this.distance = distance;
         this.heightStart = heightStart;
         this.heightEnd = heightEnd;
@@ -51,9 +49,17 @@ public class RepeatedObject extends AbstractObject {
         this.lengthEnd = lengthEnd;
         this.radiusStart = radiusStart;
         this.radiusEnd = radiusEnd;
-        this.linearReference = linearReference1;
+        this.linearReference = linearReference;
         this.start = start;
         this.end = end;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
     }
 
     public double getDistance() {
@@ -128,12 +134,10 @@ public class RepeatedObject extends AbstractObject {
         this.radiusEnd = radiusEnd;
     }
 
-    @Override
     public STHPosition getLinearReference() {
         return linearReference;
     }
 
-    @Override
     public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
     }

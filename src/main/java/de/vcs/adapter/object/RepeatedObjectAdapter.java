@@ -1,8 +1,7 @@
 package de.vcs.adapter.object;
 
 import de.vcs.adapter.geometry.STHPositionAdapter;
-import de.vcs.model.odr.geometry.STHPosition;
-import de.vcs.model.odr.object.RepeatedObject;
+import de.vcs.model.odr.geometry.STHRepeat;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
 import org.xmlobjects.annotation.XMLElements;
@@ -18,17 +17,16 @@ import javax.xml.namespace.QName;
         @XMLElement(name = "repeat",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
-public class RepeatedObjectAdapter implements ObjectBuilder<RepeatedObject> {
+public class RepeatedObjectAdapter implements ObjectBuilder<STHRepeat> {
 
     @Override
-    public RepeatedObject createObject(QName name) throws ObjectBuildException {
-        return new RepeatedObject();
+    public STHRepeat createObject(QName name) throws ObjectBuildException {
+        return new STHRepeat();
     }
 
     @Override
-    public void initializeObject(RepeatedObject object, QName name, Attributes attributes, XMLReader reader)
+    public void initializeObject(STHRepeat object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
-        AbstractObjectAdapter.setSuperAttributes(object, name, attributes, reader);
         attributes.getValue("distance").ifDouble(object::setDistance);
         attributes.getValue("heightStart").ifDouble(object::setHeightStart);
         attributes.getValue("heightEnd").ifDouble(object::setHeightEnd);
@@ -46,9 +44,8 @@ public class RepeatedObjectAdapter implements ObjectBuilder<RepeatedObject> {
     }
 
     @Override
-    public void buildChildObject(RepeatedObject object, QName name, Attributes attributes, XMLReader reader)
+    public void buildChildObject(STHRepeat object, QName name, Attributes attributes, XMLReader reader)
             throws ObjectBuildException, XMLReadException {
-        AbstractObjectAdapter.buildSuperChildObject(object, name, attributes, reader);
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
                 case "start":

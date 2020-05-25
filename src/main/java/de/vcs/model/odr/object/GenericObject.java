@@ -1,5 +1,7 @@
 package de.vcs.model.odr.object;
 
+import de.vcs.model.odr.geometry.STHRepeat;
+
 import java.util.ArrayList;
 
 /**
@@ -12,14 +14,14 @@ public class GenericObject extends AbstractObject {
     private String type;
     private String subtype;
     private boolean dynamic;
-    private ArrayList<RepeatedObject> repeats;
+    private ArrayList<STHRepeat> repeats;
 
     public GenericObject() {
-        this.repeats = new ArrayList<RepeatedObject>();
+        this.repeats = new ArrayList<STHRepeat>();
     }
 
     public GenericObject(String type, String subtype, boolean dynamic,
-            ArrayList<RepeatedObject> repeats) {
+            ArrayList<STHRepeat> repeats) {
         this.type = type;
         this.subtype = subtype;
         this.dynamic = dynamic;
@@ -50,11 +52,11 @@ public class GenericObject extends AbstractObject {
         this.dynamic = dynamic;
     }
 
-    public ArrayList<RepeatedObject> getRepeats() {
+    public ArrayList<STHRepeat> getRepeats() {
         return repeats;
     }
 
-    public void setRepeats(ArrayList<RepeatedObject> repeats) {
+    public void setRepeats(ArrayList<STHRepeat> repeats) {
         this.repeats = repeats;
     }
 }

@@ -2,6 +2,7 @@ package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.STHPosition;
+import de.vcs.model.odr.geometry.STHRepeat;
 import de.vcs.model.odr.lane.LaneValidity;
 import org.locationtech.jts.geom.Geometry;
 
@@ -22,6 +23,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private double height;
     private double width;
     private double radius;
+    private ArrayList<STHRepeat> repeat;
     private ArrayList<Geometry> gmlGeometries;
     private ArrayList<Outline> outlines;
     private ArrayList<Material> materials;
@@ -29,6 +31,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private STHPosition linearReference;
 
     public AbstractObject() {
+        this.repeat = new ArrayList<>();
         this.gmlGeometries = new ArrayList<Geometry>();
         this.outlines = new ArrayList<Outline>();
         this.materials = new ArrayList<Material>();
@@ -38,7 +41,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
 
     public AbstractObject(String name, String id, double validLength, String orientation, double length,
             double height,
-            double width, double radius, ArrayList<Geometry> gmlGeometries,
+            double width, double radius, ArrayList<STHRepeat> repeat, ArrayList<Geometry> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
             ArrayList<LaneValidity> validities, STHPosition linearReference) {
         this.name = name;
@@ -49,6 +52,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.height = height;
         this.width = width;
         this.radius = radius;
+        this.repeat = repeat;
         this.gmlGeometries = gmlGeometries;
         this.outlines = outlines;
         this.materials = materials;
@@ -118,6 +122,14 @@ public class AbstractObject extends AbstractOpenDriveElement {
 
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    public ArrayList<STHRepeat> getRepeat() {
+        return repeat;
+    }
+
+    public void setRepeat(ArrayList<STHRepeat> repeat) {
+        this.repeat = repeat;
     }
 
     public ArrayList<Geometry> getGmlGeometries() {
