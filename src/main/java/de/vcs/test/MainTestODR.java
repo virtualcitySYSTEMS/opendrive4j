@@ -63,7 +63,8 @@ public class MainTestODR {
                     .forEach(sig -> System.out.println("signalId: " + sig.getId() + " type: " + sig.getType()));
             System.out.println("-- objects --");
             r.getObjects()
-                    .forEach(obj -> System.out.println("objectId: " + obj.getId() + " name: " + obj.getName()));
+                    .forEach(obj -> System.out.println("objectId: " + obj.getId() + " name: " + obj.getName() + " s: " +
+                            obj.getLinearReference().getS() + " t: " + obj.getLinearReference().getT()));
         }
     }
 }

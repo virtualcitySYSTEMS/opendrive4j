@@ -1,6 +1,7 @@
 package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STHRepeat;
 import de.vcs.model.odr.lane.LaneValidity;
@@ -30,6 +31,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private ArrayList<Material> materials;
     private ArrayList<LaneValidity> validities;
     private STHPosition linearReference;
+    private InertialTransform intertialTransform;
 
     public AbstractObject() {
         this.repeat = new TreeMap<>();
@@ -38,13 +40,14 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.materials = new ArrayList<Material>();
         this.validities = new ArrayList<LaneValidity>();
         this.linearReference = new STHPosition();
+        this.intertialTransform = new InertialTransform();
     }
 
     public AbstractObject(String name, String id, double validLength, String orientation, double length,
             double height,
             double width, double radius, TreeMap<Double, STHRepeat> repeat, ArrayList<Geometry> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
-            ArrayList<LaneValidity> validities, STHPosition linearReference) {
+            ArrayList<LaneValidity> validities, STHPosition linearReference, InertialTransform intertialTransform) {
         this.name = name;
         this.id = id;
         this.validLength = validLength;
@@ -59,6 +62,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.materials = materials;
         this.validities = validities;
         this.linearReference = linearReference;
+        this.intertialTransform = intertialTransform;
     }
 
     public String getName() {
@@ -171,5 +175,13 @@ public class AbstractObject extends AbstractOpenDriveElement {
 
     public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
+    }
+
+    public InertialTransform getIntertialTransform() {
+        return intertialTransform;
+    }
+
+    public void setIntertialTransform(InertialTransform intertialTransform) {
+        this.intertialTransform = intertialTransform;
     }
 }
