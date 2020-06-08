@@ -6,12 +6,13 @@ import org.locationtech.jts.geom.Polygon;
 public interface Visitor {
     Point visit(ParamPolynom poly);
 
-    Point visit(Line line);
+    Point visit(Arc arc);
 
-    Point visit(Polynom arc);
+    Point visit(Polynom poly);
 
     Point visit(Spiral spiral);
 
-    Point visit(Polygon poly);
+    Point visit(Line line);
+
 
 }
