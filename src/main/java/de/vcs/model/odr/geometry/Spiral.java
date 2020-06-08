@@ -1,5 +1,7 @@
 package de.vcs.model.odr.geometry;
 
+import org.locationtech.jts.geom.Point;
+
 /**
  * @author rruhdorfer
  * @version 1.0
@@ -16,6 +18,11 @@ public class Spiral extends AbstractSTGeometry {
     public Spiral(double curvStart, double curvEnd) {
         this.curvStart = curvStart;
         this.curvEnd = curvEnd;
+    }
+
+    @Override
+    public Point accept(Visitor v) {
+        return v.visit(this);
     }
 
     public double getCurvStart() {

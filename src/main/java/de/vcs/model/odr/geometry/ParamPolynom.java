@@ -1,5 +1,7 @@
 package de.vcs.model.odr.geometry;
 
+import org.locationtech.jts.geom.Point;
+
 /**
  * @author rruhdorfer
  * @version 1.0
@@ -28,6 +30,11 @@ public class ParamPolynom extends AbstractSTGeometry {
         this.bV = bV;
         this.cV = cV;
         this.dV = dV;
+    }
+
+    @Override
+    public Point accept(Visitor v) {
+        return v.visit(this);
     }
 
     public double getaU() {

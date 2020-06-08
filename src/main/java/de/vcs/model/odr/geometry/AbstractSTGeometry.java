@@ -7,7 +7,7 @@ import org.xmlobjects.gml.model.geometry.primitives.Point;
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public abstract class AbstractSTGeometry extends AbstractODRGeometry implements Comparable<AbstractSTGeometry> {
+public abstract class AbstractSTGeometry extends AbstractODRGeometry implements Comparable<AbstractSTGeometry>, InterfaceSTGeometry {
 
     private double length;
     private Point inertialReference;
