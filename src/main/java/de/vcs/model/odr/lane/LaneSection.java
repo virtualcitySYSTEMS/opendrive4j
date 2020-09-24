@@ -56,7 +56,7 @@ public class LaneSection extends AbstractOpenDriveElement {
         this.linearReference = linearReference;
     }
 
-    public ArrayList<? extends Geometry> getGmlGeometries() {
+    public ArrayList<Geometry> getGmlGeometries() {
         return gmlGeometries;
     }
 
