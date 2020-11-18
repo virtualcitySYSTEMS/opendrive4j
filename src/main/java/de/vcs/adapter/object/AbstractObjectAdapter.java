@@ -37,8 +37,8 @@ public abstract class AbstractObjectAdapter implements ObjectBuilder<AbstractObj
         attributes.getValue("radius").ifDouble(object::setRadius);
         attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
         attributes.getValue("t").ifDouble(object.getLinearReference()::setT);
-        attributes.getValue("zOffset").ifDouble(object.getIntertialTransform()::setzOffset);
-        attributes.getValue("hdg").ifDouble(object.getIntertialTransform()::setHdg);
+        attributes.getValue("zOffset").ifDouble(object.getIntertialTransform()::setzOffset); // zOffset -> inertial
+        attributes.getValue("hdg").ifDouble(object.getIntertialTransform()::setHdg); // hdg with respect to st
     }
 
     public static void buildSuperChildObject(AbstractObject object, QName name, Attributes attributes, XMLReader reader)

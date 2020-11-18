@@ -4,6 +4,7 @@ import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STHRepeat;
+import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.model.odr.lane.LaneValidity;
 import org.locationtech.jts.geom.Geometry;
 
@@ -31,6 +32,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
     private ArrayList<Material> materials;
     private ArrayList<LaneValidity> validities;
     private STHPosition linearReference;
+    private STTransform stTransform;
     private InertialTransform intertialTransform;
 
     public AbstractObject() {
@@ -41,13 +43,15 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.validities = new ArrayList<LaneValidity>();
         this.linearReference = new STHPosition();
         this.intertialTransform = new InertialTransform();
+        this.stTransform = new STTransform();
     }
 
     public AbstractObject(String name, String id, double validLength, String orientation, double length,
             double height,
             double width, double radius, TreeMap<Double, STHRepeat> repeat, ArrayList<Geometry> gmlGeometries,
             ArrayList<Outline> outlines, ArrayList<Material> materials,
-            ArrayList<LaneValidity> validities, STHPosition linearReference, InertialTransform intertialTransform) {
+            ArrayList<LaneValidity> validities, STHPosition linearReference, InertialTransform intertialTransform,
+            STTransform stTransform) {
         this.name = name;
         this.id = id;
         this.validLength = validLength;
@@ -63,6 +67,7 @@ public class AbstractObject extends AbstractOpenDriveElement {
         this.validities = validities;
         this.linearReference = linearReference;
         this.intertialTransform = intertialTransform;
+        this.stTransform = stTransform;
     }
 
     public String getName() {
@@ -175,6 +180,14 @@ public class AbstractObject extends AbstractOpenDriveElement {
 
     public void setLinearReference(STHPosition linearReference) {
         this.linearReference = linearReference;
+    }
+
+    public STTransform getStTransform() {
+        return stTransform;
+    }
+
+    public void setStTransform(STTransform stTransform) {
+        this.stTransform = stTransform;
     }
 
     public InertialTransform getIntertialTransform() {
