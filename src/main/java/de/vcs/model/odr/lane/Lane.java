@@ -17,7 +17,7 @@ public class Lane extends AbstractOpenDriveElement {
 
     private int id;
     private String type;
-    private double level;
+    private boolean level;
     private ArrayList<Material> materials;
     private ArrayList<Access> accesses;
     private ArrayList<Speed> speeds;
@@ -42,7 +42,7 @@ public class Lane extends AbstractOpenDriveElement {
         borders = new TreeMap<Double, Polynom>();
     }
 
-    public Lane(int id, String type, double level, ArrayList<Material> materials,
+    public Lane(int id, String type, boolean level, ArrayList<Material> materials,
             ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId,
             int successorId, ArrayList<Rule> rules,
             ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
@@ -80,11 +80,11 @@ public class Lane extends AbstractOpenDriveElement {
         this.type = type;
     }
 
-    public double getLevel() {
+    public boolean getLevel() {
         return level;
     }
 
-    public void setLevel(double level) {
+    public void setLevel(boolean level) {
         this.level = level;
     }
 
