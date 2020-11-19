@@ -1,9 +1,11 @@
 package de.vcs.model.odr.signal;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.model.odr.lane.LaneValidity;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 
@@ -33,7 +35,9 @@ public class Signal extends AbstractOpenDriveElement {
     private ArrayList<Reference> references;
     private STHPosition linearReference;
     private STTransform stTransform;
+    private InertialTransform inertialTransform;
     private PhysicalPosition physicalPosition;
+    private ArrayList<Geometry> gmlGeometries;
 
     public Signal() {
         validities = new ArrayList<LaneValidity>();
@@ -41,14 +45,17 @@ public class Signal extends AbstractOpenDriveElement {
         references = new ArrayList<Reference>();
         linearReference = new STHPosition();
         stTransform = new STTransform();
+        inertialTransform = new InertialTransform();
         physicalPosition = new PhysicalPosition();
+        gmlGeometries = new ArrayList<>();
     }
 
     public Signal(String id, String name, boolean dynamic, String orientation, String country,
             String countryRevision, String type, String subtype, double value, String unit, double height, double width,
             String text, ArrayList<LaneValidity> validities,
             ArrayList<Dependency> dependencies, ArrayList<Reference> references,
-            STHPosition linearReference, STTransform stTransform, PhysicalPosition physicalPosition) {
+            STHPosition linearReference, STTransform stTransform, InertialTransform inertialTransform,
+            PhysicalPosition physicalPosition, ArrayList<Geometry> gmlGeometries) {
         this.id = id;
         this.name = name;
         this.dynamic = dynamic;
@@ -67,7 +74,9 @@ public class Signal extends AbstractOpenDriveElement {
         this.references = references;
         this.linearReference = linearReference;
         this.stTransform = stTransform;
+        this.inertialTransform = inertialTransform;
         this.physicalPosition = physicalPosition;
+        this.gmlGeometries = gmlGeometries;
     }
 
     public String getId() {
@@ -214,11 +223,27 @@ public class Signal extends AbstractOpenDriveElement {
         this.stTransform = stTransform;
     }
 
+    public InertialTransform getInertialTransform() {
+        return inertialTransform;
+    }
+
+    public void setInertialTransform(InertialTransform inertialTransform) {
+        this.inertialTransform = inertialTransform;
+    }
+
     public PhysicalPosition getPhysicalPosition() {
         return physicalPosition;
     }
 
     public void setPhysicalPosition(PhysicalPosition physicalPosition) {
         this.physicalPosition = physicalPosition;
+    }
+
+    public ArrayList<Geometry> getGmlGeometries() {
+        return gmlGeometries;
+    }
+
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
+        this.gmlGeometries = gmlGeometries;
     }
 }

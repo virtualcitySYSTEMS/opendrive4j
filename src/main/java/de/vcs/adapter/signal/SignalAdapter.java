@@ -42,6 +42,10 @@ public class SignalAdapter implements ObjectBuilder<Signal> {
         attributes.getValue("height").ifDouble(object::setHeight);
         attributes.getValue("width").ifDouble(object::setWidth);
         attributes.getValue("text").ifPresent(object::setText);
+        attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
+        attributes.getValue("t").ifDouble(object.getLinearReference()::setT);
+        attributes.getValue("zOffset").ifDouble(object.getInertialTransform()::setzOffset); // z -> inertial
+        attributes.getValue("hOffset").ifDouble(object.getStTransform()::setHdg); // heading with respect to st
     }
 
     @Override
