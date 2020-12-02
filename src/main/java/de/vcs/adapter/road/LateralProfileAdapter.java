@@ -29,7 +29,7 @@ public class LateralProfileAdapter implements ObjectBuilder<LateralProfile> {
             throws ObjectBuildException, XMLReadException {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
-                case "superElevation":
+                case "superelevation":
                     object.getSuperElevations().put(attributes.getValue("s").getAsDouble(),
                             reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
