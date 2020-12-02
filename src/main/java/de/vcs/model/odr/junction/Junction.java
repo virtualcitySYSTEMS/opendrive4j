@@ -2,6 +2,7 @@ package de.vcs.model.odr.junction;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.signal.Controller;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;
 
@@ -19,16 +20,19 @@ public class Junction extends AbstractOpenDriveElement {
     private ArrayList<Priority> priorities;
     private ArrayList<Controller> controllers;
     private Surfaces surfaces;
+    private ArrayList<Geometry> gmlGeometries;
 
     public Junction() {
         this.connections = new ArrayList<Connection>();
         this.priorities = new ArrayList<Priority>();
         this.controllers = new ArrayList<Controller>();
         this.surfaces = new Surfaces();
+        this.gmlGeometries = new ArrayList<>();
     }
 
     public Junction(String name, String id, String type, ArrayList<Connection> connections,
-            ArrayList<Priority> priorities, ArrayList<Controller> controllers, Surfaces Surfaces) {
+            ArrayList<Priority> priorities, ArrayList<Controller> controllers, Surfaces Surfaces,
+            ArrayList<Geometry> gmlGeometries) {
         this.name = name;
         this.id = id;
         this.type = type;
@@ -36,6 +40,7 @@ public class Junction extends AbstractOpenDriveElement {
         this.priorities = priorities;
         this.controllers = controllers;
         this.surfaces = Surfaces;
+        this.gmlGeometries = gmlGeometries;
     }
 
     public String getName() {
@@ -92,5 +97,13 @@ public class Junction extends AbstractOpenDriveElement {
 
     public void setControllers(ArrayList<Controller> controllers) {
         this.controllers = controllers;
+    }
+
+    public ArrayList<Geometry> getGmlGeometries() {
+        return gmlGeometries;
+    }
+
+    public void setGmlGeometries(ArrayList<Geometry> gmlGeometries) {
+        this.gmlGeometries = gmlGeometries;
     }
 }
