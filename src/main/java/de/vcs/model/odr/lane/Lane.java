@@ -25,7 +25,7 @@ public class Lane extends AbstractOpenDriveElement {
     private int successorId;
     private ArrayList<Rule> rules;
     private ArrayList<RoadMark> roadMarks;
-    private ArrayList<Height> heights;
+    private TreeMap<Double, Height> heights;
     private ArrayList<Geometry> gmlGeometries;
     private TreeMap<Double, Polynom> widths;
     private TreeMap<Double, Polynom> borders;
@@ -36,7 +36,7 @@ public class Lane extends AbstractOpenDriveElement {
         speeds = new ArrayList<Speed>();
         rules = new ArrayList<Rule>();
         roadMarks = new ArrayList<RoadMark>();
-        heights = new ArrayList<Height>();
+        heights = new TreeMap<Double, Height>();
         gmlGeometries = new ArrayList<Geometry>();
         widths = new TreeMap<Double, Polynom>();
         borders = new TreeMap<Double, Polynom>();
@@ -45,7 +45,7 @@ public class Lane extends AbstractOpenDriveElement {
     public Lane(int id, String type, boolean level, ArrayList<Material> materials,
             ArrayList<Access> accesses, ArrayList<Speed> speeds, int predecessorId,
             int successorId, ArrayList<Rule> rules,
-            ArrayList<RoadMark> roadMarks, ArrayList<Height> heights,
+            ArrayList<RoadMark> roadMarks, TreeMap<Double, Height> heights,
             ArrayList<Geometry> gmlGeometries, TreeMap<Double, Polynom> widths,
             TreeMap<Double, Polynom> borders) {
         this.id = id;
@@ -144,11 +144,11 @@ public class Lane extends AbstractOpenDriveElement {
         this.roadMarks = roadMarks;
     }
 
-    public ArrayList<Height> getHeights() {
+    public TreeMap<Double, Height> getHeights() {
         return heights;
     }
 
-    public void setHeights(ArrayList<Height> heights) {
+    public void setHeights(TreeMap<Double, Height> heights) {
         this.heights = heights;
     }
 
