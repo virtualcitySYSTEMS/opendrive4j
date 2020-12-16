@@ -34,7 +34,7 @@ public class LaneAdapter implements ObjectBuilder<Lane> {
             throws ObjectBuildException, XMLReadException {
         attributes.getValue("id").ifInteger(object::setId);
         TextContentChecker.check(attributes.getValue("type"), LaneType.class, object::setType);
-        attributes.getValue("level").ifDouble(object::setLevel);
+        attributes.getValue("level").ifBoolean(object::setLevel);
     }
 
     @Override
