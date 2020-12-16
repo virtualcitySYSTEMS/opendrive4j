@@ -70,7 +70,8 @@ public class LaneAdapter implements ObjectBuilder<Lane> {
                     object.getAccesses().add(reader.getObjectUsingBuilder(AccessAdapter.class));
                     break;
                 case "roadMark":
-                    object.getRoadMarks().add(reader.getObjectUsingBuilder(RoadMarkAdapter.class));
+                    object.getRoadMarks().put(attributes.getValue("sOffset").getAsDouble(),
+                            reader.getObjectUsingBuilder(RoadMarkAdapter.class));
                     break;
                 case "rule":
                     object.getRules().add(reader.getObjectUsingBuilder(RuleAdapter.class));
