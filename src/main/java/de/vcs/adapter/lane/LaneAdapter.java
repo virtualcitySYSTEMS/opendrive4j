@@ -77,7 +77,8 @@ public class LaneAdapter implements ObjectBuilder<Lane> {
                     object.getRules().add(reader.getObjectUsingBuilder(RuleAdapter.class));
                     break;
                 case "height":
-                    object.getHeights().add(reader.getObjectUsingBuilder(HeightAdapter.class));
+                    object.getHeights().put(attributes.getValue("sOffset").getAsDouble(),
+                            reader.getObjectUsingBuilder(HeightAdapter.class));
                     break;
                 case "width":
                     object.getWidths().put(attributes.getValue("sOffset").getAsDouble(),
