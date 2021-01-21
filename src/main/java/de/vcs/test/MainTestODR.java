@@ -18,10 +18,12 @@ public class MainTestODR {
         XMLReaderFactory factory = XMLReaderFactory.newInstance(xmlObjects);
         OpenDRIVE odr;
         try (XMLReader reader = factory.createReader(new File(
-                "src/main/resources/realRoadExample.xodr"))) {
+                "src/main/resources/2020-09-21_SAVe_Ingolstadt_Update2_Prio1-6.xodr"))) {
             odr = xmlObjects.fromXML(reader, OpenDRIVE.class);
         }
         System.out.println("header name: " + odr.getHeader().getName());
+        int nrObjects = 0;
+        int nrSignals = 0;
         for (Road r : odr.getRoads()) {
             System.out.println("===== road id: " + r.getId() + " =====");
             System.out.println(" + preID: " + r.getPredecessorId());
@@ -32,9 +34,6 @@ public class MainTestODR {
                 AbstractSTGeometry g = (AbstractSTGeometry) entry.getValue();
                 System.out.println(g.getClass().getName() + " s: " + g.getLinearReference().getS() +
                         " xy: " + g.getInertialReference().getPos().getValue());
-//                if (g instanceof de.vcs.model.odr.geometry.ParamPolynom) {
-//                    ((ParamPolynom) g).calcPointList();
-//                }
             }
             r.getLanes().getLaneOffsets()
                     .forEach((s, lOffset) -> {
@@ -58,13 +57,20 @@ public class MainTestODR {
                                                 l.getWidths().floorEntry(0.0).getValue().getStTransform().getsOffset() +
                                                 " preID: " + l.getPredecessorId() + " sucID: " + l.getSuccessorId()));
                     });
-            System.out.println("-- signals --");
+            System.out.println("-- signals -- " + r.getSignals().getSignals().size());
+            nrSignals += r.getSignals().getSignals().size();
             r.getSignals().getSignals()
                     .forEach(sig -> System.out.println("signalId: " + sig.getId() + " type: " + sig.getType()));
-            System.out.println("-- objects --");
+            System.out.println("-- objects -- " + r.getObjects().size());
+            nrObjects += r.getObjects().size();
             r.getObjects()
                     .forEach(obj -> System.out.println("objectId: " + obj.getId() + " name: " + obj.getName() + " s: " +
                             obj.getLinearReference().getS() + " t: " + obj.getLinearReference().getT()));
         }
+        System.out.println(" ---------------------");
+        System.out.println("roads: " + odr.getRoads().size());
+        System.out.println("objects: " + nrObjects);
+        System.out.println("signals: " + nrSignals);
+        System.out.println(" ---------------------");
     }
 }

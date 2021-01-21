@@ -86,19 +86,15 @@ public class RoadAdapter implements ObjectBuilder<Road> {
                             switch (reader.getName().getLocalPart()) {
                                 case "object":
                                     object.getObjects().add(reader.getObjectUsingBuilder(GenericObjectAdapter.class));
-                                    reader.nextTag();   // close tag
                                     break;
                                 case "tunnel":
                                     object.getObjects().add(reader.getObjectUsingBuilder(TunnelAdapter.class));
-                                    reader.nextTag();   // close tag
                                     break;
                                 case "bridge":
                                     object.getObjects().add(reader.getObjectUsingBuilder(BridgeAdapter.class));
-                                    reader.nextTag();   // close tag
                                     break;
                                 case "objectReference":
                                     object.getObjects().add(reader.getObjectUsingBuilder(ObjectReferenceAdapter.class));
-                                    reader.nextTag();   // close tag
                                     break;
                             }
                         }
