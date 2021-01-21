@@ -1,6 +1,5 @@
 package de.vcs.adapter.geometry;
 
-import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -20,8 +19,6 @@ import javax.xml.namespace.QName;
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE),
         @XMLElement(name = "end",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE),
-        @XMLElement(name = "cornerRoad",
-                namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
 public class STHPositionAdapter implements ObjectBuilder<STHPosition> {
 

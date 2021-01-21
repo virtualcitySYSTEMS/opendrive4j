@@ -13,7 +13,7 @@ import org.xmlobjects.xml.Attributes;
 import javax.xml.namespace.QName;
 
 @XMLElements({
-        @XMLElement(name = "cornerLocal",
+        @XMLElement(name = "uvzPosition",
                 namespaceURI = ODRConstants.ODR_1_6_NAMESPACE)
 })
 public class UVZPositionAdapter implements ObjectBuilder<UVZPosition> {

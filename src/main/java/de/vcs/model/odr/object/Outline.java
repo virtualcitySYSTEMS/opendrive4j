@@ -1,9 +1,6 @@
 package de.vcs.model.odr.object;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.geometry.STHPosition;
-import de.vcs.model.odr.geometry.UVZPosition;
-import de.vcs.model.odr.lane.LaneType;
 
 import java.util.ArrayList;
 
@@ -14,16 +11,16 @@ public class Outline extends AbstractOpenDriveElement {
     private boolean outer;
     private boolean closed;
     private String laneType;
-    private ArrayList<UVZPosition> cornerLocal;
-    private ArrayList<STHPosition> cornerRoad;
+    private ArrayList<CornerLocal> cornerLocal;
+    private ArrayList<CornerRoad> cornerRoad;
 
     public Outline() {
-        this.cornerLocal = new ArrayList<UVZPosition>();
-        this.cornerRoad = new ArrayList<STHPosition>();
+        this.cornerLocal = new ArrayList<CornerLocal>();
+        this.cornerRoad = new ArrayList<CornerRoad>();
     }
 
     public Outline(int id, String fillType, boolean outer, boolean closed, String laneType,
-            ArrayList<UVZPosition> cornerLocal, ArrayList<STHPosition> cornerRoad) {
+            ArrayList<CornerLocal> cornerLocal, ArrayList<CornerRoad> cornerRoad) {
         this.id = id;
         this.fillType = fillType;
         this.outer = outer;
@@ -73,19 +70,19 @@ public class Outline extends AbstractOpenDriveElement {
         this.laneType = laneType;
     }
 
-    public ArrayList<UVZPosition> getCornerLocal() {
+    public ArrayList<CornerLocal> getCornerLocal() {
         return cornerLocal;
     }
 
-    public void setCornerLocal(ArrayList<UVZPosition> cornerLocal) {
+    public void setCornerLocal(ArrayList<CornerLocal> cornerLocal) {
         this.cornerLocal = cornerLocal;
     }
 
-    public ArrayList<STHPosition> getCornerRoad() {
+    public ArrayList<CornerRoad> getCornerRoad() {
         return cornerRoad;
     }
 
-    public void setCornerRoad(ArrayList<STHPosition> cornerRoad) {
+    public void setCornerRoad(ArrayList<CornerRoad> cornerRoad) {
         this.cornerRoad = cornerRoad;
     }
 }

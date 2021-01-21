@@ -1,9 +1,6 @@
 package de.vcs.adapter.object;
 
-import de.vcs.adapter.geometry.STHPositionAdapter;
-import de.vcs.adapter.geometry.UVZPositionAdapter;
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.geometry.UVZPosition;
 import de.vcs.model.odr.lane.LaneType;
 import de.vcs.model.odr.object.Outline;
 import de.vcs.model.odr.object.OutlineFillType;
@@ -45,10 +42,10 @@ public class OutlineAdapter implements ObjectBuilder<Outline> {
         if (ODRConstants.ODR_1_6_NAMESPACE.equals(name.getNamespaceURI())) {
             switch (name.getLocalPart()) {
                 case "cornerLocal":
-                    object.getCornerLocal().add(reader.getObjectUsingBuilder(UVZPositionAdapter.class));
+                    object.getCornerLocal().add(reader.getObjectUsingBuilder(CornerLocalAdapter.class));
                     break;
                 case "cornerRoad":
-                    object.getCornerRoad().add(reader.getObjectUsingBuilder(STHPositionAdapter.class));
+                    object.getCornerRoad().add(reader.getObjectUsingBuilder(CornerRoadAdapter.class));
                     break;
             }
         }
