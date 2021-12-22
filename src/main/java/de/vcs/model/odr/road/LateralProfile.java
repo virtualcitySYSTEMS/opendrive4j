@@ -2,6 +2,7 @@ package de.vcs.model.odr.road;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
+import de.vcs.model.odr.geometry.STHPosition;
 
 import java.util.TreeMap;
 
@@ -13,15 +14,15 @@ import java.util.TreeMap;
 public class LateralProfile extends AbstractOpenDriveElement {
 
     private TreeMap<Double, AbstractODRGeometry> superElevations;
-    private TreeMap<Double, AbstractODRGeometry> shapes;
+    private TreeMap<STHPosition, AbstractODRGeometry> shapes;
 
     public LateralProfile() {
         this.superElevations = new TreeMap<Double, AbstractODRGeometry>();
-        this.shapes = new TreeMap<Double, AbstractODRGeometry>();
+        this.shapes = new TreeMap<STHPosition, AbstractODRGeometry>();
     }
 
     public LateralProfile(TreeMap<Double, AbstractODRGeometry> superElevations,
-            TreeMap<Double, AbstractODRGeometry> shapes) {
+            TreeMap<STHPosition, AbstractODRGeometry> shapes) {
         this.superElevations = superElevations;
         this.shapes = shapes;
     }
@@ -35,11 +36,11 @@ public class LateralProfile extends AbstractOpenDriveElement {
         this.superElevations = superElevations;
     }
 
-    public TreeMap<Double, AbstractODRGeometry> getShapes() {
+    public TreeMap<STHPosition, AbstractODRGeometry> getShapes() {
         return shapes;
     }
 
-    public void setShapes(TreeMap<Double, AbstractODRGeometry> shapes) {
+    public void setShapes(TreeMap<STHPosition, AbstractODRGeometry> shapes) {
         this.shapes = shapes;
     }
 }

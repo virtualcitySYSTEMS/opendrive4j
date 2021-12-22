@@ -3,6 +3,8 @@ package de.vcs.test;
 import de.vcs.model.odr.core.OpenDRIVE;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.AbstractSTGeometry;
+import de.vcs.model.odr.geometry.Polynom;
+import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.road.Road;
 import org.xmlobjects.XMLObjects;
 import org.xmlobjects.stream.XMLReader;
@@ -18,7 +20,7 @@ public class MainTestODR {
         XMLReaderFactory factory = XMLReaderFactory.newInstance(xmlObjects);
         OpenDRIVE odr;
         try (XMLReader reader = factory.createReader(new File(
-                "src/main/resources/2020-09-21_SAVe_Ingolstadt_Update2_Prio1-6.xodr"))) {
+                "src/main/resources/2021-10-26_1500_PLIMOS_Grafing_Prio1.xodr"))) {
             odr = xmlObjects.fromXML(reader, OpenDRIVE.class);
         }
         System.out.println("header name: " + odr.getHeader().getName());
@@ -34,6 +36,13 @@ public class MainTestODR {
                 AbstractSTGeometry g = (AbstractSTGeometry) entry.getValue();
                 System.out.println(g.getClass().getName() + " s: " + g.getLinearReference().getS() +
                         " xy: " + g.getInertialReference().getPos().getValue());
+            }
+            System.out.println(" -- lateralProfile -- ");
+            for (Map.Entry<STHPosition, AbstractODRGeometry> entry : r.getLateralProfile().getShapes().entrySet()) {
+                STHPosition sthPosition = entry.getKey();
+                Polynom g = (Polynom) entry.getValue();
+                System.out.println(" s: " + sthPosition.getS() + " t: " + sthPosition.getT() +
+                        " abcd: " + g.getA() + " " + g.getB() + " " + g.getC() + " " + g.getD());
             }
             r.getLanes().getLaneOffsets()
                     .forEach((s, lOffset) -> {

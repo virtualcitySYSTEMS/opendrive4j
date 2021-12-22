@@ -5,13 +5,16 @@ package de.vcs.model.odr.geometry;
  * @version 1.0
  * @created 20-Nov-2019 15:17:53
  */
-public class STHPosition extends AbstractODRGeometry {
+public class STHPosition extends AbstractODRGeometry implements Comparable<STHPosition> {
 
     private double s;
     private double t;
     private double h;
 
     public STHPosition() {
+        this.s = 0.0;
+        this.t = 0.0;
+        this.h = 0.0;
     }
 
     public STHPosition(double s, double t, double h) {
@@ -42,5 +45,24 @@ public class STHPosition extends AbstractODRGeometry {
 
     public void setH(double h) {
         this.h = h;
+    }
+
+    @Override
+    public int compareTo(STHPosition o) {
+        if (s < o.getS()) {
+            return -1;
+        }
+        if (s > o.getS()) {
+            return 1;
+        }
+        if (s == o.getS()) {
+            if (t < o.getT()) {
+                return -1;
+            }
+            if (t > o.getT()) {
+                return 1;
+            }
+        }
+        return 0;
     }
 }
