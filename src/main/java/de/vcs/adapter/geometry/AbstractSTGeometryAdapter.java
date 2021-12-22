@@ -22,7 +22,9 @@ public abstract class AbstractSTGeometryAdapter {
         attributes.getValue("length").ifDouble(object::setLength);
         // odr
         attributes.getValue("s").ifDouble(object.getLinearReference()::setS);
+        attributes.getValue("t").ifDouble(object.getLinearReference()::setT);
         attributes.getValue("sOffset").ifDouble(object.getStTransform()::setsOffset);
+        attributes.getValue("tOffset").ifDouble(object.getStTransform()::settOffset);
         ArrayList<Double> xyList = new ArrayList<>();
         attributes.getValue("x").ifDouble(xyList::add);
         attributes.getValue("y").ifDouble(xyList::add);
