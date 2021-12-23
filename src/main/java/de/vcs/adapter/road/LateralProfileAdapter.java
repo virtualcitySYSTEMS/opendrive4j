@@ -1,6 +1,7 @@
 package de.vcs.adapter.road;
 
 import de.vcs.adapter.geometry.PolynomAdapter;
+import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.road.LateralProfile;
 import de.vcs.util.ODRConstants;
@@ -13,6 +14,7 @@ import org.xmlobjects.stream.XMLReader;
 import org.xmlobjects.xml.Attributes;
 
 import javax.xml.namespace.QName;
+import java.util.TreeMap;
 
 @XMLElements({
         @XMLElement(name = "lateralProfile",
@@ -35,13 +37,14 @@ public class LateralProfileAdapter implements ObjectBuilder<LateralProfile> {
                             reader.getObjectUsingBuilder(PolynomAdapter.class));
                     break;
                 case "shape":
-                    STHPosition sthPosition = new STHPosition(
-                            attributes.getValue("s").getAsDouble(),
-                            attributes.getValue("t").getAsDouble(),
-                            0.0
-                    );
-                    object.getShapes().put(sthPosition,
-                            reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    double s = attributes.getValue("s").getAsDouble();
+                    double t = attributes.getValue("t").getAsDouble();
+                    if (object.getShapes().containsKey(s)) {
+                        object.getShapes().get(s).put(t, reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    } else {
+                        object.getShapes().computeIfAbsent(s, v -> new TreeMap<>())
+                                .put(t, reader.getObjectUsingBuilder(PolynomAdapter.class));
+                    }
                     break;
             }
         }
