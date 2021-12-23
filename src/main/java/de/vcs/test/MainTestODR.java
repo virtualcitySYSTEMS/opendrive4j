@@ -3,6 +3,8 @@ package de.vcs.test;
 import de.vcs.model.odr.core.OpenDRIVE;
 import de.vcs.model.odr.geometry.AbstractODRGeometry;
 import de.vcs.model.odr.geometry.AbstractSTGeometry;
+import de.vcs.model.odr.geometry.Polynom;
+import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.road.Road;
 import org.xmlobjects.XMLObjects;
 import org.xmlobjects.stream.XMLReader;
@@ -10,6 +12,8 @@ import org.xmlobjects.stream.XMLReaderFactory;
 
 import java.io.File;
 import java.util.Map;
+import java.util.Objects;
+import java.util.TreeMap;
 
 public class MainTestODR {
 
@@ -18,9 +22,15 @@ public class MainTestODR {
         XMLReaderFactory factory = XMLReaderFactory.newInstance(xmlObjects);
         OpenDRIVE odr;
         try (XMLReader reader = factory.createReader(new File(
-                "src/main/resources/2020-09-21_SAVe_Ingolstadt_Update2_Prio1-6.xodr"))) {
+                "src/main/resources/2021-10-26_1500_PLIMOS_Grafing_Prio1.xodr"))) {
             odr = xmlObjects.fromXML(reader, OpenDRIVE.class);
         }
+
+        MainTestODR.printContent(odr);
+        MainTestODR.getClosestShape(odr, "1001000", new STHPosition(20.0,-1.0,0.0));
+    }
+
+    public static void printContent(OpenDRIVE odr) {
         System.out.println("header name: " + odr.getHeader().getName());
         int nrObjects = 0;
         int nrSignals = 0;
@@ -34,6 +44,14 @@ public class MainTestODR {
                 AbstractSTGeometry g = (AbstractSTGeometry) entry.getValue();
                 System.out.println(g.getClass().getName() + " s: " + g.getLinearReference().getS() +
                         " xy: " + g.getInertialReference().getPos().getValue());
+            }
+            System.out.println(" -- lateralProfile -- ");
+            for (Map.Entry<Double, TreeMap<Double, AbstractODRGeometry>> entryS : r.getLateralProfile().getShapes().entrySet()) {
+                for (Map.Entry<Double, AbstractODRGeometry> entryT : entryS.getValue().entrySet()) {
+                    Polynom g = (Polynom) entryT.getValue();
+                    System.out.println(" s: " + g.getLinearReference().getS() + " t: " + g.getLinearReference().getT() +
+                            " abcd: " + g.getA() + " " + g.getB() + " " + g.getC() + " " + g.getD());
+                }
             }
             r.getLanes().getLaneOffsets()
                     .forEach((s, lOffset) -> {
@@ -72,5 +90,28 @@ public class MainTestODR {
         System.out.println("objects: " + nrObjects);
         System.out.println("signals: " + nrSignals);
         System.out.println(" ---------------------");
+    }
+
+    public static void getClosestShape(OpenDRIVE odr, String roadId, STHPosition sthPosition) {
+        double s = sthPosition.getS();
+        double t = sthPosition.getT();
+        odr.getRoads().stream()
+                .filter((road) -> Objects.equals(road.getId(), roadId))
+                .findAny()
+                .ifPresent(road -> {
+                    System.out.println("===== road id: " + road.getId() + " =====");
+                    System.out.println("sthPosition: " + s + " " + t);
+                    if (!road.getLateralProfile().getShapes().isEmpty()) {
+                        Polynom floorShape = (Polynom) road.getLateralProfile().getShapes().floorEntry(s).getValue().floorEntry(t).getValue();
+                        Polynom ceilingShape = (Polynom) road.getLateralProfile().getShapes().ceilingEntry(s).getValue().floorEntry(t).getValue();
+                        System.out.println("Shape floorEntry s: " + floorShape.getLinearReference().getS() + " t: " + floorShape.getLinearReference().getT() +
+                                " abcd: " + floorShape.getA() + " " + floorShape.getB() + " " + floorShape.getC() + " " + floorShape.getD());
+                        System.out.println("Shape ceilingEntry s: " + ceilingShape.getLinearReference().getS() + " t: " + ceilingShape.getLinearReference().getT() +
+                                " abcd: " + ceilingShape.getA() + " " + ceilingShape.getB() + " " + ceilingShape.getC() + " " + ceilingShape.getD());
+
+                    } else {
+                        System.out.println("no shapes available");
+                    }
+                });
     }
 }

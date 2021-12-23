@@ -12,6 +12,9 @@ public class STHPosition extends AbstractODRGeometry {
     private double h;
 
     public STHPosition() {
+        this.s = 0.0;
+        this.t = 0.0;
+        this.h = 0.0;
     }
 
     public STHPosition(double s, double t, double h) {

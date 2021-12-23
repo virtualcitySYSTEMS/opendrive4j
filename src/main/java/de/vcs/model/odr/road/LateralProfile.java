@@ -13,15 +13,15 @@ import java.util.TreeMap;
 public class LateralProfile extends AbstractOpenDriveElement {
 
     private TreeMap<Double, AbstractODRGeometry> superElevations;
-    private TreeMap<Double, AbstractODRGeometry> shapes;
+    private TreeMap<Double, TreeMap<Double, AbstractODRGeometry>> shapes;
 
     public LateralProfile() {
         this.superElevations = new TreeMap<Double, AbstractODRGeometry>();
-        this.shapes = new TreeMap<Double, AbstractODRGeometry>();
+        this.shapes = new TreeMap<Double, TreeMap<Double, AbstractODRGeometry>>();
     }
 
     public LateralProfile(TreeMap<Double, AbstractODRGeometry> superElevations,
-            TreeMap<Double, AbstractODRGeometry> shapes) {
+            TreeMap<Double, TreeMap<Double, AbstractODRGeometry>> shapes) {
         this.superElevations = superElevations;
         this.shapes = shapes;
     }
@@ -35,11 +35,11 @@ public class LateralProfile extends AbstractOpenDriveElement {
         this.superElevations = superElevations;
     }
 
-    public TreeMap<Double, AbstractODRGeometry> getShapes() {
+    public TreeMap<Double, TreeMap<Double, AbstractODRGeometry>> getShapes() {
         return shapes;
     }
 
-    public void setShapes(TreeMap<Double, AbstractODRGeometry> shapes) {
+    public void setShapes(TreeMap<Double, TreeMap<Double, AbstractODRGeometry>> shapes) {
         this.shapes = shapes;
     }
 }
