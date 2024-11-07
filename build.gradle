@@ -5,7 +5,7 @@ plugins {
 
 }
 
-group 'vcs.odr.opendrive4j'
+group 'vcs.odr'
 version '1.0.0'
 description 'A Java mapping for ASAM e.V. OpenDRIVE standard'
 ext.date = new Date()
