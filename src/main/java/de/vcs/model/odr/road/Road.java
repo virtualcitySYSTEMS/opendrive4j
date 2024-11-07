@@ -1,10 +1,10 @@
 package de.vcs.model.odr.road;
 
+import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.lane.Lanes;
 import de.vcs.model.odr.object.AbstractObject;
-import de.vcs.model.odr.signal.Signals;
 import de.vcs.model.odr.railroad.Railroad;
-import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.signal.Signals;
 import org.locationtech.jts.geom.Geometry;
 
 import java.util.ArrayList;

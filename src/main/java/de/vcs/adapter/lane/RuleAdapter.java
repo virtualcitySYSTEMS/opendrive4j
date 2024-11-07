@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class RuleAdapter implements ObjectBuilder<Rule> {
 
     @Override
-    public Rule createObject(QName name) throws ObjectBuildException {
+    public Rule createObject(QName name, Object o) throws ObjectBuildException {
         return new Rule();
     }
 

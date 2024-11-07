@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class ParamPolynomAdapter implements ObjectBuilder<ParamPolynom> {
 
     @Override
-    public ParamPolynom createObject(QName name) throws ObjectBuildException {
+    public ParamPolynom createObject(QName name, Object o) throws ObjectBuildException {
         return new ParamPolynom();
     }
 

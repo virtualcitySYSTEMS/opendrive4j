@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class ArcAdapter implements ObjectBuilder<Arc> {
 
     @Override
-    public Arc createObject(QName name) throws ObjectBuildException {
+    public Arc createObject(QName name, Object o) throws ObjectBuildException {
         return new Arc();
     }
 

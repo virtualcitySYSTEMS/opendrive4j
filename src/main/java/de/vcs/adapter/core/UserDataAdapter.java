@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class UserDataAdapter implements ObjectBuilder<UserData> {
 
     @Override
-    public UserData createObject(QName name) throws ObjectBuildException {
+    public UserData createObject(QName name, Object o) throws ObjectBuildException {
         return new UserData();
     }
 

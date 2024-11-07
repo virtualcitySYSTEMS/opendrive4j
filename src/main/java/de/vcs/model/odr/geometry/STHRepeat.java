@@ -1,12 +1,5 @@
 package de.vcs.model.odr.geometry;
 
-import de.vcs.model.odr.lane.LaneValidity;
-import de.vcs.model.odr.object.Material;
-import de.vcs.model.odr.object.Outline;
-import org.locationtech.jts.geom.Geometry;
-
-import java.util.ArrayList;
-
 /**
  * @author rruhdorfer
  * @version 1.0

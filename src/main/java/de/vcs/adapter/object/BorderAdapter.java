@@ -1,7 +1,6 @@
 package de.vcs.adapter.object;
 
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.object.AbstractObject;
 import de.vcs.model.odr.object.Border;
 import de.vcs.model.odr.object.BorderType;
 import de.vcs.util.ODRConstants;
@@ -22,7 +21,7 @@ import javax.xml.namespace.QName;
 public class BorderAdapter implements ObjectBuilder<Border> {
 
     @Override
-    public Border createObject(QName name) throws ObjectBuildException {
+    public Border createObject(QName name, Object o) throws ObjectBuildException {
         return new Border();
     }
 

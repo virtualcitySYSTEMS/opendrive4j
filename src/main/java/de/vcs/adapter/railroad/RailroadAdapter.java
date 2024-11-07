@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class RailroadAdapter implements ObjectBuilder<Railroad> {
 
     @Override
-    public Railroad createObject(QName name) throws ObjectBuildException {
+    public Railroad createObject(QName name, Object o) throws ObjectBuildException {
         return new Railroad();
     }
 

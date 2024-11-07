@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class ErrorAdapter implements ObjectBuilder<Error> {
 
     @Override
-    public Error createObject(QName name) throws ObjectBuildException {
+    public Error createObject(QName name, Object o) throws ObjectBuildException {
         return new Error();
     }
 

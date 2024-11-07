@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class RawDataAdapter implements ObjectBuilder<RawData> {
 
     @Override
-    public RawData createObject(QName name) throws ObjectBuildException {
+    public RawData createObject(QName name, Object o) throws ObjectBuildException {
         return new RawData();
     }
 

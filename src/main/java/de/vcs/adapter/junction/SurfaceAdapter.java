@@ -20,7 +20,7 @@ import javax.xml.namespace.QName;
 public class SurfaceAdapter implements ObjectBuilder<Surfaces> {
 
     @Override
-    public Surfaces createObject(QName name) throws ObjectBuildException {
+    public Surfaces createObject(QName name, Object o) throws ObjectBuildException {
         return new Surfaces();
     }
 

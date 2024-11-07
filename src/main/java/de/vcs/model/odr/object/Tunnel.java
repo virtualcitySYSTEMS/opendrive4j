@@ -1,7 +1,5 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.core.AdditionalData;
-
 /**
  * @author rruhdorfer
  * @version 1.0

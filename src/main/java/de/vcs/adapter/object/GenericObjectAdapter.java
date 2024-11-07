@@ -1,7 +1,8 @@
 package de.vcs.adapter.object;
 
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.object.*;
+import de.vcs.model.odr.object.GenericObject;
+import de.vcs.model.odr.object.ObjectType;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
 import org.xmlobjects.annotation.XMLElements;
@@ -20,7 +21,7 @@ import javax.xml.namespace.QName;
 public class GenericObjectAdapter implements ObjectBuilder<GenericObject> {
 
     @Override
-    public GenericObject createObject(QName name) throws ObjectBuildException {
+    public GenericObject createObject(QName name, Object o) throws ObjectBuildException {
         return new GenericObject();
     }
 

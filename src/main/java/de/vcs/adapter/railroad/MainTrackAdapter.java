@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class MainTrackAdapter implements ObjectBuilder<MainTrack> {
 
     @Override
-    public MainTrack createObject(QName name) throws ObjectBuildException {
+    public MainTrack createObject(QName name, Object o) throws ObjectBuildException {
         return new MainTrack();
     }
 

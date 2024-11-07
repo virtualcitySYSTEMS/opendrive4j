@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class IncludeAdapter implements ObjectBuilder<Include> {
 
     @Override
-    public Include createObject(QName name) throws ObjectBuildException {
+    public Include createObject(QName name, Object o) throws ObjectBuildException {
         return new Include();
     }
 

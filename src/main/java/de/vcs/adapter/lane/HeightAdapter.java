@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class HeightAdapter implements ObjectBuilder<Height> {
 
     @Override
-    public Height createObject(QName name) throws ObjectBuildException {
+    public Height createObject(QName name, Object o) throws ObjectBuildException {
         return new Height();
     }
 

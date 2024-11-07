@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class JunctionAdapter implements ObjectBuilder<Junction> {
 
     @Override
-    public Junction createObject(QName name) throws ObjectBuildException {
+    public Junction createObject(QName name, Object o) throws ObjectBuildException {
         return new Junction();
     }
 

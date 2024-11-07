@@ -1,7 +1,6 @@
 package de.vcs.adapter.railroad;
 
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.railroad.Platform;
 import de.vcs.model.odr.railroad.Station;
 import de.vcs.model.odr.railroad.StationType;
 import de.vcs.util.ODRConstants;
@@ -22,7 +21,7 @@ import javax.xml.namespace.QName;
 public class StationAdapter implements ObjectBuilder<Station> {
 
     @Override
-    public Station createObject(QName name) throws ObjectBuildException {
+    public Station createObject(QName name, Object o) throws ObjectBuildException {
         return new Station();
     }
 

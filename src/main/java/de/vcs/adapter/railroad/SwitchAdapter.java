@@ -1,8 +1,6 @@
 package de.vcs.adapter.railroad;
 
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.railroad.Partner;
-import de.vcs.model.odr.railroad.SideTrack;
 import de.vcs.model.odr.railroad.Switch;
 import de.vcs.model.odr.railroad.SwitchPosition;
 import de.vcs.util.ODRConstants;
@@ -23,7 +21,7 @@ import javax.xml.namespace.QName;
 public class SwitchAdapter implements ObjectBuilder<Switch> {
 
     @Override
-    public Switch createObject(QName name) throws ObjectBuildException {
+    public Switch createObject(QName name, Object o) throws ObjectBuildException {
         return new Switch();
     }
 

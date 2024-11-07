@@ -23,7 +23,7 @@ import javax.xml.namespace.QName;
 public class STHPositionAdapter implements ObjectBuilder<STHPosition> {
 
     @Override
-    public STHPosition createObject(QName name) throws ObjectBuildException {
+    public STHPosition createObject(QName name, Object o) throws ObjectBuildException {
         return new STHPosition();
     }
 

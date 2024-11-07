@@ -26,7 +26,7 @@ import javax.xml.namespace.QName;
 public class SurfaceCRGAdapter implements ObjectBuilder<SurfaceCRG> {
 
     @Override
-    public SurfaceCRG createObject(QName name) throws ObjectBuildException {
+    public SurfaceCRG createObject(QName name, Object o) throws ObjectBuildException {
         return new SurfaceCRG();
     }
 

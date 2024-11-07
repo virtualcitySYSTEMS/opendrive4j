@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class JunctionReferenceAdapter implements ObjectBuilder<JunctionReference> {
 
     @Override
-    public JunctionReference createObject(QName name) throws ObjectBuildException {
+    public JunctionReference createObject(QName name, Object o) throws ObjectBuildException {
         return new JunctionReference();
     }
 

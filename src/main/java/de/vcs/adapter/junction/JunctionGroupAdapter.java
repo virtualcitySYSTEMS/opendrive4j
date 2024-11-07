@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class JunctionGroupAdapter implements ObjectBuilder<JunctionGroup> {
 
     @Override
-    public JunctionGroup createObject(QName name) throws ObjectBuildException {
+    public JunctionGroup createObject(QName name, Object o) throws ObjectBuildException {
         return new JunctionGroup();
     }
 

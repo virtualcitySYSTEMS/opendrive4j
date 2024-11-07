@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class DataQualityAdapter implements ObjectBuilder<DataQuality> {
 
     @Override
-    public DataQuality createObject(QName name) throws ObjectBuildException {
+    public DataQuality createObject(QName name, Object o) throws ObjectBuildException {
         return new DataQuality();
     }
 

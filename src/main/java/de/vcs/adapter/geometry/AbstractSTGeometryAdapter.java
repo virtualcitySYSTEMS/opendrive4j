@@ -1,7 +1,6 @@
 package de.vcs.adapter.geometry;
 
 import de.vcs.model.odr.geometry.AbstractSTGeometry;
-import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.gml.adapter.geometry.primitives.PointAdapter;

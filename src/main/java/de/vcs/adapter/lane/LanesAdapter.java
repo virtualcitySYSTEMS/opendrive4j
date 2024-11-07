@@ -20,7 +20,7 @@ import javax.xml.namespace.QName;
 public class LanesAdapter implements ObjectBuilder<Lanes> {
 
     @Override
-    public Lanes createObject(QName name) throws ObjectBuildException {
+    public Lanes createObject(QName name, Object o) throws ObjectBuildException {
         return new Lanes();
     }
 

@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class TypeAdapter implements ObjectBuilder<Type> {
 
     @Override
-    public Type createObject(QName name) throws ObjectBuildException {
+    public Type createObject(QName name, Object o) throws ObjectBuildException {
         return new Type();
     }
 

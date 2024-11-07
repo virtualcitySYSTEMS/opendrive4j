@@ -4,7 +4,6 @@ import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.model.odr.junction.Connection;
 import de.vcs.model.odr.junction.ContactPoint;
 import de.vcs.model.odr.junction.JunctionType;
-import de.vcs.model.odr.junction.LaneLink;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
 import org.xmlobjects.annotation.XMLElements;
@@ -23,7 +22,7 @@ import javax.xml.namespace.QName;
 public class ConnectionAdapter implements ObjectBuilder<Connection> {
 
     @Override
-    public Connection createObject(QName name) throws ObjectBuildException {
+    public Connection createObject(QName name, Object o) throws ObjectBuildException {
         return new Connection();
     }
 

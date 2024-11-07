@@ -1,28 +1,23 @@
 package de.vcs.adapter.road;
 
-import com.sun.jdi.ObjectReference;
 import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.adapter.lane.LanesAdapter;
-import de.vcs.adapter.object.*;
+import de.vcs.adapter.object.BridgeAdapter;
+import de.vcs.adapter.object.GenericObjectAdapter;
+import de.vcs.adapter.object.ObjectReferenceAdapter;
+import de.vcs.adapter.object.TunnelAdapter;
 import de.vcs.adapter.railroad.RailroadAdapter;
 import de.vcs.adapter.signal.SignalsAdapter;
-import de.vcs.model.odr.object.AbstractObject;
-import de.vcs.model.odr.object.GenericObject;
-import de.vcs.model.odr.road.*;
+import de.vcs.model.odr.road.Road;
+import de.vcs.model.odr.road.TrafficRule;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
 import org.xmlobjects.annotation.XMLElements;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.builder.ObjectBuilder;
-import org.xmlobjects.gml.adapter.geometry.AbstractGeometryAdapter;
-import org.xmlobjects.gml.adapter.geometry.primitives.PointAdapter;
-import org.xmlobjects.gml.adapter.geometry.primitives.PolygonAdapter;
-import org.xmlobjects.gml.model.GMLObject;
-import org.xmlobjects.gml.model.geometry.AbstractGeometry;
 import org.xmlobjects.stream.XMLReadException;
 import org.xmlobjects.stream.XMLReader;
 import org.xmlobjects.xml.Attributes;
-import sun.awt.image.ImageWatched;
 
 import javax.xml.namespace.QName;
 
@@ -35,7 +30,7 @@ import static org.xmlobjects.stream.EventType.START_ELEMENT;
 public class RoadAdapter implements ObjectBuilder<Road> {
 
     @Override
-    public Road createObject(QName name) throws ObjectBuildException {
+    public Road createObject(QName name, Object o) throws ObjectBuildException {
         return new Road();
     }
 

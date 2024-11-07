@@ -1,8 +1,6 @@
 package de.vcs.adapter.road;
 
 import de.vcs.adapter.geometry.PolynomAdapter;
-import de.vcs.model.odr.geometry.AbstractODRGeometry;
-import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.road.LateralProfile;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -23,7 +21,7 @@ import java.util.TreeMap;
 public class LateralProfileAdapter implements ObjectBuilder<LateralProfile> {
 
     @Override
-    public LateralProfile createObject(QName name) throws ObjectBuildException {
+    public LateralProfile createObject(QName name, Object o) throws ObjectBuildException {
         return new LateralProfile();
     }
 

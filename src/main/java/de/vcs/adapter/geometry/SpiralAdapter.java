@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class SpiralAdapter implements ObjectBuilder<Spiral> {
 
     @Override
-    public Spiral createObject(QName name) throws ObjectBuildException {
+    public Spiral createObject(QName name, Object o) throws ObjectBuildException {
         return new Spiral();
     }
 

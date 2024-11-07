@@ -23,7 +23,7 @@ import javax.xml.namespace.QName;
 public class PredecessorSuccessorAdapter implements ObjectBuilder<PredecessorSuccessor> {
 
     @Override
-    public PredecessorSuccessor createObject(QName name) throws ObjectBuildException {
+    public PredecessorSuccessor createObject(QName name, Object o) throws ObjectBuildException {
         return new PredecessorSuccessor();
     }
 

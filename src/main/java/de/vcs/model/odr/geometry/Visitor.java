@@ -1,7 +1,6 @@
 package de.vcs.model.odr.geometry;
 
 import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
 
 public interface Visitor {
     Point visit(ParamPolynom poly);

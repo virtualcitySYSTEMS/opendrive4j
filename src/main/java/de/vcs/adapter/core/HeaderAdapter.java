@@ -1,9 +1,7 @@
 package de.vcs.adapter.core;
 
 import de.vcs.adapter.geometry.InertialTransformAdapter;
-import de.vcs.model.odr.core.GeoReference;
 import de.vcs.model.odr.core.Header;
-import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
 import org.xmlobjects.annotation.XMLElements;
@@ -22,7 +20,7 @@ import javax.xml.namespace.QName;
 public class HeaderAdapter implements ObjectBuilder<Header> {
 
     @Override
-    public Header createObject(QName name) throws ObjectBuildException {
+    public Header createObject(QName name, Object o) throws ObjectBuildException {
         return new Header();
     }
 

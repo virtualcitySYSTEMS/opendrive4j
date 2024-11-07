@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class ParkingSpaceAdapter implements ObjectBuilder<ParkingSpace> {
 
     @Override
-    public ParkingSpace createObject(QName name) throws ObjectBuildException {
+    public ParkingSpace createObject(QName name, Object o) throws ObjectBuildException {
         return new ParkingSpace();
     }
 

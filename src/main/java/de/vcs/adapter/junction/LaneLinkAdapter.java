@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class LaneLinkAdapter implements ObjectBuilder<LaneLink> {
 
     @Override
-    public LaneLink createObject(QName name) throws ObjectBuildException {
+    public LaneLink createObject(QName name, Object o) throws ObjectBuildException {
         return new LaneLink();
     }
 

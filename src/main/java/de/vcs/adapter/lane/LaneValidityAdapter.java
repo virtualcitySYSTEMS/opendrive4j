@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class LaneValidityAdapter implements ObjectBuilder<LaneValidity> {
 
     @Override
-    public LaneValidity createObject(QName name) throws ObjectBuildException {
+    public LaneValidity createObject(QName name, Object o) throws ObjectBuildException {
         return new LaneValidity();
     }
 

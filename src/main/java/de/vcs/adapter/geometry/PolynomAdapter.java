@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class PolynomAdapter implements ObjectBuilder<Polynom> {
 
     @Override
-    public Polynom createObject(QName name) throws ObjectBuildException {
+    public Polynom createObject(QName name, Object o) throws ObjectBuildException {
         return new Polynom();
     }
 

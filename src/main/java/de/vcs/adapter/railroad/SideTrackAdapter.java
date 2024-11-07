@@ -3,7 +3,6 @@ package de.vcs.adapter.railroad;
 import de.vcs.adapter.geometry.STHPositionAdapter;
 import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.model.odr.junction.ElementDir;
-import de.vcs.model.odr.railroad.MainTrack;
 import de.vcs.model.odr.railroad.SideTrack;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -23,7 +22,7 @@ import javax.xml.namespace.QName;
 public class SideTrackAdapter implements ObjectBuilder<SideTrack> {
 
     @Override
-    public SideTrack createObject(QName name) throws ObjectBuildException {
+    public SideTrack createObject(QName name, Object o) throws ObjectBuildException {
         return new SideTrack();
     }
 

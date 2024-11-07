@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class ObjectReferenceAdapter implements ObjectBuilder<ObjectReference> {
 
     @Override
-    public ObjectReference createObject(QName name) throws ObjectBuildException {
+    public ObjectReference createObject(QName name, Object o) throws ObjectBuildException {
         return new ObjectReference();
     }
 

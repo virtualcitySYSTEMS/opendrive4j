@@ -2,9 +2,9 @@ package de.vcs.model.odr.core;
 
 import de.vcs.model.odr.junction.Junction;
 import de.vcs.model.odr.junction.JunctionGroup;
+import de.vcs.model.odr.railroad.Station;
 import de.vcs.model.odr.road.Road;
 import de.vcs.model.odr.signal.Controller;
-import de.vcs.model.odr.railroad.Station;
 
 import java.util.ArrayList;
 

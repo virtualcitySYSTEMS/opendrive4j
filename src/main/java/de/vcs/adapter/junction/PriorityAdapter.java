@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class PriorityAdapter implements ObjectBuilder<Priority> {
 
     @Override
-    public Priority createObject(QName name) throws ObjectBuildException {
+    public Priority createObject(QName name, Object o) throws ObjectBuildException {
         return new Priority();
     }
 

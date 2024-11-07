@@ -4,8 +4,6 @@ import de.vcs.model.odr.core.AbstractOpenDriveElement;
 import de.vcs.model.odr.geometry.InertialTransform;
 import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.geometry.STTransform;
-import de.vcs.model.odr.junction.CRGMode;
-import de.vcs.model.odr.junction.CRGPurpose;
 
 /**
  * @author rruhdorfer

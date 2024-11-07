@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class RoadMarkAdapter implements ObjectBuilder<RoadMark> {
 
     @Override
-    public RoadMark createObject(QName name) throws ObjectBuildException {
+    public RoadMark createObject(QName name, Object o) throws ObjectBuildException {
         return new RoadMark();
     }
 

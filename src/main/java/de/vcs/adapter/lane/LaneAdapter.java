@@ -25,7 +25,7 @@ import static org.xmlobjects.stream.EventType.START_ELEMENT;
 public class LaneAdapter implements ObjectBuilder<Lane> {
 
     @Override
-    public Lane createObject(QName name) throws ObjectBuildException {
+    public Lane createObject(QName name, Object o) throws ObjectBuildException {
         return new Lane();
     }
 

@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class PlanViewAdapter implements ObjectBuilder<PlanView> {
 
     @Override
-    public PlanView createObject(QName name) throws ObjectBuildException {
+    public PlanView createObject(QName name, Object o) throws ObjectBuildException {
         return new PlanView();
     }
 

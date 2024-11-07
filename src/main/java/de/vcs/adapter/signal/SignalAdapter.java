@@ -2,7 +2,6 @@ package de.vcs.adapter.signal;
 
 import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.model.odr.core.UnitEnumCollection;
-import de.vcs.model.odr.object.BorderType;
 import de.vcs.model.odr.object.Orientation;
 import de.vcs.model.odr.signal.Signal;
 import de.vcs.util.ODRConstants;
@@ -23,7 +22,7 @@ import javax.xml.namespace.QName;
 public class SignalAdapter implements ObjectBuilder<Signal> {
 
     @Override
-    public Signal createObject(QName name) throws ObjectBuildException {
+    public Signal createObject(QName name, Object o) throws ObjectBuildException {
         return new Signal();
     }
 

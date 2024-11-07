@@ -24,7 +24,7 @@ import javax.xml.namespace.QName;
 public class OpenDRIVEAdapter implements ObjectBuilder<OpenDRIVE> {
 
     @Override
-    public OpenDRIVE createObject(QName name) throws ObjectBuildException {
+    public OpenDRIVE createObject(QName name, Object o) throws ObjectBuildException {
         return new OpenDRIVE();
     }
 

@@ -1,11 +1,6 @@
 package de.vcs.adapter.object;
 
-import de.vcs.adapter.geometry.STHPositionAdapter;
-import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.adapter.lane.LaneValidityAdapter;
-import de.vcs.model.odr.object.AbstractObject;
 import de.vcs.model.odr.object.Objects;
-import de.vcs.model.odr.object.Orientation;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
 import org.xmlobjects.annotation.XMLElements;
@@ -24,7 +19,7 @@ import javax.xml.namespace.QName;
 public abstract class ObjectsAdapter implements ObjectBuilder<Objects> {
 
     @Override
-    public Objects createObject(QName qName) throws ObjectBuildException {
+    public Objects createObject(QName qName, Object o) throws ObjectBuildException {
         return new Objects();
     }
 

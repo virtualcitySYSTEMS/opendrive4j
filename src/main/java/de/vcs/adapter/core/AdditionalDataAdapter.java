@@ -2,8 +2,6 @@ package de.vcs.adapter.core;
 
 import de.vcs.model.odr.core.AdditionalData;
 import de.vcs.util.ODRConstants;
-import org.xmlobjects.annotation.XMLElement;
-import org.xmlobjects.annotation.XMLElements;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.builder.ObjectBuilder;
 import org.xmlobjects.stream.XMLReadException;
@@ -15,7 +13,7 @@ import javax.xml.namespace.QName;
 public class AdditionalDataAdapter implements ObjectBuilder<AdditionalData> {
 
     @Override
-    public AdditionalData createObject(QName name) throws ObjectBuildException {
+    public AdditionalData createObject(QName name, Object o) throws ObjectBuildException {
         return new AdditionalData();
     }
 

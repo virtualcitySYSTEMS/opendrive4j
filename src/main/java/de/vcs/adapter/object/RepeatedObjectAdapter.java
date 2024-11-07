@@ -20,7 +20,7 @@ import javax.xml.namespace.QName;
 public class RepeatedObjectAdapter implements ObjectBuilder<STHRepeat> {
 
     @Override
-    public STHRepeat createObject(QName name) throws ObjectBuildException {
+    public STHRepeat createObject(QName name, Object o) throws ObjectBuildException {
         return new STHRepeat();
     }
 

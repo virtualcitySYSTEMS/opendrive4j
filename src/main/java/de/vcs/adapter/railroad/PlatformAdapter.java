@@ -1,6 +1,5 @@
 package de.vcs.adapter.railroad;
 
-import de.vcs.model.odr.railroad.Partner;
 import de.vcs.model.odr.railroad.Platform;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -20,7 +19,7 @@ import javax.xml.namespace.QName;
 public class PlatformAdapter implements ObjectBuilder<Platform> {
 
     @Override
-    public Platform createObject(QName name) throws ObjectBuildException {
+    public Platform createObject(QName name, Object o) throws ObjectBuildException {
         return new Platform();
     }
 

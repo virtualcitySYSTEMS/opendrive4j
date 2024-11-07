@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class CornerLocalAdapter implements ObjectBuilder<CornerLocal> {
 
     @Override
-    public CornerLocal createObject(QName name) throws ObjectBuildException {
+    public CornerLocal createObject(QName name, Object o) throws ObjectBuildException {
         return new CornerLocal();
     }
 

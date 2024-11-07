@@ -1,7 +1,7 @@
 package de.vcs.model.odr.lane;
 
-import de.vcs.model.odr.geometry.STTransform;
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
+import de.vcs.model.odr.geometry.STTransform;
 
 /**
  * @author rruhdorfer

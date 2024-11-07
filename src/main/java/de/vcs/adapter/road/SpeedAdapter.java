@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class SpeedAdapter implements ObjectBuilder<Speed> {
 
     @Override
-    public Speed createObject(QName name) throws ObjectBuildException {
+    public Speed createObject(QName name, Object o) throws ObjectBuildException {
         return new Speed();
     }
 

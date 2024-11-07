@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class DependencyAdapter implements ObjectBuilder<Dependency> {
 
     @Override
-    public Dependency createObject(QName name) throws ObjectBuildException {
+    public Dependency createObject(QName name, Object o) throws ObjectBuildException {
         return new Dependency();
     }
 

@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class LineAdapter implements ObjectBuilder<Line> {
 
     @Override
-    public Line createObject(QName name) throws ObjectBuildException {
+    public Line createObject(QName name, Object o) throws ObjectBuildException {
         return new Line();
     }
 

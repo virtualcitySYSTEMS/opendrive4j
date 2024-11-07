@@ -1,9 +1,6 @@
 package de.vcs.adapter.core;
 
 import de.vcs.model.odr.core.UserDataContent;
-import de.vcs.util.ODRConstants;
-import org.xmlobjects.annotation.XMLElement;
-import org.xmlobjects.annotation.XMLElements;
 import org.xmlobjects.builder.ObjectBuildException;
 import org.xmlobjects.builder.ObjectBuilder;
 import org.xmlobjects.stream.XMLReadException;
@@ -15,7 +12,7 @@ import javax.xml.namespace.QName;
 public class UserDataContentAdapter implements ObjectBuilder<UserDataContent> {
 
     @Override
-    public UserDataContent createObject(QName name) throws ObjectBuildException {
+    public UserDataContent createObject(QName name, Object o) throws ObjectBuildException {
         return new UserDataContent();
     }
 

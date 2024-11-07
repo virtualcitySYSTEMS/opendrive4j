@@ -1,7 +1,6 @@
 package de.vcs.model.odr.railroad;
 
 import de.vcs.model.odr.core.AbstractOpenDriveElement;
-import de.vcs.model.odr.core.AdditionalData;
 
 /**
  * @author rruhdorfer

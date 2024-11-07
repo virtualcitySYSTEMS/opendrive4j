@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class OutlineAdapter implements ObjectBuilder<Outline> {
 
     @Override
-    public Outline createObject(QName name) throws ObjectBuildException {
+    public Outline createObject(QName name, Object o) throws ObjectBuildException {
         return new Outline();
     }
 

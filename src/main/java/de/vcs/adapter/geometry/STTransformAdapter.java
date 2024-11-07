@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 public class STTransformAdapter implements ObjectBuilder<STTransform> {
 
     @Override
-    public STTransform createObject(QName name) throws ObjectBuildException {
+    public STTransform createObject(QName name, Object o) throws ObjectBuildException {
         return new STTransform();
     }
 

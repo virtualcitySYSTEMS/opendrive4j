@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
 public class AccessAdapter implements ObjectBuilder<Access> {
 
     @Override
-    public Access createObject(QName name) throws ObjectBuildException {
+    public Access createObject(QName name, Object o) throws ObjectBuildException {
         return new Access();
     }
 

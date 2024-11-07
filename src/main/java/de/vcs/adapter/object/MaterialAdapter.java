@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class MaterialAdapter implements ObjectBuilder<Material> {
 
     @Override
-    public Material createObject(QName name) throws ObjectBuildException {
+    public Material createObject(QName name, Object o) throws ObjectBuildException {
         return new Material();
     }
 

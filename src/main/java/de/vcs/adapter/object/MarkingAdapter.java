@@ -3,7 +3,6 @@ package de.vcs.adapter.object;
 import de.vcs.adapter.helper.TextContentChecker;
 import de.vcs.model.odr.lane.RoadMarkColor;
 import de.vcs.model.odr.lane.RoadMarkWeight;
-import de.vcs.model.odr.object.CornerReference;
 import de.vcs.model.odr.object.Marking;
 import de.vcs.model.odr.object.SideType;
 import de.vcs.util.ODRConstants;
@@ -26,7 +25,7 @@ import javax.xml.namespace.QName;
 public class MarkingAdapter implements ObjectBuilder<Marking> {
 
     @Override
-    public Marking createObject(QName name) throws ObjectBuildException {
+    public Marking createObject(QName name, Object o) throws ObjectBuildException {
         return new Marking();
     }
 

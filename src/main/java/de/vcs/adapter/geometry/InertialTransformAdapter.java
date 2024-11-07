@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class InertialTransformAdapter implements ObjectBuilder<InertialTransform> {
 
     @Override
-    public InertialTransform createObject(QName name) throws ObjectBuildException {
+    public InertialTransform createObject(QName name, Object o) throws ObjectBuildException {
         return new InertialTransform();
     }
 

@@ -1,9 +1,5 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.geometry.STHRepeat;
-
-import java.util.ArrayList;
-
 /**
  * @author rruhdorfer
  * @version 1.0

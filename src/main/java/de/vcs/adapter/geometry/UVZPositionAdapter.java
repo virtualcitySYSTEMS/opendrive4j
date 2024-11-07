@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class UVZPositionAdapter implements ObjectBuilder<UVZPosition> {
 
     @Override
-    public UVZPosition createObject(QName name) throws ObjectBuildException {
+    public UVZPosition createObject(QName name, Object o) throws ObjectBuildException {
         return new UVZPosition();
     }
 

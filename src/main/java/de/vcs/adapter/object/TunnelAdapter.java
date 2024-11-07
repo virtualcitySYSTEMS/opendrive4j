@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class TunnelAdapter implements ObjectBuilder<Tunnel> {
 
     @Override
-    public Tunnel createObject(QName name) throws ObjectBuildException {
+    public Tunnel createObject(QName name, Object o) throws ObjectBuildException {
         return new Tunnel();
     }
 

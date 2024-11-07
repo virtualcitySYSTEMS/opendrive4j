@@ -1,6 +1,5 @@
 package de.vcs.adapter.signal;
 
-import de.vcs.model.odr.signal.SignalReference;
 import de.vcs.model.odr.signal.Signals;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -20,7 +19,7 @@ import javax.xml.namespace.QName;
 public class SignalsAdapter implements ObjectBuilder<Signals> {
 
     @Override
-    public Signals createObject(QName name) throws ObjectBuildException {
+    public Signals createObject(QName name, Object o) throws ObjectBuildException {
         return new Signals();
     }
 

@@ -2,9 +2,7 @@ package de.vcs.adapter.road;
 
 import de.vcs.adapter.geometry.STHPositionAdapter;
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.road.RoadType;
-import de.vcs.model.odr.road.Speed;
 import de.vcs.model.odr.road.Type;
 import de.vcs.util.ODRConstants;
 import org.xmlobjects.annotation.XMLElement;
@@ -24,7 +22,7 @@ import javax.xml.namespace.QName;
 public class TypeAdapter implements ObjectBuilder<Type> {
 
     @Override
-    public Type createObject(QName name) throws ObjectBuildException {
+    public Type createObject(QName name, Object o) throws ObjectBuildException {
         return new Type();
     }
 

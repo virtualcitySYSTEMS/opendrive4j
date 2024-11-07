@@ -14,7 +14,7 @@ import javax.xml.namespace.QName;
 public class LaneSectionAdapter implements ObjectBuilder<LaneSection> {
 
     @Override
-    public LaneSection createObject(QName name) throws ObjectBuildException {
+    public LaneSection createObject(QName name, Object o) throws ObjectBuildException {
         return new LaneSection();
     }
 

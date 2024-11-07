@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class BridgeAdapter implements ObjectBuilder<Bridge> {
 
     @Override
-    public Bridge createObject(QName name) throws ObjectBuildException {
+    public Bridge createObject(QName name, Object o) throws ObjectBuildException {
         return new Bridge();
     }
 

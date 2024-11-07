@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class CornerReferenceAdapter implements ObjectBuilder<CornerReference> {
 
     @Override
-    public CornerReference createObject(QName name) throws ObjectBuildException {
+    public CornerReference createObject(QName name, Object o) throws ObjectBuildException {
         return new CornerReference();
     }
 

@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class PartnerAdapter implements ObjectBuilder<Partner> {
 
     @Override
-    public Partner createObject(QName name) throws ObjectBuildException {
+    public Partner createObject(QName name, Object o) throws ObjectBuildException {
         return new Partner();
     }
 

@@ -1,8 +1,5 @@
 package de.vcs.model.odr.object;
 
-import de.vcs.model.odr.lane.RoadMarkColor;
-import de.vcs.model.odr.lane.RoadMarkWeight;
-
 import java.util.ArrayList;
 
 public class Marking extends AbstractObject {

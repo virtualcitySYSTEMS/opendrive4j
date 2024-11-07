@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class ExplicitRoadMarkAdapter implements ObjectBuilder<ExplicitRoadMark> {
 
     @Override
-    public ExplicitRoadMark createObject(QName name) throws ObjectBuildException {
+    public ExplicitRoadMark createObject(QName name, Object o) throws ObjectBuildException {
         return new ExplicitRoadMark();
     }
 

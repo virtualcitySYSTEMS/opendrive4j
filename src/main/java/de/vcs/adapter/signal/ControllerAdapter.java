@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class ControllerAdapter implements ObjectBuilder<Controller> {
 
     @Override
-    public Controller createObject(QName name) throws ObjectBuildException {
+    public Controller createObject(QName name, Object o) throws ObjectBuildException {
         return new Controller();
     }
 

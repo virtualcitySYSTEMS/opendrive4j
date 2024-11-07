@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class CornerRoadAdapter implements ObjectBuilder<CornerRoad> {
 
     @Override
-    public CornerRoad createObject(QName name) throws ObjectBuildException {
+    public CornerRoad createObject(QName name, Object o) throws ObjectBuildException {
         return new CornerRoad();
     }
 

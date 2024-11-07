@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 public class GeoReferenceAdapter implements ObjectBuilder<GeoReference> {
 
     @Override
-    public GeoReference createObject(QName name) throws ObjectBuildException {
+    public GeoReference createObject(QName name, Object o) throws ObjectBuildException {
         return new GeoReference();
     }
 

@@ -2,7 +2,6 @@ package de.vcs.adapter.railroad;
 
 import de.vcs.adapter.geometry.STHPositionAdapter;
 import de.vcs.adapter.helper.TextContentChecker;
-import de.vcs.model.odr.geometry.STHPosition;
 import de.vcs.model.odr.railroad.PlatformSide;
 import de.vcs.model.odr.railroad.Segment;
 import de.vcs.util.ODRConstants;
@@ -23,7 +22,7 @@ import javax.xml.namespace.QName;
 public class SegmentAdapter implements ObjectBuilder<Segment> {
 
     @Override
-    public Segment createObject(QName name) throws ObjectBuildException {
+    public Segment createObject(QName name, Object o) throws ObjectBuildException {
         return new Segment();
     }
 

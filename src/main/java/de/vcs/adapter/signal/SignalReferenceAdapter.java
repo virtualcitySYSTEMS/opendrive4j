@@ -21,7 +21,7 @@ import javax.xml.namespace.QName;
 public class SignalReferenceAdapter implements ObjectBuilder<SignalReference> {
 
     @Override
-    public SignalReference createObject(QName name) throws ObjectBuildException {
+    public SignalReference createObject(QName name, Object o) throws ObjectBuildException {
         return new SignalReference();
     }
 

@@ -20,7 +20,7 @@ import javax.xml.namespace.QName;
 public class ElevationProfileAdapter implements ObjectBuilder<ElevationProfile> {
 
     @Override
-    public ElevationProfile createObject(QName name) throws ObjectBuildException {
+    public ElevationProfile createObject(QName name, Object o) throws ObjectBuildException {
         return new ElevationProfile();
     }
 
